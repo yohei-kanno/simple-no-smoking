@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
+gem 'slim-rails'
+gem 'bootstrap'
+gem 'html2slim'
 gem 'rails-i18n'
 gem 'valid_email'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
