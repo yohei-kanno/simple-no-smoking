@@ -1,0 +1,3 @@
+class NoSmokingUserProfile < ApplicationRecord
+  belongs_to :user
+end
