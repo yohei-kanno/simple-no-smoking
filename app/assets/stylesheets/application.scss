@@ -1,6 +1,7 @@
 @import "bootstrap";
 
 .container{
+  text-align: center;
   height: 100vh;
   width: 100vw;
   background-color: #252526;
@@ -29,9 +30,66 @@ border: 2px solid #0EF871;
 
 .header{
   margin-top: 20px;
+  margin-bottom: 20px;
   text-shadow:0 3px 5px #0EF871
 }
 
 .footer{
   text-shadow:0 3px 5px #0EF871
+}
+
+.mode_select_contain{
+  margin-top: 30px;
+  width: 300px;
+  margin: auto;
+  
+  .mode_descripton{
+    margin-top: 10px;
+    margin-bottom: 50px;
+    
+    li {
+      font-size: 12px;
+      text-align: left;
+      margin-top: 9px;
+    }
+  }
+}
+
+
+.no_smoking_button{
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  color: #FFF;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
+  padding: 0.8em 4rem;
+  background: #3FAD88;
+  border: 2px solid green;
+  font-size: 20px;
+  border-radius: 8px;
+  transition: .4s;
+  &:hover{
+    text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
+                 6px 0px 15px rgba(255, 255, 240, 0.83);
+  }
+}
+
+.reduction_button{
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  color: #FFF;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
+  padding: 0.8em 3rem;
+  background: #E2992A;
+  border: 2px solid #F89703;
+  font-size: 20px;
+  border-radius: 8px;
+  transition: .4s;
+  &:hover{
+    text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
+                 6px 0px 15px rgba(255, 255, 240, 0.83);
+  }
 }
