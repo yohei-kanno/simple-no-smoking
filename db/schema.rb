@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_03_082530) do
+ActiveRecord::Schema.define(version: 2021_05_04_041722) do
 
   create_table "no_smoking_user_profiles", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 2021_05_03_082530) do
     t.string "email", null: false
     t.string "crypted_password"
     t.string "salt"
-    t.integer "smoke_mode", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "birth_date"

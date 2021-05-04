@@ -30,3 +30,7 @@ h2.no_smoking_section
 h3.no_smoking_title 今吸ってしまったら失う時給
 h2.no_smoking_section
   p = "#{lost_hours_money_80.to_s(:delimited)}円"
+
+    
+.mode_select_contain
+= button_to 'プロフィールを編集する',edit_user_no_smoking_user_profile_path(@user.id),{method: :get, class:'no_smoking_button'} 

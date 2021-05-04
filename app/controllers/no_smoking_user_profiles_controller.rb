@@ -25,7 +25,6 @@ class NoSmokingUserProfilesController < ApplicationController
   
   def update
     updated_profile = @no_smoking_user_profile.update(no_smoking_user_profile_params)
-    binding.pry
     if updated_profile
       redirect_to user_no_smoking_user_profile_path
     else
