@@ -1,41 +1,53 @@
 @import "bootstrap";
 
+$no-smoking-color: #0EF871;
+
+@mixin mode_select_button{
+  margin-top: 30px;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  // text-decoration: none;
+  color: #FFF;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
+  padding: 0.4em 2rem;
+  font-size: 20px;
+  border-radius: 8px;
+  transition: .4s;
+  &:hover{
+    text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
+                 6px 0px 15px rgba(255, 255, 240, 0.83);
+  }
+}
+
+
 .container{
   text-align: center;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   background-color: #252526;
   color: white;
   width: auto;
-  border: 3px solid  #0EF871;
+  border: 3px solid  $no-smoking-color;
 }
   
 .form-control{
-border: 2px solid #0EF871;
+border: 2px solid $no-smoking-color;
 }
 
 .form-group{
   margin-top: 40px;
 }
 
-.default-btn{
-  margin-top: 40px;
-  margin-bottom: 30px;
-  padding: 7px 50px;
-  background-color: #3FAD88;
-  border-radius: 8px;
-  border: 0px;
-  color: white;
-}
-
 .header{
   margin-top: 20px;
   margin-bottom: 20px;
-  text-shadow:0 3px 5px #0EF871
+  text-shadow:0 3px 5px $no-smoking-color
 }
 
 .footer{
-  text-shadow:0 3px 5px #0EF871
+  text-shadow:0 3px 5px $no-smoking-color
 }
 
 .mode_select_contain{
@@ -57,39 +69,18 @@ border: 2px solid #0EF871;
 
 
 .no_smoking_button{
-  position: relative;
-  display: inline-block;
-  font-weight: bold;
-  text-decoration: none;
-  color: #FFF;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
-  padding: 0.8em 4rem;
+  @include mode_select_button;
   background: #3FAD88;
   border: 2px solid green;
-  font-size: 20px;
-  border-radius: 8px;
-  transition: .4s;
-  &:hover{
-    text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
-                 6px 0px 15px rgba(255, 255, 240, 0.83);
-  }
 }
 
 .reduction_button{
-  position: relative;
-  display: inline-block;
-  font-weight: bold;
-  text-decoration: none;
-  color: #FFF;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
-  padding: 0.8em 3rem;
+  @include mode_select_button;
   background: #E2992A;
   border: 2px solid #F89703;
-  font-size: 20px;
-  border-radius: 8px;
-  transition: .4s;
-  &:hover{
-    text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
-                 6px 0px 15px rgba(255, 255, 240, 0.83);
-  }
+}
+
+.no_smoking_section{
+  text-decoration: underline #3FAD88;
+  margin-bottom: 40px;
 }

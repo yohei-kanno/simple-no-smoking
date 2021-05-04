@@ -4,7 +4,7 @@ div
 
 
 .mode_select_contain
-  = button_to '禁煙モードで始める',{},{class:'no_smoking_button'}
+  = button_to '禁煙モードで始める',new_user_no_smoking_user_profile_path(@user.id),{method: :get, class:'no_smoking_button'} 
 
   .mode_descripton
     ul

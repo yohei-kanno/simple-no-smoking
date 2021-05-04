@@ -4,4 +4,6 @@ class User < ApplicationRecord
   validates :password, presence: true
   
   enum smoke_mode: { no_smoking_mode: 0, reduction_mode: 1 }
+  
+  has_one :no_smoking_user_profile, dependent: :destroy, class_name: 'NoSmokingUserProfile'
 end

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   # skip_before_action :require_login, only: [:new, :create]
   
-  before_action :set_user, only: %i[ mode_select ]
+  before_action :set_user, only: %i[ mode_select create_mode_select]
   
   def new
     @user = User.new
@@ -14,10 +14,6 @@ class UsersController < ApplicationController
     else
       render :new
     end
-  end
-  
-  def mode_select
-
   end
 
   private

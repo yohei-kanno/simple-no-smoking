@@ -1,0 +1,24 @@
+= "#{@user.name}さんの編集ページ"
+
+= form_with model: [@user,@no_smoking_user_profile] , local: true do |f|
+
+  div.text-center
+    .form-group
+      = f.label :tabaco_price, '吸っているタバコの金額を教えて下さい'
+      .row.justify-content-center
+        .col-sm-4
+          = f.number_field :tabaco_price, class: 'form-control', size: "20"
+      
+    .form-group
+      = f.label :smoking_pace, 'タバコを１日辺り何本吸いますか？'
+      .row.justify-content-center
+        .col-sm-4
+          = f.number_field :smoking_pace, class: 'form-control' 
+  
+    .form-group 
+      = f.label :hourly_wage, 'あなたの時給を教えて下さい'
+      .row.justify-content-center
+        .col-sm-4
+          = f.number_field :hourly_wage, class: 'form-control'
+          
+    = f.submit '更新する', class:'no_smoking_button'
