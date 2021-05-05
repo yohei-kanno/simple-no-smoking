@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   
-  root to: 'users#new'
+  get "/login" => "sessions#new"
+  post "/login" => "sessions#create"
+  delete "/login" => "sessions#destory"
+  
+  root to: "sessions#new"
   
   resources :users, only: %i[ new index create] do
     member do
