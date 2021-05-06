@@ -1,2 +1,19 @@
-h1 Sessions#new
-p Find me in app/views/sessions/new.html.slim
+= form_with model: @user, local: true do |f|
+
+  div.text-center
+    .form-group
+      = f.label :email, 'メールアドレス'
+      .row.justify-content-center
+        .col-sm-4
+          = f.text_field :email, class: "form-control"
+      
+    .form-group
+      = f.label :password, 'パスワード'
+      .row.justify-content-center
+        .col-sm-4
+          = f.password_field :password, class: 'form-control'
+    
+  = f.submit 'ログイン', class:'no_smoking_button'
+
+= button_to new_user_path, method: :get,class: 'cp_link' do
+  span 新規登録

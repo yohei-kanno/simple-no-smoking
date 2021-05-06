@@ -84,3 +84,18 @@ border: 2px solid $no-smoking-color;
   text-decoration: underline #3FAD88;
   margin-bottom: 40px;
 }
+
+.cp_link {
+
+	padding: 0.1em 0.3em;
+	background-image: linear-gradient(to right, rgba(0,0,0,0) 50%, rgb(63, 165, 23) 50%);
+	background-position: 0 0;
+	background-size: 200% auto;
+	transition: .3s;
+	color: black;
+  border-radius: 5px;
+}
+.cp_link:hover {
+	background-position: -100% 0;
+	color: #fff;
+}
