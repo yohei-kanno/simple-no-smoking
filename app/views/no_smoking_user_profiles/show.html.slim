@@ -32,8 +32,12 @@
   
     p = "#{lost_hours_money_80.to_s(:delimited)}円"
     
-  .main
+  .button_frex
     -if logged_in? 
       = button_to 'プロフィールを編集する',edit_user_no_smoking_user_profile_path(@user.id),{method: :get, class:'cp_link'} 
+      
       = button_to '/logout', method: :delete, class: 'cp_link' do
         span ログアウト
+        
+      = button_to user_path(@user.id), method: :delete, class: 'cp_link' do
+        span アカウント削除

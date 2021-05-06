@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   # skip_before_action :require_login, only: [:new, :create]
   
-  before_action :set_user, only: %i[ mode_select create_mode_select]
+  before_action :set_user, only: %i[ destroy]
   
   def new
     @user = User.new
@@ -16,6 +16,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user.destroy
+    redirect_to root_url
+  end
+  
   private
 
   def user_params

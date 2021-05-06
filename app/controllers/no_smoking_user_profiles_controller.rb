@@ -1,7 +1,5 @@
 class NoSmokingUserProfilesController < ApplicationController
-  
   before_action :set_user, only: %i[ new create show edit index]
-  
   before_action :set_no_smoking_user, only: %i[ edit update ]
   
   def index; end
@@ -19,7 +17,8 @@ class NoSmokingUserProfilesController < ApplicationController
     end
   end
     
-  def show; end
+  def show
+  end
   
   def edit;end
   
