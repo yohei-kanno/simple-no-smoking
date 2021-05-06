@@ -4,7 +4,7 @@ $no-smoking-color: #0EF871;
 
 @mixin mode_select_button{
   margin-top: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   position: relative;
   display: inline-block;
   font-weight: bold;
@@ -86,7 +86,6 @@ border: 2px solid $no-smoking-color;
 }
 
 .cp_link {
-
 	padding: 0.1em 0.3em;
 	background-image: linear-gradient(to right, rgba(0,0,0,0) 50%, rgb(63, 165, 23) 50%);
 	background-position: 0 0;
@@ -94,8 +93,12 @@ border: 2px solid $no-smoking-color;
 	transition: .3s;
 	color: black;
   border-radius: 5px;
+  &:hover {
+    background-position: -100% 0;
+    color: #fff;
+  }
 }
-.cp_link:hover {
-	background-position: -100% 0;
-	color: #fff;
+
+.main{
+  display: inline-flex;
 }

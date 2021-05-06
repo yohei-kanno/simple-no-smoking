@@ -29,4 +29,11 @@
     p = "#{lost_money_80.to_s(:delimited)}円"
   h3.no_smoking_title 今吸ってしまったら失う時給
   h2.no_smoking_section
+  
     p = "#{lost_hours_money_80.to_s(:delimited)}円"
+    
+  .main
+    -if logged_in? 
+      = button_to 'プロフィールを編集する',edit_user_no_smoking_user_profile_path(@user.id),{method: :get, class:'cp_link'} 
+      = button_to '/logout', method: :delete, class: 'cp_link' do
+        span ログアウト
