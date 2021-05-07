@@ -1,0 +1,11 @@
+| ご登録しているメールアドレスを入力して下さい
+
+= form_with url:password_resets_path, method: :post do |f|
+  .text_center
+    .form-group
+      = f.label :email,"メールアドレス"
+      .row.justify-content-center
+        .col-sm-4
+          = f.email_field :email, class: 'form-control'
+          
+    = f.submit "パスワードリセットを申請する", class: 'no_smoking_button'

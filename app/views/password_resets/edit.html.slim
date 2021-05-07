@@ -1,0 +1,16 @@
+= "#{@user.name}さんパスワードの再設定をして下さい"
+
+= form_with model: @user, url: password_reset_path(@token), method: :patch do |f|
+  .text_center
+    .form-group
+      = f.label :password,"パスワード"
+      .row.justify-content-center
+        .col-sm-4
+          = f.password_field :password, class: 'form-control'
+    .form-group
+      = f.label :password_confirmation,"パスワード確認"
+      .row.justify-content-center
+        .col-sm-4
+          = f.password_field :password_confirmation, class: 'form-control'
+          
+    = f.submit "新しいパスワードを設定する", class: 'no_smoking_button'
