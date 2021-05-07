@@ -46,13 +46,13 @@
     -if logged_in? 
       = button_to '喫煙情報を編集する',edit_user_no_smoking_user_profile_path(current_user.no_smoking_user_profile.id),{method: :get, class: 'cp_link'} 
       
-      = button_to '/logout', {method: :delete, class: 'cp_link', data: {confirm: "sa"}} do
+      = button_to '/logout', {method: :delete, class: 'cp_link'} do
         span ログアウト
         
-      = button_to user_path(current_user.id), method: :delete, class: 'cp_link' do
+      = button_to user_path(current_user.id), method: :delete, class: 'cp_link', data:{ confirm: "本当に削除しますか？" } do
         span アカウント削除
         
-      = button_to user_reset_start_date_path, method: :patch, class: 'cp_link' do
+      = button_to user_reset_start_date_path, method: :patch, class: 'cp_link',data: { confirm: "データをリセットして宜しいですか？" } do
         span 禁煙を最初から始める
 
 

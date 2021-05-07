@@ -10,6 +10,7 @@ gem 'html2slim'
 gem 'rails-i18n'
 gem 'valid_email'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
+gem 'data-confirm-modal'
 
 gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
