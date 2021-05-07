@@ -5,4 +5,5 @@ class User < ApplicationRecord
   
   validates :reset_password_token, uniqueness: true, allow_nil: true
   has_one :no_smoking_user_profile, dependent: :destroy, class_name: 'NoSmokingUserProfile'
+  has_one :mode, dependent: :destroy, class_name: "Mode"
 end

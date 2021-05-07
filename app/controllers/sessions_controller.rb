@@ -5,8 +5,10 @@ class SessionsController < ApplicationController
   
   def create
     if @user = login(params[:email], params[:password])
-      if @user.no_smoking_user_profile
+      if @user.no_smoking_user_profile && @user.mode
         redirect_back_or_to(user_no_smoking_user_profile_path(@user.id))
+      elsif !@user.mode
+        redirect_back_or_to(new_user_modes_path(@user.id))
       else
         redirect_back_or_to(new_user_no_smoking_user_profile_path(@user.id))
       end
@@ -15,6 +17,7 @@ class SessionsController < ApplicationController
       render :new
     end
   end
+        
         
   
   def destroy
