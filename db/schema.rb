@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2021_05_06_192321) do
     t.integer "hourly_wage", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.datetime "start_date"
+    t.datetime "start_date", default: "2021-05-07 04:54:54"
     t.index ["user_id"], name: "index_no_smoking_user_profiles_on_user_id"
   end
 
