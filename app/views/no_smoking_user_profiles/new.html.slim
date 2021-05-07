@@ -1,13 +1,19 @@
 = "#{@user.name}さんの事を教えて下さい"
 
-= form_with url:user_no_smoking_user_profile_path , local: true do |f|
+= form_with model: @no_smoking_user_profile, url:user_no_smoking_user_profile_path,  local: true do |f|
 
   div.text-center
+    .form-group
+      = f.label :start_date, 'いつになったら禁煙を始めますか？'
+      .row.justify-content-center
+        .col-sm-4
+          = f.datetime_field :start_date, class: 'form-control'
+          
     .form-group
       = f.label :tabaco_price, '吸っているタバコの金額を教えて下さい'
       .row.justify-content-center
         .col-sm-4
-          = f.number_field :tabaco_price, class: 'form-control', size: "20"
+          = f.number_field :tabaco_price, class: 'form-control'
       
     .form-group
       = f.label :smoking_pace, 'タバコを１日辺り何本吸いますか？'

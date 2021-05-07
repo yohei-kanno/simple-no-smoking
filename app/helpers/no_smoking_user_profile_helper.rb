@@ -2,7 +2,7 @@ module NoSmokingUserProfileHelper
   
   #ユーザーの禁煙した秒数
   def smoking_in_second
-    DateTime.now.to_i - @user.no_smoking_user_profile.created_at.to_i
+    DateTime.now.to_i - current_user.no_smoking_user_profile.start_date.to_i
   end
   
   #禁煙した日数
@@ -12,12 +12,12 @@ module NoSmokingUserProfileHelper
   
   # ユーザーの１本辺りの金額
   def one_smoke_price
-    @user.no_smoking_user_profile.tabaco_price / 20.0
+    current_user.no_smoking_user_profile.tabaco_price / 20.0
   end
     
   #ユーザーの１日辺りの金額
   def one_day_price
-    one_smoke_price * @user.no_smoking_user_profile.smoking_pace
+    one_smoke_price * current_user.no_smoking_user_profile.smoking_pace
   end
   
   #ユーザーが1秒辺りいくら使っているのか
@@ -27,12 +27,12 @@ module NoSmokingUserProfileHelper
   
   #ユーザーが何秒に1本吸っているのか
   def one_every_second
-    86400 / @user.no_smoking_user_profile.smoking_pace
+    86400 / current_user.no_smoking_user_profile.smoking_pace
   end
   
   #ユーザーの生きた秒数
   def life_time
-    DateTime.now.to_i - @user.birth_date.to_i
+    DateTime.now.to_i - current_user.birth_date.to_i
   end
   
   #80年生きた際の残りの秒数
@@ -59,6 +59,11 @@ module NoSmokingUserProfileHelper
   def gained_time
     patience_number * 5
   end
+  
+  #我慢した長さ
+  def gained_longth
+    patience_number * 8
+  end
       
   #失う時間
   def lost_time_80
@@ -71,6 +76,6 @@ module NoSmokingUserProfileHelper
   end
   
   def lost_hours_money_80
-    lost_time_80 * @user.no_smoking_user_profile.hourly_wage
+    lost_time_80 * current_user.no_smoking_user_profile.hourly_wage
   end
 end

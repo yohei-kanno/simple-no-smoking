@@ -1,3 +1,13 @@
+- if smoking_in_second < 0
+  h2
+    = "#{current_user.name}さんの禁煙は"
+    br/
+  h1
+    = current_user.no_smoking_user_profile.start_date.strftime("%m月%d日%H時間%M分%S秒")
+    br/
+  h2 
+    | にスタートします
+- else
   h3.no_smoking_title 禁煙時間
   h2.no_smoking_section
     p = no_smoking_time
@@ -18,7 +28,7 @@
   h3.no_smoking_title 我慢したタバコの長さ 
   h6 1本５cm計算
   h2.no_smoking_section
-    p = "#{gained_time}cm"
+    p = "#{gained_longth}cm"
     
   h3.no_smoking_title 今から８０歳まで吸って失う時間
   h2.no_smoking_section
@@ -34,10 +44,40 @@
     
   .button_frex
     -if logged_in? 
-      = button_to 'プロフィールを編集する',edit_user_no_smoking_user_profile_path(@user.id),{method: :get, class:'cp_link'} 
+      = button_to '喫煙情報を編集する',edit_user_no_smoking_user_profile_path(current_user.no_smoking_user_profile.id),{method: :get, class: 'cp_link'} 
       
-      = button_to '/logout', method: :delete, class: 'cp_link' do
+      = button_to '/logout', {method: :delete, class: 'cp_link', data: {confirm: "sa"}} do
         span ログアウト
         
-      = button_to user_path(@user.id), method: :delete, class: 'cp_link' do
+      = button_to user_path(current_user.id), method: :delete, class: 'cp_link' do
         span アカウント削除
+        
+      = button_to user_reset_start_date_path, method: :patch, class: 'cp_link' do
+        span 禁煙を最初から始める
+
+
+javascript:
+  window.onload = () => {
+
+  class Confirm {
+    constructor(el) {
+      this.message = el.getAttribute('data-confirm')
+      if (this.message) {
+        el.form.addEventListener('submit', this.confirm.bind(this))
+      } else {
+        console && console.warn('No value specified in `data-confirm`', el)
+      }
+    }
+
+    confirm(e) {
+      if (!window.confirm(this.message)) {
+        e.preventDefault();
+      }
+    }
+  }
+
+  Array.from(document.querySelectorAll('[data-confirm]')).forEach((el) => {
+    new Confirm(el)
+  })
+
+  }

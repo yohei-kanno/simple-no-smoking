@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   
   root to: "sessions#new"
   
-  resources :users, only: %i[ new index create destroy] do
+  resources :users, only: %i[ new create destroy] do
     resource :no_smoking_user_profile, only: %i[ new create show edit update]
+    
+    resource :reset_start_date,only: %i[ update ]
   end
 end
