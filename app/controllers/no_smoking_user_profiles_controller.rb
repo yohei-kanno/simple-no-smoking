@@ -1,5 +1,5 @@
 class NoSmokingUserProfilesController < ApplicationController
-  before_action :set_user, only: %i[ new create show edit ]
+  before_action :set_user, only: %i[ new create show edit update ]
   before_action :set_mode
   before_action :set_no_smoking_user, only: %i[ show edit update ]
   before_action :require_login
@@ -20,7 +20,9 @@ class NoSmokingUserProfilesController < ApplicationController
     end
   end
     
-  def show; end
+  def show
+    binding.pry
+  end
   
   def edit; end
   

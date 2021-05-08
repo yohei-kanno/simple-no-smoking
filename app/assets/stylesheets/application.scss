@@ -1,6 +1,7 @@
 @import "bootstrap";
 
 $no-smoking-color: #0EF871;
+$reduciton-color: #E2992A;
 
 @mixin mode_select_button{
   margin-top: 30px;
@@ -22,7 +23,7 @@ $no-smoking-color: #0EF871;
 }
 
 
-.container{
+.container.no_smoking{
   text-align: center;
   height: 100%;
   width: 100vw;
@@ -31,23 +32,47 @@ $no-smoking-color: #0EF871;
   width: auto;
   border: 3px solid  $no-smoking-color;
 }
+
+.container.reduction{
+  text-align: center;
+  height: 100%;
+  width: 100vw;
+  background-color: #252526;
+  color: white;
+  width: auto;
+  border: 3px solid  $reduciton-color;
+}
   
 .form-control{
 border: 2px solid $no-smoking-color;
+}
+
+.form-control.reduction{
+border: 2px solid $reduciton-color;
 }
 
 .form-group{
   margin-top: 40px;
 }
 
-.header{
+.no_smoking_header{
   margin-top: 20px;
   margin-bottom: 20px;
   text-shadow:0 3px 5px $no-smoking-color
 }
 
-.footer{
+.reduction_header{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-shadow:0 3px 5px $reduciton-color
+}
+
+.no_smoking_footer{
   text-shadow:0 3px 5px $no-smoking-color
+}
+
+.reduction_footer{
+  text-shadow:0 3px 5px $reduciton-color
 }
 
 .mode_select_contain{
@@ -81,13 +106,33 @@ border: 2px solid $no-smoking-color;
 }
 
 .no_smoking_section{
-  text-decoration: underline #3FAD88;
+  text-decoration: underline $no-smoking-color;
   margin-bottom: 40px;
 }
+
+.reduction_section{
+  text-decoration: underline $reduciton-color;
+  margin-bottom: 40px;
+}
+  
 
 .cp_link {
 	padding: 0.1em 0.3em;
 	background-image: linear-gradient(to right, rgba(0,0,0,0) 50%, rgb(63, 173, 136) 50%);
+	background-position: 0 0;
+	background-size: 200% auto;
+	transition: .3s;
+	color: black;
+  border-radius: 5px;
+  &:hover {
+    background-position: -100% 0;
+    color: #fff;
+  }
+}
+
+.cp_link_reduction {
+	padding: 0.1em 0.3em;
+	background-image: linear-gradient(to right, rgba(0,0,0,0) 50%, rgb(226, 153, 42) 50%);
 	background-position: 0 0;
 	background-size: 200% auto;
 	transition: .3s;

@@ -16,8 +16,15 @@ class ModesController < ApplicationController
     @mode.mode = 0
     @mode.save!
     redirect_to login_url
-    binding.pry
   end
+  
+  def reduction
+    @mode = @user.build_mode
+    @mode.mode = 1
+    @mode.save!
+    redirect_to login_url
+  end
+    
   
   private
   

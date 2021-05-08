@@ -1,9 +1,8 @@
-module NoSmokingUserProfileHelper
-  
-  #ユーザーの禁煙した秒数
+module NoSmokingUserProfilesHelper
   def smoking_in_second
     DateTime.now.to_i - current_user.no_smoking_user_profile.start_date.to_i
   end
+  
   
   #禁煙した日数
   def smoking_in_day
@@ -49,12 +48,12 @@ module NoSmokingUserProfileHelper
   def amount_of_money_earned
     (one_minute_price * smoking_in_second).floor
   end
-
+  
   #我慢した本数
   def patience_number
     smoking_in_second / one_every_second
   end
-
+  
   #得した時間
   def gained_time
     patience_number * 5
@@ -78,4 +77,5 @@ module NoSmokingUserProfileHelper
   def lost_hours_money_80
     lost_time_80 * current_user.no_smoking_user_profile.hourly_wage
   end
+ 
 end

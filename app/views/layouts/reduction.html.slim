@@ -2,14 +2,16 @@ doctype html
 html
   head
     title
-      | SimpleNoSmoking
+      | reductionmode
     meta[name="viewport" content="width=device-width,initial-scale=1"]
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    .container.no_smoking
-      = render 'shared/header'
+    .container.reduction
+      h1.text-center.reduction_header
+        | ReductionMode
       = yield
-      = render 'shared/footer'
+      h1.text-center.reduction_footer
+        | ReductionMode

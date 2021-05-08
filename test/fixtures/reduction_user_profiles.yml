@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  references: 
+  tabaco_price: 1
+  smoking_pace: 1
+  hourly_wage: 1
+
+two:
+  references: 
+  tabaco_price: 1
+  smoking_pace: 1
+  hourly_wage: 1

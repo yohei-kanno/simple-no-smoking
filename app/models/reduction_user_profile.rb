@@ -1,4 +1,4 @@
-class NoSmokingUserProfile < ApplicationRecord
+class ReductionUserProfile < ApplicationRecord
   belongs_to :user
   validates :start_date, presence: true
   validates :tabaco_price, presence: true

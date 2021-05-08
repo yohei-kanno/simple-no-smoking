@@ -15,7 +15,7 @@ div
       li 失った時給が分かります
     
 .mode_select_contain
-  = button_to '減煙モードで始める',{},{class:'reduction_button'}
+  = button_to '減煙モードで始める',reduction_user_modes_path,{method: :post, class:'reduction_button'}
 
   .mode_descripton
     ul

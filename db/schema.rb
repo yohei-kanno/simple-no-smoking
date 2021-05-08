@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_07_091632) do
+ActiveRecord::Schema.define(version: 2021_05_07_145332) do
 
   create_table "modes", force: :cascade do |t|
     t.integer "mode", null: false
@@ -27,8 +27,19 @@ ActiveRecord::Schema.define(version: 2021_05_07_091632) do
     t.integer "hourly_wage", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.datetime "start_date", default: "2021-05-07 08:50:22"
+    t.datetime "start_date", default: "2021-05-07 15:03:22"
     t.index ["user_id"], name: "index_no_smoking_user_profiles_on_user_id"
+  end
+
+  create_table "reduction_user_profiles", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "tabaco_price", null: false
+    t.integer "smoking_pace", null: false
+    t.integer "hourly_wage", null: false
+    t.datetime "start_date", default: "2021-05-07 15:03:22", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_reduction_user_profiles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,4 +60,5 @@ ActiveRecord::Schema.define(version: 2021_05_07_091632) do
 
   add_foreign_key "modes", "users"
   add_foreign_key "no_smoking_user_profiles", "users"
+  add_foreign_key "reduction_user_profiles", "users"
 end

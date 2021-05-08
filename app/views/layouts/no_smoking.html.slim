@@ -9,9 +9,9 @@ html
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    .container
-      h1.text-center.header
+    .container.no_smoking
+      h1.text-center.no_smoking_header
         | NoSmokingMode
-        = yield
-      h1.text-center.header
+      = yield
+      h1.text-center.no_smoking_footer
         | NoSmokingMode

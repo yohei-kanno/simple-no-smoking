@@ -6,6 +6,7 @@ Bundler.require(*Rails.groups)
 
 module SimpleNoSmoking
   class Application < Rails::Application
+    config.action_controller.include_all_helpers = false
     config.load_defaults 6.1
     config.time_zone = 'Tokyo'
     config.i18n.load_path +=

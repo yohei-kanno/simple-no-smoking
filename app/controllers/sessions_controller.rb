@@ -5,18 +5,26 @@ class SessionsController < ApplicationController
   
   def create
     if @user = login(params[:email], params[:password])
-      if @user.no_smoking_user_profile && @user.mode
+      if @user.no_smoking_user_profile && (@user.mode.mode === "no_smoking_mode")
         redirect_back_or_to(user_no_smoking_user_profile_path(@user.id))
+      elsif @user.reduction_user_profile && (@user.mode.mode === "reduction_mode")
+        redirect_back_or_to(user_reduction_user_profile_path(@user.id))
+        
       elsif !@user.mode
         redirect_back_or_to(new_user_modes_path(@user.id))
-      else
+        
+      elsif (@user.mode.mode === "no_smoking_mode") && !@user.no_smoking_user_profile
         redirect_back_or_to(new_user_no_smoking_user_profile_path(@user.id))
+        
+      elsif (@user.mode.mode === "reduction_mode") && !@user.reduction_user_profile
+        redirect_back_or_to(new_user_reduction_user_profile_path(@user.id))
       end
     else
       flash[:alert] = 'ログイン失敗'
       render :new
     end
   end
+
         
         
   

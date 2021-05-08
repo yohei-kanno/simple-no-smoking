@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   
   
   def set_mode
-    redirect_to new_user_modes_path(@user.id) if !@user.mode
+    redirect_to new_user_modes_path(current_user.id) if !current_user.mode
   end
   
   protected
