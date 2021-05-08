@@ -8,39 +8,40 @@
   h2 
     | にスタートします
 - else
-  h3.no_smoking_title 禁煙時間
-  h2.reduction_section
-    p = no_smoking_time
+  h1 吸ったら記録しましょう！
+  br/
+  .button_frex
+    = button_to '吸いました',user_smoke_counts_path(current_user.reduction_user_profile.id),{method: :patch, class: 'cp_link_reduction', name: "reduction"}
     
-  h3.no_smoking_title 得した金額
-  h2.reduction_section
-    p = "#{amount_of_money_earned}円"
+    = button_to '間違えました',user_smoke_counts_path(current_user.reduction_user_profile.id),{method: :patch, class: 'cp_link_reduction', name: "reduction"}
     
-  h3.no_smoking_title 我慢した本数
-  h2.reduction_section
-    p = "#{patience_number}本"
-    
-  h3.no_smoking_title 浮いた時間 
-  h6 1本５分計算
-  h2.reduction_section
-    p = "#{gained_time}分"
-    
-  h3.no_smoking_title 我慢したタバコの長さ 
-  h6 1本５cm計算
-  h2.reduction_section
-    p = "#{gained_longth}cm"
-    
-  h3.no_smoking_title 今から８０歳まで吸って失う時間
-  h2.reduction_section
-    p = "#{lost_time_80.to_s(:delimited)}時間"
-    
-  h3.no_smoking_title  今から８０歳まで吸って失う金額
-  h2.reduction_section
-    p = "#{lost_money_80.to_s(:delimited)}円"
-  h3.no_smoking_title 今吸ってしまったら失う時給
-  h2.reduction_section
+  br/
+  br/ 
+  br/ 
   
-    p = "#{lost_hours_money_80.to_s(:delimited)}円"
+  h3 減煙を開始してから
+  h2.reduction_section
+    p = "#{reduction_time}経ちました"
+  
+  h3 今日吸った本数
+  h2.reduction_section 
+    p = "#{current_user.reduction_user_profile.smoking_count}本"
+    
+  h3 今日吸って良い本数
+  h2.reduction_section
+    = render 'you_can_smoke'
+    
+  h3 今日タバコに使った金額
+  h2.reduction_section
+    p = "#{used_money}"
+    
+  h3 今日タバコに使った時間
+  h2.reduction_section
+    p = "#{used_time}分"
+    
+        
+    
+    
     
   .button_frex
     -if logged_in? 

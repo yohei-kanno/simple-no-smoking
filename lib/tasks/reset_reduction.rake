@@ -3,7 +3,10 @@ namespace :reset_reduction do
   task reduction: :environment do
     logger = Logger.new 'log/reset_reduciton.log'
     begin
-      ReductionUserProfile.first.update(start_date: DateTime.current)
+      reduction_user_profiles = ReductionUserProfile.all
+      reduction_user_profiles.each do | profile | 
+        profile.update(smoking_count: 0)
+      end
     rescue => e
       logger.error "エラーです！"
       logger.error e
@@ -12,4 +15,3 @@ namespace :reset_reduction do
     end
   end
 end
-    
