@@ -1,7 +1,7 @@
 class ReductionUserProfilesController < ApplicationController
   before_action :set_user, only: %i[ new create show edit ]
   before_action :set_mode
-  before_action :set_reduction_user, only: %i[ show edit update ]
+  before_action :set_reduction_user, only: %i[ show edit update destory]
   before_action :require_login
   
   
@@ -14,7 +14,6 @@ class ReductionUserProfilesController < ApplicationController
   def create
     @reduction_user_profile = current_user.build_reduction_user_profile(reduction_user_profile_params)
     if @reduction_user_profile.save
-      binding.pry
       redirect_to user_reduction_user_profile_path
     else
       render :new
@@ -32,6 +31,11 @@ class ReductionUserProfilesController < ApplicationController
     else
       render :edit
     end
+  end
+  
+  def destroy
+    current_user.reduction_user_profile.destroy
+    redirect_to new_user_modes_path(current_user.id)
   end
   
   private

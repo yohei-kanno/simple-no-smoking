@@ -20,9 +20,7 @@ class NoSmokingUserProfilesController < ApplicationController
     end
   end
     
-  def show
-    binding.pry
-  end
+  def show; end
   
   def edit; end
   
@@ -32,6 +30,11 @@ class NoSmokingUserProfilesController < ApplicationController
     else
       render :edit
     end
+  end
+  
+  def destroy
+    current_user.no_smoking_user_profile.destroy!
+    redirect_to new_user_modes_path(current_user.id)
   end
     
   

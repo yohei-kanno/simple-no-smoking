@@ -54,6 +54,9 @@
         
       = button_to user_reset_start_date_path, method: :patch, class: 'cp_link',data: { confirm: "データをリセットして宜しいですか？" } do
         span 禁煙を最初から始める
+        
+      = button_to user_no_smoking_user_profile_path(current_user.id), method: :delete, class: 'cp_link',data: { confirm: "データをリセットして減煙をしますか？" } do
+        span 減煙にする
 
 
 javascript:
