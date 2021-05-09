@@ -1,0 +1,65 @@
+.button_frex
+    -if logged_in? 
+      = button_to '喫煙情報を編集する',edit_user_reduction_user_profile_path(current_user.reduction_user_profile.id),{method: :get, class: 'cp_link_reduction'} 
+      
+      = button_to '/logout', {method: :delete, class: 'cp_link_reduction'} do
+        span ログアウト
+        
+      = button_to user_path(current_user.id), method: :delete, class: 'cp_link_reduction', data:{ confirm: "本当に削除しますか？" } do
+        span アカウント削除
+        
+      = button_to user_reset_start_date_path, method: :patch, class: 'cp_link_reduction',data: { confirm: "データをリセットして宜しいですか？" } do
+        span 減煙を最初から始める
+
+
+br/
+br/
+
+table
+  thead
+    th = "累積本数"
+    th = "累積金額"
+  
+  tbody 
+    td = "#{sum_value}本"
+    td = "#{sum_value * one_smoke_price}円"
+
+- stocker.reverse.each.with_index(1) do |stock, i|
+    table
+      thead
+        th = "日付" 
+        th = "吸った本数"
+        th = "使った金額"
+      tbody 
+        td = "#{stock.created_at.strftime("%m月%d日")}" 
+        td = "#{stock.counter}本"
+        td = "#{one_smoke_price * stock.counter}円"
+        br/
+br/
+br/
+
+javascript:
+  window.onload = () => {
+
+  class Confirm {
+    constructor(el) {
+      this.message = el.getAttribute('data-confirm')
+      if (this.message) {
+        el.form.addEventListener('submit', this.confirm.bind(this))
+      } else {
+        console && console.warn('No value specified in `data-confirm`', el)
+      }
+    }
+
+    confirm(e) {
+      if (!window.confirm(this.message)) {
+        e.preventDefault();
+      }
+    }
+  }
+
+  Array.from(document.querySelectorAll('[data-confirm]')).forEach((el) => {
+    new Confirm(el)
+  })
+
+  }

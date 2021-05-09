@@ -2,6 +2,7 @@
 
 $no-smoking-color: #0EF871;
 $reduciton-color: #E2992A;
+$dark-reducton-color: #ff9900;
 
 @mixin mode_select_button{
   margin-top: 30px;
@@ -146,4 +147,46 @@ border: 2px solid $reduciton-color;
 
 .button_frex{
   display: inline-flex;
+}
+
+// ---------テーブルデザイン----------------
+table{
+  width: 100%;
+  border-collapse:separate;
+  border-spacing: 0;
+}
+
+table th:first-child{
+  border-radius: 5px 0 0 0;
+}
+
+table th:last-child{
+  border-radius: 0 5px 0 0;
+  border-right: 1px solid $reduciton-color;
+}
+
+table th{
+  text-align: center;
+  color:white;
+  background: linear-gradient($reduciton-color,$reduciton-color);
+  border-left: 3px solid $dark-reducton-color;
+  border-top: 3px solid $dark-reducton-color;
+  border-bottom: 3px solid $dark-reducton-color;
+  box-shadow: 0px 1px 1px rgb(255, 153, 0) inset;
+  width: 25%;
+  padding: 10px 0;
+}
+
+table td{
+  text-align: center;
+  border-left: 3px solid $dark-reducton-color;
+  border-bottom: 3px solid $dark-reducton-color;
+  border-top:none;
+  box-shadow: 0px -3px 5px 1px $reduciton-color inset;
+  width: 25%;
+  padding: 10px 0;
+}
+
+table td:last-child{
+  border-right: 1px solid $reduciton-color;
 }

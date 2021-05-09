@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :require_login
   
-  
   def set_mode
     redirect_to new_user_modes_path(current_user.id) if !current_user.mode
   end

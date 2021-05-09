@@ -1,7 +1,7 @@
 s1 = Date.parse("1950/01/01")
 s2 = Date.parse("2000/3/31")
 
-50.times do |n|
+5.times do |n|
   user = User.create(
     name: "example#{n}",
     email: "user#{n}@example.com",
@@ -21,7 +21,7 @@ s2 = Date.parse("2000/3/31")
   )
 end
 
-50.times do |n|
+5.times do |n|
   user = User.create(
     name: "example#{n + 50}",
     email: "user#{n + 50}@example.com",

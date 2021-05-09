@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_08_120126) do
+ActiveRecord::Schema.define(version: 2021_05_08_215301) do
 
   create_table "modes", force: :cascade do |t|
     t.integer "mode", null: false
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2021_05_08_120126) do
     t.integer "hourly_wage", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.datetime "start_date", default: "2021-05-08 16:54:50"
+    t.datetime "start_date", default: "2021-05-08 22:37:26"
     t.index ["user_id"], name: "index_no_smoking_user_profiles_on_user_id"
   end
 
@@ -36,11 +36,19 @@ ActiveRecord::Schema.define(version: 2021_05_08_120126) do
     t.integer "tabaco_price", null: false
     t.integer "smoking_pace", null: false
     t.integer "hourly_wage", null: false
-    t.datetime "start_date", default: "2021-05-08 16:54:50", null: false
+    t.datetime "start_date", default: "2021-05-08 22:37:26", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "smoking_count", default: 0
     t.index ["user_id"], name: "index_reduction_user_profiles_on_user_id"
+  end
+
+  create_table "stocks", force: :cascade do |t|
+    t.integer "counter"
+    t.integer "reduction_user_profile_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["reduction_user_profile_id"], name: "index_stocks_on_reduction_user_profile_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,4 +70,5 @@ ActiveRecord::Schema.define(version: 2021_05_08_120126) do
   add_foreign_key "modes", "users"
   add_foreign_key "no_smoking_user_profiles", "users"
   add_foreign_key "reduction_user_profiles", "users"
+  add_foreign_key "stocks", "reduction_user_profiles"
 end

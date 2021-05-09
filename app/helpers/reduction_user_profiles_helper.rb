@@ -29,10 +29,6 @@ end
   def used_time
     current_user.reduction_user_profile.smoking_count * 5
   end
-  
-  start_date = Time.current.beginning_of_day
-  end_date = Time.current.end_of_day
-  
-  count_smoking = ReductionUserProfile.where(created_at: start_date..end_date).pluck(:smoking_count)
+
   
 end

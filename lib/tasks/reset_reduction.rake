@@ -5,6 +5,7 @@ namespace :reset_reduction do
     begin
       reduction_user_profiles = ReductionUserProfile.all
       reduction_user_profiles.each do | profile | 
+        profile.stocks.create(counter: profile.smoking_count)
         profile.update(smoking_count: 0)
       end
     rescue => e
