@@ -1,10 +1,11 @@
-- if object.errors.any? && object === @reduction_user_profile
-  .alert.alert-remyalert-mini
-    ul
-      - object.errors.full_messages.each do |message|
-        li= message
-- elsif object.errors.any? && object === @no_smoking_user_profile
-  .alert.alert-nsmyalert-mini
-    ul
-      - object.errors.full_messages.each do |message|
-        li= message
+- if object.errors.any?
+  -if object === @reduction_user_profile
+    .alert.alert-remyalert-mini
+      ul
+        - object.errors.full_messages.each do |message|
+          li= message
+  - else 
+    .alert.alert-nsmyalert-mini
+      ul
+        - object.errors.full_messages.each do |message|
+          li= message

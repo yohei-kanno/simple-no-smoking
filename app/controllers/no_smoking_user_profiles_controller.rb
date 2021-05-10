@@ -10,10 +10,10 @@ class NoSmokingUserProfilesController < ApplicationController
   def create
     @no_smoking_user_profile = current_user.build_no_smoking_user_profile(no_smoking_profile_params)
     if @no_smoking_user_profile.save
-      flash[:nsmysuccess] = "登録が完了しました！"
+      flash[:nsmysuccess] = t(".success_created")
       redirect_to user_no_smoking_user_profile_path
     else
-      flash.now[:nsmyalert] = "登録が出来ませんでした"
+      flash.now[:nsmyalert] = t(".failed_created")
       render :new
     end
   end
@@ -24,10 +24,10 @@ class NoSmokingUserProfilesController < ApplicationController
   
   def update
     if @no_smoking_user_profile.update(no_smoking_profile_params)
-      flash[:nsmysuccess] = "更新が完了しました！"
+      flash[:nsmysuccess] = t(".success_updated")
       redirect_to user_no_smoking_user_profile_path
     else
-      flash.now[:nsmyalert] = "更新が出来ませんでした"
+      flash.now[:nsmyalert] = t(".failed_updated")
       render :edit
     end
   end
@@ -35,7 +35,7 @@ class NoSmokingUserProfilesController < ApplicationController
   
   def destroy
     current_user.no_smoking_user_profile.destroy!
-    flash[:nsmysuccess] = "モードを切り替える事が出来ます"
+    flash[:nsmysuccess] = t(".select_mode")
     redirect_to new_user_modes_path(current_user.id)
   end
   

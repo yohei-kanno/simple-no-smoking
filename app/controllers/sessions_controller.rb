@@ -6,26 +6,26 @@ class SessionsController < ApplicationController
   def create
     if @user = login(params[:email], params[:password])
       if @user.no_smoking_user_profile && (@user.mode.mode === "no_smoking_mode")
-        flash[:nsmysuccess] = "ログインしました！"
+        flash[:nsmysuccess] = t(".success_logined")
         redirect_back_or_to(user_no_smoking_user_profile_path(@user.id))
       elsif @user.reduction_user_profile && (@user.mode.mode === "reduction_mode")
-        flash[:remysuccess] = "ログインしました！"
+        flash[:remysuccess] = t(".success_logined")
         redirect_back_or_to(user_reduction_user_profile_path(@user.id))
         
       elsif !@user.mode
-        flash[:nsmysuccess] = "モードを選択して下さい"
+        flash[:nsmysuccess] = t(".select_mode")
         redirect_back_or_to(new_user_modes_path(@user.id))
         
       elsif (@user.mode.mode === "no_smoking_mode") && !@user.no_smoking_user_profile
-        flash[:nsmysuccess] = "ログインしました！"
+        flash[:nsmysuccess] = t(".success_logined")
         redirect_back_or_to(new_user_no_smoking_user_profile_path(@user.id))
         
       elsif (@user.mode.mode === "reduction_mode") && !@user.reduction_user_profile
-        flash[:remysuccess] = "ログインしました！"
+        flash[:remysuccess] = t(".success_logined")
         redirect_back_or_to(new_user_reduction_user_profile_path(@user.id))
       end
     else
-      flash.now[:nsmyalert] = 'ログイン出来ませんでした'
+      flash.now[:nsmyalert] = t(".failed_logined")
       render :new
     end
   end

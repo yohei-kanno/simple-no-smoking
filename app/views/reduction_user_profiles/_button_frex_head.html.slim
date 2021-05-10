@@ -1,5 +1,5 @@
   .button_frex
-    = button_to '吸いました',user_smoke_counts_path(current_user.reduction_user_profile.id),{method: :patch, class: 'cp_link_reduction', name: "reduction"}
+    = button_to '1本吸った',user_smoke_counts_path(current_user.reduction_user_profile.id),{method: :patch, class: 'cp_link_reduction', name: "reduction"}
     - if current_user.reduction_user_profile.smoking_count > 0
      = button_to '1本減らす',user_smoke_counts_path(current_user.reduction_user_profile.id),{method: :patch, class: 'cp_link_reduction', name: "reduction"}
     

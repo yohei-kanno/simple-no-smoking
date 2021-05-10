@@ -1,0 +1,21 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        id: "ID"
+        name: "氏名"
+        email: "メールアドレス"
+        birth_date: "誕生日"
+        password: "パスワード"
+        
+      no_smoking_user_profile:
+        start_date:   "禁煙開始日"
+        tabaco_price: "タバコの金額"
+        smoking_pace: "１日の喫煙数"
+        hourly_wage: "時給"
+      
+      reduction_user_profile:
+        start_date: "減煙開始日"
+        tabaco_price: "タバコの金額"
+        smoking_pace: "1日の理想の喫煙数"
+        hourly_wage: "時給"

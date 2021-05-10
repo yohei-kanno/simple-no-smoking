@@ -1,5 +1,4 @@
 class ModesController < ApplicationController
-
   def new
     @mode = Mode.new
   end
@@ -11,7 +10,7 @@ class ModesController < ApplicationController
       flash[:nsmysuccess] = "ログインして下さい"
       redirect_to login_url
     else
-      flash[:nsmysuccess] = "ログインしました！"
+      flash[:nsmysuccess] = "禁煙モードで登録しました"
       redirect_to new_user_no_smoking_user_profile_path
     end
   end
@@ -23,7 +22,7 @@ class ModesController < ApplicationController
       flash[:nsmysuccess] = "ログインして下さい"
       redirect_to login_url
     else
-      flash[:remysuccess] = "ログインしました！"
+      flash[:remysuccess] = "減煙モードで登録しました"
       redirect_to new_user_reduction_user_profile_path
     end
   end

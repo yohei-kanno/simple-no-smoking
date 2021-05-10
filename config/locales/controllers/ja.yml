@@ -1,0 +1,49 @@
+ja:
+  users:
+    create:
+      success_created: "登録が完了しました"
+      failed_created: "登録が出来ませんでした"
+    destroy:
+      success_destroy: "アカウントを削除しました"
+  
+  sessions:
+    create:
+      success_logined: "ログインしました"
+      failed_logined: "ログイン出来ませんでした"
+      select_mode: "モードを選択して下さい"
+  
+  no_smoking_user_profiles:
+    create:
+      success_created: "登録が完了しました"
+      failed_created: "登録が出来ませんでした"
+    
+    update:
+      success_updated: "更新が完了しました"
+      failed_updated: "更新が出来ませんでした"
+    
+    destroy:
+      select_mode: "モードを選択して下さい"
+      
+  reduction_user_profiles:
+    create:
+      success_created: "登録が完了しました"
+      failed_created: "登録が出来ませんでした"
+    
+    update:
+      success_updated: "更新が完了しました"
+      failed_updated: "更新が出来ませんでした"
+  
+    destroy:
+      select_mode: "モードを選択して下さい"
+      
+  reset_start_dates:
+    update:
+      reset_data: "データをリセットしました"
+      
+  smoke_counts:
+    update:
+      one_smoke: "1本吸った"
+      
+  stocks:
+    index:
+      no_record: "まだ記録がありません"
