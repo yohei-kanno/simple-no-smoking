@@ -135,15 +135,12 @@ border: 2px solid $reduction-color;
 
 
 .button_frex{
-  display: inline-flex;
+  text-align: left;
 }
 
-  
-
-
-
-
-
+.button_frex_end{
+  display: inline-flex ;
+}
 
 // ---------テーブルデザイン----------------
 table{
