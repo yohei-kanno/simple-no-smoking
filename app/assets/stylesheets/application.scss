@@ -16,6 +16,24 @@
   color: rgb(233, 103, 103);
 }
 
+.alert-nsmyalert-mini{
+  @include my_flash ;
+  border: 2px solid $dark-no-smoking-color;
+  background-color:$no-smoking-color;
+  color: rgb(233, 103, 103);
+  font-size: 12px;
+  text-align: center;
+}
+  
+.alert-remyalert-mini{
+  @include my_flash ;
+  border: 2px solid $dark-reducton-color;
+  background-color:$reduciton-color;
+  color: rgb(233, 103, 103);
+  font-size: 12px;
+  text-align: center;
+}
+
 .alert-remysuccess{
   @include my_flash ;
   border: 2px solid $dark-reducton-color;
@@ -115,17 +133,17 @@ border: 2px solid $reduciton-color;
 	background-image: linear-gradient(to right, rgba(0,0,0,0) 50%, rgb(226, 153, 42) 50%);
 }
 
+
+.button_frex{
+  display: inline-flex;
+}
+
   
 
 
 
 
 
-
-
-.button_frex{
-  display: inline-flex;
-}
 
 // ---------テーブルデザイン----------------
 table{

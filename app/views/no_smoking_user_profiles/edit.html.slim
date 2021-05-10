@@ -1,4 +1,4 @@
-
+= render 'shared/error_form', {object: @no_smoking_user_profile}
 = "#{current_user.name}さんの編集ページ"
 
 = form_with model: [current_user,@no_smoking_user_profile] , local: true do |f|

@@ -10,7 +10,7 @@ class NoSmokingUserProfilesController < ApplicationController
   def create
     @no_smoking_user_profile = current_user.build_no_smoking_user_profile(no_smoking_profile_params)
     if @no_smoking_user_profile.save
-      flash[:mynssuccess] = "登録が完了しました！"
+      flash[:nsmysuccess] = "登録が完了しました！"
       redirect_to user_no_smoking_user_profile_path
     else
       flash.now[:nsmyalert] = "登録が出来ませんでした"

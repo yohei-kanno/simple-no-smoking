@@ -1,3 +1,4 @@
+= render 'shared/error_form', {object: @no_smoking_user_profile}
 = "#{current_user.name}さんの事を教えて下さい"
 
 = form_with model: @no_smoking_user_profile, url:user_no_smoking_user_profile_path,  local: true do |f|
