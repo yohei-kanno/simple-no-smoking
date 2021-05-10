@@ -11,5 +11,10 @@ html
   body
     .container.no_smoking
       = render 'shared/header'
+      - flash.each do |key, value|
+        p class=("alert alert-#{key}") 
+          = value
+
+       
       = yield
       = render 'shared/footer'

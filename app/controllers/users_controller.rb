@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: [:new, :create]
-  
-  before_action :set_user, only: %i[ destroy]
+  before_action :set_user, only: %i[ destroy ]
   
   def new
     @user = User.new
@@ -10,6 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      flash[:mysuccess] = "登録完了しました！"
       redirect_to new_user_modes_path(@user.id)
     else
       render :new

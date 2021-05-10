@@ -1,49 +1,28 @@
 @import "bootstrap";
+@import "index";
 
-$no-smoking-color: #0EF871;
-$reduciton-color: #E2992A;
-$dark-reducton-color: #ff9900;
-
-@mixin mode_select_button{
-  margin-top: 30px;
-  margin-bottom: 30px;
-  position: relative;
-  display: inline-block;
-  font-weight: bold;
-  // text-decoration: none;
-  color: #FFF;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
-  padding: 0.4em 2rem;
-  font-size: 20px;
-  border-radius: 8px;
-  transition: .4s;
-  &:hover{
-    text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
-                 6px 0px 15px rgba(255, 255, 240, 0.83);
-  }
+.alert-mysuccess{
+  @include no_smoking_my_flash ;
+  color: #fff;
 }
 
 
+.alert-myalert{
+  @include no_smoking_my_flash ;
+  color: rgb(233, 103, 103);
+}
+  
+
 .container.no_smoking{
-  text-align: center;
-  height: 100%;
-  width: 100vw;
-  background-color: #252526;
-  color: white;
-  width: auto;
+  @include base_background;
   border: 3px solid  $no-smoking-color;
 }
 
 .container.reduction{
-  text-align: center;
-  height: 100%;
-  width: 100vw;
-  background-color: #252526;
-  color: white;
-  width: auto;
+  @include base_background;
   border: 3px solid  $reduciton-color;
 }
-  
+
 .form-control{
 border: 2px solid $no-smoking-color;
 }
@@ -56,23 +35,15 @@ border: 2px solid $reduciton-color;
   margin-top: 40px;
 }
 
-.no_smoking_header{
+.no_smoking_updown{
   margin-top: 20px;
   margin-bottom: 20px;
   text-shadow:0 3px 5px $no-smoking-color
 }
 
-.reduction_header{
+.reduction_updown{
   margin-top: 20px;
   margin-bottom: 20px;
-  text-shadow:0 3px 5px $reduciton-color
-}
-
-.no_smoking_footer{
-  text-shadow:0 3px 5px $no-smoking-color
-}
-
-.reduction_footer{
   text-shadow:0 3px 5px $reduciton-color
 }
 
@@ -84,7 +55,6 @@ border: 2px solid $reduciton-color;
   .mode_descripton{
     margin-top: 10px;
     margin-bottom: 50px;
-    
     li {
       font-size: 12px;
       text-align: left;
@@ -92,7 +62,7 @@ border: 2px solid $reduciton-color;
     }
   }
 }
-
+    
 
 .no_smoking_button{
   @include mode_select_button;
@@ -116,34 +86,23 @@ border: 2px solid $reduciton-color;
   margin-bottom: 40px;
 }
   
-
 .cp_link {
-	padding: 0.1em 0.3em;
+  @include slide_button;
 	background-image: linear-gradient(to right, rgba(0,0,0,0) 50%, rgb(63, 173, 136) 50%);
-	background-position: 0 0;
-	background-size: 200% auto;
-	transition: .3s;
-	color: black;
-  border-radius: 5px;
-  &:hover {
-    background-position: -100% 0;
-    color: #fff;
-  }
 }
 
 .cp_link_reduction {
-	padding: 0.1em 0.3em;
+  @include slide_button;
 	background-image: linear-gradient(to right, rgba(0,0,0,0) 50%, rgb(226, 153, 42) 50%);
-	background-position: 0 0;
-	background-size: 200% auto;
-	transition: .3s;
-	color: black;
-  border-radius: 5px;
-  &:hover {
-    background-position: -100% 0;
-    color: #fff;
-  }
 }
+
+  
+
+
+
+
+
+
 
 .button_frex{
   display: inline-flex;

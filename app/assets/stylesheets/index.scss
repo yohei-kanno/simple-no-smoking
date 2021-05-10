@@ -1,0 +1,61 @@
+$base_color: #252526;
+$no-smoking-color: #0EF871;
+$dark-no-smoking-color: #3FAD88;
+$reduciton-color: #E2992A;
+$dark-reducton-color: #ff9900;
+
+@mixin mode_select_button{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  // text-decoration: none;
+  color: #FFF;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
+  padding: 0.4em 2rem;
+  font-size: 20px;
+  border-radius: 8px;
+  transition: .4s;
+  &:hover{
+    text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
+                 6px 0px 15px rgba(255, 255, 240, 0.83);
+  }
+}
+
+@mixin base_background{
+  text-align: center;
+  height: 100%;
+  width: 100vw;
+  background-color: $base_color;
+  color: white;
+  width: auto;
+}
+
+@mixin slide_button{
+  padding: 0.1em 0.3em;
+	
+  background-color: $base_color;
+	background-position: 0 0;
+	background-size: 200% auto;
+	transition: .3s;
+	color: #fff;
+  border-radius: 5px;
+  &:hover {
+    background-position: -100% 0;
+    color: #fff;
+  }
+}
+
+@mixin no_smoking_my_flash{
+  background-color:$no-smoking-color;
+
+  width: 30%;
+  height: 3rem;
+  margin: auto;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-size: 15px;
+  border: 2px solid $dark-no-smoking-color;
+  text-shadow:1px 0 2px black;
+}

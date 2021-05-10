@@ -2,24 +2,15 @@
   h2
     = "#{current_user.name}さんの禁煙は"
     br/
-  h1
+  h
     = current_user.reduction_user_profile.start_date.strftime("%m月%d日%H時間%M分%S秒")
     br/
   h2 
     | にスタートします
 - else
-  h1 吸ったら記録しましょう！
+  h2 吸ったら記録しましょう！
   br/
-  .button_frex
-    = button_to '吸いました',user_smoke_counts_path(current_user.reduction_user_profile.id),{method: :patch, class: 'cp_link_reduction', name: "reduction"}
-    
-    = button_to '間違えました',user_smoke_counts_path(current_user.reduction_user_profile.id),{method: :patch, class: 'cp_link_reduction', name: "reduction"}
-    
-    = button_to '記録を見る！',user_reduction_user_profile_stocks_path(current_user.reduction_user_profile.id),{method: :get, class: 'cp_link_reduction'}
-    
-  br/
-  br/ 
-  br/ 
+  = render 'button_frex_head'
   
   h3 減煙を開始してから
   h2.reduction_section
@@ -41,49 +32,5 @@
   h2.reduction_section
     p = "#{sum_value}本"
     
-        
-    
-    
-    
-  .button_frex
-    -if logged_in? 
-      = button_to '喫煙情報を編集する',edit_user_reduction_user_profile_path(current_user.reduction_user_profile.id),{method: :get, class: 'cp_link_reduction'} 
-      
-      = button_to '/logout', {method: :delete, class: 'cp_link_reduction'} do
-        span ログアウト
-        
-      = button_to user_path(current_user.id), method: :delete, class: 'cp_link_reduction', data:{ confirm: "本当に削除しますか？" } do
-        span アカウント削除
-        
-      = button_to user_reset_start_date_path, method: :patch, class: 'cp_link_reduction',data: { confirm: "データをリセットして宜しいですか？" } do
-        span 減煙を最初から始める
-        
-      = button_to user_reduction_user_profile_path(current_user.id), method: :delete, class: 'cp_link_reduction',data: { confirm: "データをリセットして禁煙を始めますか？" } do
-        span 禁煙を始める
-
-
-javascript:
-  window.onload = () => {
-
-  class Confirm {
-    constructor(el) {
-      this.message = el.getAttribute('data-confirm')
-      if (this.message) {
-        el.form.addEventListener('submit', this.confirm.bind(this))
-      } else {
-        console && console.warn('No value specified in `data-confirm`', el)
-      }
-    }
-
-    confirm(e) {
-      if (!window.confirm(this.message)) {
-        e.preventDefault();
-      }
-    }
-  }
-
-  Array.from(document.querySelectorAll('[data-confirm]')).forEach((el) => {
-    new Confirm(el)
-  })
-
-  }
+= render 'shared/button_frex_footer'
+= render 'shared/comfirm_js'
