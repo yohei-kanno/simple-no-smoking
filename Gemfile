@@ -14,6 +14,7 @@ gem 'data-confirm-modal'
 gem 'whenever', require: false
 gem 'mini_racer'
 gem 'rails-i18n'
+gem 'kaminari'
 
 gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
