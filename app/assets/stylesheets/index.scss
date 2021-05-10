@@ -47,15 +47,12 @@ $dark-reducton-color: #ff9900;
   }
 }
 
-@mixin no_smoking_my_flash{
-  background-color:$no-smoking-color;
-
-  width: 30%;
+@mixin my_flash{
+  width: 40%;
   height: 3rem;
   margin: auto;
   margin-bottom: 20px;
   border-radius: 5px;
   font-size: 15px;
-  border: 2px solid $dark-no-smoking-color;
   text-shadow:1px 0 2px black;
 }

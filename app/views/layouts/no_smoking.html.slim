@@ -12,6 +12,9 @@ html
     .container.no_smoking
       h1.text-center.no_smoking_updown
         | NoSmokingMode
+      - flash.each do |key, value|
+        p class=("alert alert-#{key}") 
+          = value
       = yield
       h1.text-center.no_smoking_updown
         | NoSmokingMode

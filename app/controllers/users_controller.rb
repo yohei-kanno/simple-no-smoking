@@ -9,15 +9,17 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:mysuccess] = "登録完了しました！"
+      flash[:nsmysuccess] = "登録が完了しました！"
       redirect_to new_user_modes_path(@user.id)
     else
+      flash.now[:nsmyalert] = "登録が出来ませんでした"
       render :new
     end
   end
 
   def destroy
     @user.destroy
+    flash[:nsmysuccess] = "アカウントを削除しました！"
     redirect_to root_url
   end
   

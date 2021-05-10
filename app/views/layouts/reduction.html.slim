@@ -12,6 +12,9 @@ html
     .container.reduction
       h1.text-center.reduction_updown
         | ReductionMode
+      - flash.each do |key, value|
+        p class=("alert alert-#{key}") 
+          = value
       = yield
       h1.text-center.reduction_updown
         | ReductionMode
