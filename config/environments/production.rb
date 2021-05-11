@@ -54,6 +54,17 @@ Rails.application.configure do
   # information to avoid inadvertent exposure of personally identifiable information (PII).
   config.log_level = :info
 
+  config.action_mailer.default_url_options = { :host => 'simple-no-smoking.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => "smtp.sendgrid.net",
+    :port => 587,
+    :domain => "heroku.com",
+    :authentication => :plain,
+    :user_name => ENV['SENDGRID_USERNAME'],
+    :password => ENV['SENDGRID_PASSWORD'],
+  }
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
 
