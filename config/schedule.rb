@@ -1,4 +1,5 @@
 ENV['RAILS_ENV'] || :production
+
 require File.expand_path(File.dirname(__FILE__) + "/environment")
 
 set :output, "log/crontab.log"
