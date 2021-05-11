@@ -1,5 +1,4 @@
 ENV['RAILS_ENV'] || :production
-
 require File.expand_path(File.dirname(__FILE__) + "/environment")
 
 set :output, "#{Rails.root}/log/crontab.log"
@@ -8,5 +7,5 @@ job_type :rake, "export PATH=\"$HOME/.rbenv/bin:$PATH\"; eval \"$(rbenv init -)\
 set :environment, ENV['RAILS_ENV']
 
 every 1.minute do
-  command "heroku run rails reset_reduction:reduction"
+  rake "reset_reduction:reduction"
 end
