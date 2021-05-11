@@ -5,10 +5,14 @@
 
 # Example:
 #
+
+ENV['RAILS_ENV'] || :production
+require File.expand_path(File.dirname(__FILE__) + "/environment")
+
 set :output, "log/crontab.log"
 set :job_template, "/bin/zsh -l -c ':job'"
 job_type :rake, "export PATH=\"$HOME/.rbenv/bin:$PATH\"; eval \"$(rbenv init -)\"; cd :path && RAILS_ENV=:environment bundle exec rake :task :output"
-set :environment, :production
+set :environment, ENV['RAILS_ENV']
 #
 # every 1.day, :at => '0:00 am' do
 #   rake "reset_reduction:reduction"
