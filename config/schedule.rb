@@ -8,5 +8,5 @@ job_type :rake, "export PATH=\"$HOME/.rbenv/bin:$PATH\"; eval \"$(rbenv init -)\
 set :environment, ENV['RAILS_ENV']
 
 every 1.minute do
-  rake "reset_reduction:reduction"
+  command "heroku run rails reset_reduction:reduction"
 end
