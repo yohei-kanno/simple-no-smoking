@@ -8,6 +8,7 @@ module SimpleNoSmoking
   class Application < Rails::Application
     config.action_controller.include_all_helpers = false
     config.load_defaults 6.1
+    config.assets.debug = true
     config.time_zone = 'Tokyo'
     config.i18n.load_path +=
       Dir[Rails.root.join("config","locales","**","*.{rb,yml}").to_s]
