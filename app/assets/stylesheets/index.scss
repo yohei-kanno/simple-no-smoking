@@ -41,10 +41,7 @@ $dark-reduction-color:#583705;
 	transition: .1s;
 	color: #fff;
   border-radius: 5px;
-  &:hover {
-    background-position: -100% 0;
-    color: #fff;
-  }
+
 }
 
 @mixin my_flash{

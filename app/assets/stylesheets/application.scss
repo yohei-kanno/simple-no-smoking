@@ -125,12 +125,16 @@ border: 2px solid $reduction-color;
   
 .cp_link {
   @include slide_button;
-	background-image: linear-gradient(to right, rgba(0,0,0,0) 50%, rgb(63, 173, 136) 50%);
+  &:hover {
+    background-color: $dark-no-smoking-color;
+  }
 }
 
 .cp_link_reduction {
   @include slide_button;
-	background-image: linear-gradient(to right, rgba(0,0,0,0) 50%, rgb(226, 153, 42) 50%);
+  &:hover {
+    background-color: $reduction-color;
+  }
 }
 
 
