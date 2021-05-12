@@ -53,18 +53,18 @@ Rails.application.configure do
   # Include generic and useful information about system operation, but avoid logging too much
   # information to avoid inadvertent exposure of personally identifiable information (PII).
   config.log_level = :info
-  
-  config.action_mailer.default_url_options = { :host => 'simple-no-smoking.herokuapp.com' }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :enable_starttls_auto => true,
-    :address => "smtp.sendgrid.net",
-    :port => 587,
-    :domain => "heroku.com",
-    :authentication => :plain,
-    :user_name => ENV['SENDGRID_USERNAME'],
-    :password => ENV['SENDGRID_PASSWORD'],
-  }
+
+  host = 'simple-no-smoking.herokuapp.com'
+config.action_mailer.default_url_options = { host: host }
+ActionMailer::Base.smtp_settings = {
+  port: ENV['MAILGUN_SMTP_PORT'],
+  address: ENV['MAILGUN_SMTP_SERVER'],
+  user_name: ENV['MAILGUN_SMTP_LOGIN'],
+  password: ENV['MAILGUN_SMTP_PASSWORD'],
+  domain: host,
+  authentication: :plain
+}
+ActionMailer::Base.delivery_method = :smtp
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
 
