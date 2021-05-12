@@ -2,24 +2,41 @@
   h4 = "#{current_user.name}さんの記録です"
   = paginate @stocks
   table
+    | 今までの積み上げ
     thead
-      th = "累積本数"
-      th = "累積金額"
+      th = "本数"
+      th = "金額"
+      th = "時間"
+      th = "寿命"
+      th = "時給"
     
     tbody 
       td = "#{sum_value}本"
-      td = "#{sum_value * one_smoke_price}円"
+      td = "#{(sum_value * one_smoke_price).floor}円"
+      td = "#{(sum_value * 5).floor}分"
+      td = "#{(sum_value * 5.5).floor}分"
+      td = "#{(sum_value * 5.5).floor}分"
+      
   hr/
   table
+    | 日々の積み上げ
     thead
       th = "日付" 
-      th = "吸った本数"
-      th = "使った金額"
+      th = "本数"
+      th = "金額"
+      th = "時間"
+      th = "寿命"
+      th = "時給"
+      
     - @stocks.reverse.each.with_index(1) do |stock, i|
       tbody 
         td = "#{stock.created_at.strftime("%m月%d日")}" 
         td = "#{stock.counter}本"
-        td = "#{one_smoke_price * stock.counter}円"
+        td = "#{(one_smoke_price * stock.counter).floor}円"
+        td = "#{(stock.counter * 5).floor}分"
+        td = "#{(stock.counter * 5.5).floor}分"
+        td = "#{((stock.counter * 300 /3600.0) * current_user.reduction_user_profile.hourly_wage).floor}円"
+        
   = paginate @stocks
   
 = render 'shared/button_frex_footer'
