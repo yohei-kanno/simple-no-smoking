@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import Rails from "@rails/ujs"
 
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
