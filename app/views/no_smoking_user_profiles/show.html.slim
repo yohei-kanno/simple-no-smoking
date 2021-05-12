@@ -25,37 +25,26 @@
   h2.no_smoking_section
     p = "#{gained_time}分"
     
-  h3.no_smoking_title 我慢したタバコの長さ 
-  h6 1本５cm計算
+  h3.no_smoking_title 伸びた寿命
+  h6 1本５分３０秒計算
   h2.no_smoking_section
-    p = "#{gained_longth}cm"
+    p = "#{gained_life}"
     
   h3.no_smoking_title 今から８０歳まで吸って失う時間
   h2.no_smoking_section
-    p = "#{lost_time_80.to_s(:delimited)}時間"
+    p = "#{lost_time_80_final}"
+ 
+    
+  h3.no_smoking_title 今から８０歳まで吸って失う寿命
+  h2.no_smoking_section
+    p = "#{lost_life_80_final}"
     
   h3.no_smoking_title  今から８０歳まで吸って失う金額
   h2.no_smoking_section
     p = "#{lost_money_80.to_s(:delimited)}円"
+    
   h3.no_smoking_title 今吸ってしまったら失う時給
   h2.no_smoking_section
-  
     p = "#{lost_hours_money_80.to_s(:delimited)}円"
-    
-  .button_frex
-    -if logged_in? 
-      = button_to '喫煙情報を編集する',edit_user_no_smoking_user_profile_path(current_user.no_smoking_user_profile.id),{method: :get, class: 'cp_link'} 
-      
-      = button_to '/logout', {method: :delete, class: 'cp_link'} do
-        span ログアウト
-        
-      = button_to user_path(current_user.id), method: :delete, class: 'cp_link', data:{ confirm: "本当に削除しますか？" } do
-        span アカウント削除
-        
-      = button_to user_reset_start_date_path, method: :patch, class: 'cp_link',data: { confirm: "データをリセットして宜しいですか？" } do
-        span 禁煙を最初から始める
-        
-      = button_to user_no_smoking_user_profile_path(current_user.id), method: :delete, class: 'cp_link',data: { confirm: "データをリセットして減煙をしますか？" } do
-        span 減煙にする
-
-/ = render 'shared/comfirm_js'
+  
+= render 'ns_frex_button'
