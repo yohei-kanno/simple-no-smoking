@@ -25,11 +25,21 @@
     = render 'you_can_smoke'
     
   h3 今日タバコに使った金額
-  h2.reduction_section
+  h2.reduction_section_
     p = "#{used_money}円"
     
-  h3 今までの合計本数
+  h3 今日タバコに使った時間
   h2.reduction_section
-    p = "#{sum_value}本"
+    p = "#{used_time_final}"
+    
+  h3 今日失った寿命
+  h2.reduction_section
+    p = "#{lost_life_final}"
+    
+  h3 今日失った時給
+  h2.reduction_section
+    p = "#{lost_wage}円"
+    
+  
     
 = render 'shared/button_frex_footer'

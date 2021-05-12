@@ -93,6 +93,7 @@ module NoSmokingUserProfilesHelper
   end
   
   def lost_time_80
+    #生涯で何本タバコを吸うのか=>smoking_in_life
     smoking_in_life = life_time_80 / one_every_second
     smoking_in_life * 300 / 3600
   end
