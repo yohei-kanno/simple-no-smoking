@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2021_05_08_215301) do
   end
 
   create_table "stocks", force: :cascade do |t|
-    t.integer "counter"
+    t.integer "counter", default: 0
     t.integer "reduction_user_profile_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
