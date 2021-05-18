@@ -7,22 +7,22 @@ class SessionsController < ApplicationController
     if @user = login(params[:email], params[:password])
       if @user.no_smoking_user_profile && (@user.mode.mode === "no_smoking_mode")
         flash[:nsmysuccess] = t(".success_logined")
-        redirect_back_or_to(user_no_smoking_user_profile_path(@user.id))
+        redirect_to(user_no_smoking_user_profile_path(@user.id))
       elsif @user.reduction_user_profile && (@user.mode.mode === "reduction_mode")
         flash[:remysuccess] = t(".success_logined")
-        redirect_back_or_to(user_reduction_user_profile_path(@user.id))
+        redirect_to(user_reduction_user_profile_path(@user.id))
         
       elsif !@user.mode
         flash[:nsmysuccess] = t(".select_mode")
-        redirect_back_or_to(new_user_modes_path(@user.id))
+        redirect_to(new_user_modes_path(@user.id))
         
       elsif (@user.mode.mode === "no_smoking_mode") && !@user.no_smoking_user_profile
         flash[:nsmysuccess] = t(".success_logined")
-        redirect_back_or_to(new_user_no_smoking_user_profile_path(@user.id))
+        redirect_to(new_user_no_smoking_user_profile_path(@user.id))
         
       elsif (@user.mode.mode === "reduction_mode") && !@user.reduction_user_profile
         flash[:remysuccess] = t(".success_logined")
-        redirect_back_or_to(new_user_reduction_user_profile_path(@user.id))
+        redirect_to(new_user_reduction_user_profile_path(@user.id))
       end
     else
       flash.now[:nsmyalert] = t(".failed_logined")
