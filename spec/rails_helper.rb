@@ -62,4 +62,12 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  
+  def login(user)
+    visit login_path
+    fill_in 'email', with: user.email
+    fill_in 'password', with: 'password'
+    click_button 'ログイン'
+  end
+
 end
