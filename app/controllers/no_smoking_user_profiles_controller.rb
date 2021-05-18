@@ -4,7 +4,12 @@ class NoSmokingUserProfilesController < ApplicationController
   layout 'no_smoking'
   
   def new
-    @no_smoking_user_profile = current_user.build_no_smoking_user_profile
+    if current_user.no_smoking_user_profile
+      redirect_to user_no_smoking_user_profile_path
+      flash[:nsmyalert] = t(".please_edit")
+    else
+      @no_smoking_user_profile = current_user.build_no_smoking_user_profile
+    end
   end
   
   def create
