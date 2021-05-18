@@ -13,6 +13,9 @@ ja:
       select_mode: "モードを選択して下さい"
   
   no_smoking_user_profiles:
+    new:
+      please_edit: "編集画面から編集して下さい"
+      
     create:
       success_created: "登録が完了しました"
       failed_created: "登録が出来ませんでした"
