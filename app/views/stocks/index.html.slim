@@ -28,7 +28,7 @@
       th = "寿命"
       th = "時給"
       
-    - @stocks.reverse.each.with_index(1) do |stock, i|
+    - @stocks.each do |stock|
       tbody 
         td = "#{stock.created_at.strftime("%m月%d日")}" 
         td = "#{stock.counter}本"
