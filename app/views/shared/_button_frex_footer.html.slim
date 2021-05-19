@@ -7,7 +7,7 @@
       span 減煙を最初から始める
       
     = button_to user_reduction_user_profile_path(current_user.id), method: :delete, class: 'cp_link_reduction',data: { confirm: "データをリセットして禁煙を始めますか？" } do
-      span 禁煙を始める
+      span 禁煙モードに移行する
       
     = button_to '/logout', {method: :delete, class: 'cp_link_reduction'} do
       span ログアウト
