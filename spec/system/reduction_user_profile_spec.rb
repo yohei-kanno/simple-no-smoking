@@ -44,7 +44,7 @@ RSpec.describe '減煙モード全般の設定', type: :system do
   end
   
   
-  describe "編集画面" do
+  describe "編集系" do
     let!(:re_profile) { create(:reduction_user_profile, user: user_a) }
     
     before do
@@ -79,6 +79,35 @@ RSpec.describe '減煙モード全般の設定', type: :system do
         
       it "更新後の画面に遷移する事" do
         expect(page).to have_content("更新が完了しました")
+      end
+    end
+    
+    context "１本吸った、減らすボタンが正常に機能する" do
+      it "1本吸ったボタン" do
+        visit user_reduction_user_profile_path(user_a)
+        click_button("1本吸った")
+        expect(page).to have_content("1本")
+        click_button("1本吸った")
+        expect(page).to have_content("2本")
+      end
+      
+      it "減らすボタン" do
+        visit user_reduction_user_profile_path(user_a)
+        click_button("1本吸った")
+        click_button("減らす")
+        expect(page).to have_content("0本")
+        end
+        
+      it "今日吸った本数が０本なら減らすボタンが表示されない" do
+        visit user_reduction_user_profile_path(user_a)
+        expect(page).to have_content("0本")
+        expect(page).to_not have_button("減らす")
+      end
+      
+      it "今日吸った本数が１本以上なら減らすボタンが表示される" do
+        visit user_reduction_user_profile_path(user_a)
+        click_button("1本吸った")
+        expect(page).to have_button("減らす")
       end
     end
   end
