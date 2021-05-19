@@ -29,6 +29,7 @@ RSpec.describe '禁煙モード全般の設定', type: :system do
       
     context "禁煙PFの入力が十分である場合" do
       before do
+        fill_in "no_smoking_user_profile_start_date",with: Date.current
         fill_in "no_smoking_user_profile_tabaco_price", with: 550
         fill_in "no_smoking_user_profile_smoking_pace", with: 30
         fill_in "no_smoking_user_profile_hourly_wage", with: 1400
@@ -38,6 +39,7 @@ RSpec.describe '禁煙モード全般の設定', type: :system do
         expect{
           find('input[ name = "commit" ]').click
         }.to change{ NoSmokingUserProfile.count }.by(1)
+        
         expect(page).to have_content("登録が完了しました")
       end
     end
@@ -133,7 +135,7 @@ RSpec.describe '禁煙モード全般の設定', type: :system do
       before do
         ns_mode; visit user_no_smoking_user_profile_path(user_a)
         page.accept_confirm do
-          click_button "減煙にする"
+          click_button "減煙モードに移行する"
         end
       end
       
@@ -153,7 +155,7 @@ RSpec.describe '禁煙モード全般の設定', type: :system do
       before do
         ns_mode; visit user_no_smoking_user_profile_path(user_a)
         page.dismiss_confirm do
-          click_button "減煙にする"
+          click_button "減煙モードに移行する"
         end
       end
       

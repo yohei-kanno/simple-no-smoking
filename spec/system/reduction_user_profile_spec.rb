@@ -158,7 +158,7 @@ RSpec.describe '減煙モード全般の設定', type: :system do
       before do
         re_mode; visit user_reduction_user_profile_path(user_a)
         page.accept_confirm do
-          click_button "禁煙を始める"
+          click_button "禁煙モードに移行する"
         end
       end
       
@@ -178,7 +178,7 @@ RSpec.describe '減煙モード全般の設定', type: :system do
       before do
         re_mode; visit user_reduction_user_profile_path(user_a)
         page.dismiss_confirm do
-          click_button "禁煙を始める"
+          click_button "禁煙モードに移行する"
         end
       end
       
