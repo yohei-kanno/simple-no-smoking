@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
+  include IdGenerator
   
   validates :name, presence: true,length: { maximum: 20 }  
   validates :email, uniqueness: true, presence: true

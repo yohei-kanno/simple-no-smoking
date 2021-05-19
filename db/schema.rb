@@ -14,29 +14,29 @@ ActiveRecord::Schema.define(version: 2021_05_08_215301) do
 
   create_table "modes", force: :cascade do |t|
     t.integer "mode", null: false
-    t.integer "user_id", null: false
+    t.string "user_id", limit: 36, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_modes_on_user_id"
   end
 
   create_table "no_smoking_user_profiles", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.string "user_id", limit: 36, null: false
     t.integer "tabaco_price", null: false
     t.integer "smoking_pace", null: false
     t.integer "hourly_wage", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.datetime "start_date", default: "2021-05-12 22:05:05"
+    t.datetime "start_date", default: "2021-05-19 04:27:30"
     t.index ["user_id"], name: "index_no_smoking_user_profiles_on_user_id"
   end
 
-  create_table "reduction_user_profiles", force: :cascade do |t|
-    t.integer "user_id", null: false
+  create_table "reduction_user_profiles", id: { type: :string, limit: 36 }, force: :cascade do |t|
+    t.string "user_id", limit: 36, null: false
     t.integer "tabaco_price", null: false
     t.integer "smoking_pace", null: false
     t.integer "hourly_wage", null: false
-    t.datetime "start_date", default: "2021-05-12 22:05:05", null: false
+    t.datetime "start_date", default: "2021-05-19 04:27:30", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "smoking_count", default: 0
@@ -45,13 +45,13 @@ ActiveRecord::Schema.define(version: 2021_05_08_215301) do
 
   create_table "stocks", force: :cascade do |t|
     t.integer "counter", default: 0
-    t.integer "reduction_user_profile_id", null: false
+    t.string "reduction_user_profile_id", limit: 36, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["reduction_user_profile_id"], name: "index_stocks_on_reduction_user_profile_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: { type: :string, limit: 36 }, force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
     t.string "crypted_password"

@@ -1,4 +1,6 @@
 class ReductionUserProfile < ApplicationRecord
+  include IdGenerator
+  
   belongs_to :user
   has_many :stocks, dependent: :destroy
   validates :start_date, presence: true
