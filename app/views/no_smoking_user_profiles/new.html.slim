@@ -14,18 +14,18 @@
       = f.label :tabaco_price, '吸っているタバコの金額を教えて下さい'
       .row.justify-content-center
         .col-sm-4
-          = f.number_field :tabaco_price, class: 'form-control'
+          = f.number_field :tabaco_price, class: 'form-control',placeholder: "半角数字"
       
     .form-group
       = f.label :smoking_pace, 'タバコを１日辺り何本吸いますか？'
       .row.justify-content-center
         .col-sm-4
-          = f.number_field :smoking_pace, class: 'form-control' 
+          = f.number_field :smoking_pace, class: 'form-control' ,placeholder: "半角数字"
   
     .form-group 
       = f.label :hourly_wage, 'あなたの時給を教えて下さい'
       .row.justify-content-center
         .col-sm-4
-          = f.number_field :hourly_wage, class: 'form-control'
+          = f.number_field :hourly_wage, class: 'form-control',placeholder: "半角数字"
           
     = f.submit '禁煙を始める', class:'no_smoking_button'
