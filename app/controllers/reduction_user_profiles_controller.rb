@@ -4,7 +4,17 @@ class ReductionUserProfilesController < ApplicationController
   before_action :set_reduction_user, only: %i[ show edit update destory]
   
   def new
-    @reduction_user_profile = current_user.build_reduction_user_profile
+    if current_user.no_smoking_user_profile
+      redirect_to user_no_smoking_user_profile_path
+      flash[:nsmyalert] = t(".please_select_reduction")
+    elsif current_user.reduction_user_profile
+      redirect_to user_reduction_user_profile_path
+      flash[:remyalert] = t(".please_edit")
+    else
+      @reduction_user_profile = current_user.build_reduction_user_profile
+    end
+      
+      
   end
   
   def create

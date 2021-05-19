@@ -15,6 +15,7 @@ ja:
   no_smoking_user_profiles:
     new:
       please_edit: "編集画面から編集して下さい"
+      please_select_nosmoking: "「禁煙モードに移行する」ボタンを押して下さい"
       
     create:
       success_created: "登録が完了しました"
@@ -28,6 +29,10 @@ ja:
       select_mode: "モードを選択して下さい"
       
   reduction_user_profiles:
+    new:
+      please_edit: "編集画面から編集して下さい"
+      please_select_reduction: "「減煙モードに移行する」ボタンを押して下さい"
+      
     create:
       success_created: "登録が完了しました"
       failed_created: "登録が出来ませんでした"

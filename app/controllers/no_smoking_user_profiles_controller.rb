@@ -7,6 +7,10 @@ class NoSmokingUserProfilesController < ApplicationController
     if current_user.no_smoking_user_profile
       redirect_to user_no_smoking_user_profile_path
       flash[:nsmyalert] = t(".please_edit")
+    elsif
+      current_user.reduction_user_profile
+      redirect_to user_reduction_user_profile_path
+      flash[:remyalert] = t(".please_select_nosmoking")
     else
       @no_smoking_user_profile = current_user.build_no_smoking_user_profile
     end
