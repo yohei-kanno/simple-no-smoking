@@ -83,8 +83,11 @@ RSpec.describe '減煙モード全般の設定', type: :system do
     end
     
     context "１本吸った、減らすボタンが正常に機能する" do
-      it "1本吸ったボタン" do
+      before do
         visit user_reduction_user_profile_path(user_a)
+      end
+        
+      it "1本吸ったボタン" do
         click_button("1本吸った")
         expect(page).to have_content("1本")
         click_button("1本吸った")
@@ -92,20 +95,17 @@ RSpec.describe '減煙モード全般の設定', type: :system do
       end
       
       it "減らすボタン" do
-        visit user_reduction_user_profile_path(user_a)
         click_button("1本吸った")
         click_button("減らす")
         expect(page).to have_content("0本")
         end
         
       it "今日吸った本数が０本なら減らすボタンが表示されない" do
-        visit user_reduction_user_profile_path(user_a)
         expect(page).to have_content("0本")
         expect(page).to_not have_button("減らす")
       end
       
       it "今日吸った本数が１本以上なら減らすボタンが表示される" do
-        visit user_reduction_user_profile_path(user_a)
         click_button("1本吸った")
         expect(page).to have_button("減らす")
       end
