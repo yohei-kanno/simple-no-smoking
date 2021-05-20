@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  skip_before_action :require_login, only: [:new, :create]
-  before_action :set_user, only: %i[ destroy ]
-  
+  skip_before_action :require_login, only: %i[ new create]
+  before_action :set_user, only: %i[ edit update destroy ]
+
   def new
     @user = User.new
   end
@@ -16,7 +16,38 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
+  
+  def edit
+    if current_user.no_smoking_user_profile
+      render :layout => 'no_smoking'
+    else
+      render :layout => 'reduction'
+    end
+  end
+  
+  
+  def update
+    if current_user.no_smoking_user_profile
+      if current_user.update(user_params)
+        redirect_to user_no_smoking_user_profile_path(current_user.id)
+        flash[:nsmysuccess] = "更新しました"
+      else
+        flash.now[:nsmyalert] = "更新出来ませんでした"
+        render :edit
+      end
+    elsif current_user.reduction_user_profile
+      if current_user.reduction_user_profile && current_user.update(user_params)
+        redirect_to user_reduction_user_profile_path(current_user.id)
+        flash[:remysuccess] = "更新しました"
+       else
+         flash.now[:remyalert] = "更新出来ませんでした"
+         render :edit  
+       end
+    end
+  end
+      
+      
+  
   def destroy
     @user.destroy
     flash[:nsmysuccess] = t(".success_destroy")

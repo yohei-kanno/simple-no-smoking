@@ -1,0 +1,36 @@
+
+= render 'shared/error_form', {object: @user}
+= form_with model: @user, local: true do |f|
+
+  div.text-center
+    .form-group
+      = f.label :name, '名前を教えて下さい'
+      .row.justify-content-center
+        .col-sm-4
+          - if current_user.no_smoking_user_profile 
+            = f.text_field :name, class: 'form-control', size: "20"
+          - elsif current_user.reduction_user_profile
+            = f.text_field :name, class: 'form-control reduction', size: "20"
+      
+    .form-group
+      = f.label :birth_date, '誕生日を教えて下さい'
+      .row.justify-content-center
+        .col-sm-4
+          - if current_user.no_smoking_user_profile 
+            = f.date_field :birth_date, class: 'form-control'
+          - elsif current_user.reduction_user_profile
+            = f.date_field :birth_date, class: 'form-control reduction', size: "20"
+        
+    
+    .form-group 
+      = f.label :email, 'メールアドレスを教えて下さい'
+      .row.justify-content-center
+        .col-sm-4
+          - if current_user.no_smoking_user_profile 
+            = f.email_field :email, class: 'form-control'
+          - elsif current_user.reduction_user_profile
+            = f.email_field :email, class: 'form-control reduction', size: "20"
+    - if current_user.no_smoking_user_profile       
+      = f.submit '更新する', class: 'no_smoking_button'
+    - elsif current_user.reduction_user_profile
+      = f.submit '更新する', class: 'reduction_button' 

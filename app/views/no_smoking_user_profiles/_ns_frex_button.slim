@@ -5,6 +5,9 @@
       = button_to '/logout', {method: :delete, class: 'cp_link'} do
         span ログアウト
         
+      = button_to edit_user_path(current_user.id), {method: :get, class: 'cp_link'} do
+        span アカウント編集
+        
       = button_to user_path(current_user.id), method: :delete, class: 'cp_link', data:{ confirm: "本当に削除しますか？" } do
         span アカウント削除
         

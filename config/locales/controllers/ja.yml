@@ -3,6 +3,11 @@ ja:
     create:
       success_created: "登録が完了しました"
       failed_created: "登録が出来ませんでした"
+      
+    update:
+      success_update: "更新しました"
+      failed_update: "更新出来ませんでした"
+      
     destroy:
       success_destroy: "アカウントを削除しました"
   
