@@ -30,7 +30,8 @@ class ReductionUserProfilesController < ApplicationController
 
   def edit; end
   
-  def show;end
+  def show
+  end
   
   def update
     if @reduction_user_profile.update(reduction_user_profile_params)
