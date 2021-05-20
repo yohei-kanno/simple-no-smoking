@@ -109,6 +109,7 @@ RSpec.describe 'ログイン機能のテスト', type: :system do
       before do
         login(user_a)
         visit user_no_smoking_user_profile_path(user_a)
+        click_button("メニュー画面へ")
       end
       
       it "禁煙PF画面からログアウト出来る事" do
@@ -124,6 +125,7 @@ RSpec.describe 'ログイン機能のテスト', type: :system do
       before do
         login(user_a)
         visit user_reduction_user_profile_path(user_a)
+        click_button("メニュー画面へ")
       end
       
       it "減煙PF画面からログアウト出来る事" do

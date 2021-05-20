@@ -45,11 +45,12 @@ RSpec.describe '禁煙モード全般の設定', type: :system do
   end
   
   
-  describe "編集画面" do
+  describe "編集系" do
     let!(:ns_profile) { create(:no_smoking_user_profile, user: user_a) }
     
     before do
       visit user_no_smoking_user_profile_path(user_a)
+      click_button("メニュー画面へ")
       click_button("喫煙情報を編集する")
     end
     
@@ -91,6 +92,7 @@ RSpec.describe '禁煙モード全般の設定', type: :system do
     context "禁煙を最初から始めるボタン及びdata_confirm(yes)が正常に機能する" do
       before do
         ns_mode; visit user_no_smoking_user_profile_path(user_a)
+        click_button("メニュー画面へ")
         page.accept_confirm do
           click_button "禁煙を最初から始める"
         end
@@ -112,6 +114,7 @@ RSpec.describe '禁煙モード全般の設定', type: :system do
     context "禁煙を最初から始めるボタン及びdata_confirm(no)が正常に機能する" do
       before do
         ns_mode; visit user_no_smoking_user_profile_path(user_a)
+        click_button("メニュー画面へ")
         page.dismiss_confirm do
           click_button "禁煙を最初から始める"
         end
@@ -133,6 +136,7 @@ RSpec.describe '禁煙モード全般の設定', type: :system do
     context "減煙にするボタン及びdata_confirm(yes)が正常に機能する" do
       before do
         ns_mode; visit user_no_smoking_user_profile_path(user_a)
+        click_button("メニュー画面へ")
         page.accept_confirm do
           click_button "減煙モードに移行する"
         end
@@ -153,17 +157,18 @@ RSpec.describe '禁煙モード全般の設定', type: :system do
     context "減煙にするボタン及びdata_confirm(no)が正常に機能する" do
       before do
         ns_mode; visit user_no_smoking_user_profile_path(user_a)
+        click_button("メニュー画面へ")
         page.dismiss_confirm do
           click_button "減煙モードに移行する"
         end
       end
       
       it "元のPF画面のまま" do
-        expect(page).to have_content("NoSmokingMode")
+        expect(page).to have_content("減煙モードに移行する")
       end
       
       it "NoSmokingUserProfileがdestoryされていない" do
-        expect(page).to have_content("NoSmokingMode")
+        expect(page).to have_content("減煙モードに移行する")
         expect(NoSmokingUserProfile.count).to eq(1)
       end
     end
@@ -171,6 +176,7 @@ RSpec.describe '禁煙モード全般の設定', type: :system do
     context "アカウント削除ボタン及びdata_confirm(yes)が正常に機能する" do
       before do
         ns_mode; visit user_no_smoking_user_profile_path(user_a)
+        click_button("メニュー画面へ")
         page.accept_confirm do
           click_button "アカウント削除"
         end
