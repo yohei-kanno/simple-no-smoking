@@ -1,19 +1,68 @@
- .button_frex
-  -if logged_in? 
-    = button_to user_reduction_user_profile_path(current_user.id), method: :get, class: 'cp_link_reduction' do
-      span プロフィールに戻る
-    = button_to '喫煙情報を編集する',edit_user_reduction_user_profile_path(current_user.reduction_user_profile.id),{method: :get, class: 'cp_link_reduction'} 
-    = button_to user_reset_start_date_path, method: :patch, class: 'cp_link_reduction',data: { confirm: "データをリセットして宜しいですか？" } do
-      span 減煙を最初から始める
-      
-    = button_to user_reduction_user_profile_path(current_user.id), method: :delete, class: 'cp_link_reduction',data: { confirm: "データをリセットして禁煙を始めますか？" } do
-      span 禁煙モードに移行する
-      
-    = button_to '/logout', {method: :delete, class: 'cp_link_reduction'} do
-      span ログアウト
-      
-    = button_to user_path(current_user.id), method: :delete, class: 'cp_link_reduction', data:{ confirm: "本当に削除しますか？" } do
-      span アカウント削除
-      
-    = button_to edit_user_path(current_user.id), {method: :get, class: 'cp_link_reduction'} do
-        span アカウント編集
+-if logged_in? && current_user.reduction_user_profile
+  button.reduction_button.custom_text data-target="#Modal" data-toggle="modal" type="button"
+    | メニュー画面へ
+  #Modal.modal.fade  aria-labelledby="Modal" tabindex="-4" 
+    /! 以下modal-dialogのCSSの部分で modal-lgやmodal-smを追加するとモーダルのサイズを変更することができる
+    .modal-dialog.modal-lg role="document" 
+      .modal-content.modal-reduction
+        .modal-header
+          h3.modal-title-reduction
+            | メニュー画面
+          button.reduction_button.close data-dismiss="modal" type="button"  ×
+            
+        .modal-body
+            .button_frex
+              = button_to user_reduction_user_profile_path(current_user.id), method: :get, class: 'cp_link_reduction' do
+                span プロフィールに戻る
+                
+              = button_to '喫煙情報を編集する',edit_user_reduction_user_profile_path(current_user.reduction_user_profile.id),{method: :get, class: 'cp_link_reduction'} 
+              
+              = button_to edit_user_path(current_user.id), {method: :get, class: 'cp_link_reduction'} do
+                  span アカウント編集
+                  
+              = button_to user_reset_start_date_path, method: :patch, class: 'cp_link_reduction',data: { confirm: "データをリセットして宜しいですか？" } do
+                span 減煙を最初から始める
+                
+              = button_to user_reduction_user_profile_path(current_user.id), method: :delete, class: 'cp_link_reduction',data: { confirm: "データをリセットして禁煙を始めますか？" } do
+                span 禁煙モードに移行する
+                
+              = button_to '/logout', {method: :delete, class: 'cp_link_reduction'} do
+                span ログアウト
+                
+              = button_to user_path(current_user.id), method: :delete, class: 'cp_link_reduction', data:{ confirm: "本当に削除しますか？" } do
+                span アカウント削除
+                
+                  
+- elsif logged_in? && current_user.no_smoking_user_profile 
+  button.no_smoking_button.custom_text data-target="#Modal" data-toggle="modal" type="button"
+    | メニュー画面へ
+  #Modal.modal.fade  aria-labelledby="Modal" tabindex="-4" 
+    /! 以下modal-dialogのCSSの部分で modal-lgやmodal-smを追加するとモーダルのサイズを変更することができる
+    .modal-dialog.modal-lg role="document" 
+      .modal-content.modal-no-smoking
+        .modal-header
+          h3.modal-title-no-smoking
+            | メニュー画面
+          button.no_smoking_button.close data-dismiss="modal" type="button"  ×
+            
+        .modal-body
+          .button_frex    
+            = button_to '喫煙情報を編集する',edit_user_no_smoking_user_profile_path(current_user.no_smoking_user_profile.id),{method: :get, class: 'cp_link'} 
+            
+            = button_to edit_user_path(current_user.id), {method: :get, class: 'cp_link'} do
+              span アカウント編集
+              
+            = button_to user_no_smoking_user_profile_path(current_user.id), method: :delete, class: 'cp_link',data: { confirm: "データをリセットして減煙をしますか？" } do
+              span 減煙モードに移行する
+              
+            = button_to '/logout', {method: :delete, class: 'cp_link'} do
+              span ログアウト
+              
+            = button_to user_reset_start_date_path, method: :patch, class: 'cp_link',data: { confirm: "データをリセットして宜しいですか？" } do
+              span 禁煙を最初から始める
+
+            = button_to user_path(current_user.id), method: :delete, class: 'cp_link', data:{ confirm: "本当に削除しますか？" } do
+              span アカウント削除
+          
+script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 

@@ -34,14 +34,14 @@ $dark-reduction-color:#583705;
 
 @mixin slide_button{
   padding: 0.1em 0.3em;
-	
-  background-color: $base_color;
+	background-color: $base_color;
 	background-position: 0 0;
 	background-size: 200% auto;
 	transition: .1s;
 	color: #fff;
   border-radius: 5px;
-
+  width: 100%;
+  margin-bottom: 5px;
 }
 
 @mixin my_flash{

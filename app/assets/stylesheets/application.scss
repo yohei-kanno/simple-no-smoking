@@ -129,6 +129,11 @@ border: 2px solid $reduction-color;
   background: #E2992A;
   border: 2px solid #F89703;
 }
+.custom_text{
+  font-size: 10px;
+  width: 50%;
+  margin: 0;
+}
 
 .no_smoking_section{
   text-decoration: underline $no-smoking-color;
@@ -156,11 +161,12 @@ border: 2px solid $reduction-color;
 
 
 .button_frex{
-  text-align: left;
+  display:  inline- block;
+  font-size: 20px;
 }
 
 .button_frex_end{
-  display: inline-flex ;
+  display: inline-flex;
 }
 
 // ---------テーブルデザイン----------------
@@ -221,4 +227,26 @@ table td:last-child{
        background-color: $dark-reduction-color
     }
   } 
+}
+
+.modal-title-reduction{
+  color: $reduction-color;
+  padding: 0;
+}
+
+.modal-title-no-smoking{
+  color: $no-smoking-color;
+  padding: 0;
+}
+
+.modal-content{
+  background-color: $base_color;
+}
+
+.modal-reduction{
+  border: 3px solid $reduction-color;
+}
+
+.modal-no-smoking{
+  border: 3px solid $no-smoking-color;
 }

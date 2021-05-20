@@ -3,7 +3,7 @@
     = "#{current_user.name}さんの禁煙は"
     br/
   h
-    = current_user.reduction_user_profile.start_date.strftime("%m月%d日%H時間%M分%S秒")
+    = current_user.reduction_user_profile.start_date.strftime("%m月%d日%H時間%M分")
     br/
   h2 
     | にスタートします
@@ -41,7 +41,5 @@
   h3 今日失った時給
   h2.reduction_section
     p = "#{lost_wage}円"
-    
-  
     
 = render 'shared/button_frex_footer'
