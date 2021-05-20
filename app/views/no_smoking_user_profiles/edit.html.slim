@@ -5,6 +5,11 @@
 
   div.text-center
     .form-group
+      = f.label :start_date, 'いつになったら禁煙を始めますか？'
+      .row.justify-content-center
+        = raw sprintf(f.datetime_select(:start_date, {use_month_numbers: true, date_separator: '%s' ,datetime_separator: '%s',time_separator: '%s'}, class: 'form-control-ns-inline'),'年','月','日','分') + '秒'
+        
+    .form-group
       = f.label :tabaco_price, '吸っているタバコの金額を教えて下さい'
       .row.justify-content-center
         .col-sm-4

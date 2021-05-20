@@ -12,8 +12,7 @@
     .form-group
       = f.label :birth_date, '誕生日を教えて下さい'
       .row.justify-content-center
-        .col-sm-4
-          = f.date_field :birth_date, class: 'form-control'
+        = raw sprintf(f.date_select(:birth_date,{use_month_numbers: true,date_separator: "%s"}, class: 'form-control-ns-inline'),'年','月') + '日'
     
     .form-group 
       = f.label :email, 'メールアドレスを教えて下さい'

@@ -5,7 +5,6 @@ RSpec.describe '新規作成画面', type: :system do
   before do
     visit new_user_path
     fill_in "user_name", with: "kanno youhei"
-    fill_in "user_birth_date", with: Date.current
     fill_in "user_email", with: "kanno@example.com"
     fill_in "user_password", with: "foobar"
     fill_in "user_password_confirmation", with: "foobar"

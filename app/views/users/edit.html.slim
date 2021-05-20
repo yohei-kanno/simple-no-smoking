@@ -15,11 +15,10 @@
     .form-group
       = f.label :birth_date, '誕生日を教えて下さい'
       .row.justify-content-center
-        .col-sm-4
-          - if current_user.no_smoking_user_profile 
-            = f.date_field :birth_date, class: 'form-control'
-          - elsif current_user.reduction_user_profile
-            = f.date_field :birth_date, class: 'form-control reduction', size: "20"
+        - if current_user.no_smoking_user_profile 
+          = raw sprintf(f.date_select(:birth_date,{use_month_numbers: true,date_separator: "%s"}, class: 'form-control-ns-inline'),'年','月') + '日'
+        - elsif current_user.reduction_user_profile
+          = raw sprintf(f.date_select(:birth_date,{use_month_numbers: true,date_separator: "%s"}, class: 'form-control-re-inline'),'年','月') + '日'
         
     
     .form-group 

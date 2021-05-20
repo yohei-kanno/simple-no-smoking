@@ -15,5 +15,5 @@
     = button_to user_path(current_user.id), method: :delete, class: 'cp_link_reduction', data:{ confirm: "本当に削除しますか？" } do
       span アカウント削除
       
-    = button_to edit_user_path(current_user.id), {method: :get, class: 'cp_link'} do
+    = button_to edit_user_path(current_user.id), {method: :get, class: 'cp_link_reduction'} do
         span アカウント編集

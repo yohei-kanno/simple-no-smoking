@@ -3,7 +3,7 @@
 
 .alert-nsmysuccess{
   @include my_flash ;
-  border: 2px solid $dark-no-smoking-color;
+  border: 3px solid $dark-no-smoking-color;
   background-color:$no-smoking-color;
   color: #fff;
 }
@@ -11,14 +11,14 @@
 
 .alert-nsmyalert{
   @include my_flash ;
-  border: 2px solid $dark-no-smoking-color;
+  border: 3px solid $dark-no-smoking-color;
   background-color:$no-smoking-color;
   color: rgb(233, 103, 103);
 }
 
 .alert-nsmyalert-mini{
   @include my_flash ;
-  border: 2px solid $dark-no-smoking-color;
+  border: 3px solid $dark-no-smoking-color;
   background-color:$no-smoking-color;
   color: rgb(233, 103, 103);
   font-size: 12px;
@@ -27,16 +27,16 @@
   
 .alert-remyalert-mini{
   @include my_flash ;
-  border: 2px solid $dark-reduction-color;
+  border: 3px solid $dark-reduction-color;
   background-color:$reduction-color;
-  color: rgb(233, 103, 103);
+  color: red;
   font-size: 12px;
   text-align: center;
 }
 
 .alert-remysuccess{
   @include my_flash ;
-  border: 2px solid $dark-reduction-color;
+  border: 3px solid $dark-reduction-color;
   background-color:$reduction-color;
   color: #fff;
 }
@@ -44,9 +44,9 @@
 
 .alert-remyalert{
   @include my_flash ;
-  border: 2px solid $dark-reduction-color;
+  border: 3px solid $dark-reduction-color;
   background-color:$reduction-color;
-  color: rgb(233, 103, 103);
+  color: red;
 }
   
 
@@ -64,12 +64,29 @@
 border: 2px solid $no-smoking-color;
 }
 
+.form-control-ns-inline{
+  border: 2px solid $no-smoking-color;
+  padding: 2px 10px;
+  border-radius: 5px;
+  margin: 2px;
+  
+}
+
+.form-control-re-inline{
+  border: 2px solid $reduction-color;
+  padding: 2px 10px;
+  border-radius: 5px;
+  margin: 2px;
+}
+  
+
 .form-control.reduction{
 border: 2px solid $reduction-color;
 }
 
 .form-group{
   margin-top: 40px;
+
 }
 
 .no_smoking_updown{

@@ -6,7 +6,7 @@ class CreateReductionUserProfiles < ActiveRecord::Migration[6.1]
       t.integer :tabaco_price, null: false
       t.integer :smoking_pace,  null: false
       t.integer :hourly_wage, null: false
-      t.datetime :start_date, null: false, default: DateTime.now
+      t.datetime :start_date, null: false
 
       t.timestamps
     end
