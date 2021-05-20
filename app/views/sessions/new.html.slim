@@ -15,5 +15,5 @@
     
   = f.submit 'ログイン', class:'no_smoking_button'
 .button_frex
-  = button_to new_user_path, method: :get,class: 'cp_link' do
-    span 新規登録
+  = link_to new_user_path, method: :get,class: 'cp_link_new' do
+    span アカウントをお持ちでない方はこちら

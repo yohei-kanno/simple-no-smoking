@@ -152,6 +152,14 @@ border: 2px solid $reduction-color;
   }
 }
 
+.cp_link_new {
+  color: #3FAD88;
+  &:hover{
+    color: $no-smoking-color
+  }
+}
+
+
 .cp_link_reduction {
   @include slide_button;
   &:hover {
