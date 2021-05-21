@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import "index";
+@import "/user/user";
 
 .alert-nsmysuccess{
   @include my_flash ;
@@ -169,7 +170,7 @@ border: 2px solid $reduction-color;
 
 
 .button_frex{
-  display:  inline- block;
+  display:  inline-block;
   font-size: 20px;
 }
 
@@ -246,7 +247,6 @@ table td:last-child{
   color: $no-smoking-color;
   padding: 0;
 }
-
 .modal-content{
   background-color: $base_color;
 }
@@ -257,4 +257,20 @@ table td:last-child{
 
 .modal-no-smoking{
   border: 3px solid $no-smoking-color;
+}
+
+.my-check{
+  cursor: pointer;
+  user-select: none;
+}
+
+.user{
+  font-size: 15px;
+  padding: 2px 10px;
+  margin: 0px 5px;
+}
+
+.small-text{
+  margin-left: 10px;
+  font-size: 20px;
 }

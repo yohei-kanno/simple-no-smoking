@@ -30,6 +30,13 @@
         .col-sm-4
           = f.password_field :password_confirmation, class: 'form-control',placeholder:"6文字以上、半角英数字"
           
+    .form-group 
+      = f.label "利用規約",class:"my-check"
+        = f.check_box "利用規約", as: :boolean, checked:false
+        | 利用規約とプライバシーポリシーに同意する
+    div
+      = render 'term_of_use'
+      
     = f.submit 'モード選択画面へ', class: 'no_smoking_button'
     
   .text_center

@@ -2,6 +2,7 @@ class User < ApplicationRecord
   authenticates_with_sorcery!
   include IdGenerator
   
+  validates_acceptance_of "利用規約",message: "に同意して下さい", allow_nil: false, on: :create
   validates :name, presence: true,length: { maximum: 20 }  
   validates :email, uniqueness: true, presence: true
   validates :birth_date, presence: true
