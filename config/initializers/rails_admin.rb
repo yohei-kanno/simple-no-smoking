@@ -42,5 +42,8 @@ RailsAdmin.config do |config|
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+    ActionController::Base.send(:include, Sorcery::Controller)
+
+
   end
 end
