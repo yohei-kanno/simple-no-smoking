@@ -7,7 +7,7 @@ RSpec.describe '禁煙モード全般の設定', type: :system do
   
   before do
     login(user_a)
-    visit  new_user_no_smoking_user_profile_path(user_a)
+    ns_mode; visit  new_user_no_smoking_user_profile_path(user_a)
   end
 
   

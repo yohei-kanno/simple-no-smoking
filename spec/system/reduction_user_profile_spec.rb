@@ -7,7 +7,7 @@ RSpec.describe '減煙モード全般の設定', type: :system do
   
   before do
     login(user_a)
-    visit  new_user_reduction_user_profile_path(user_a)
+    re_mode;visit  new_user_reduction_user_profile_path(user_a)
   end
 
   
