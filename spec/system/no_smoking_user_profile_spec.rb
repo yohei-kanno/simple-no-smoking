@@ -129,7 +129,7 @@ RSpec.describe '禁煙モード全般の設定', type: :system do
       end
       
       it "データが実際にリセットされていない" do
-        expect(page).to_not have_content("0日00時間00分00秒")
+        expect(page).to have_content("禁煙を最初から始める")
       end
     end
     
