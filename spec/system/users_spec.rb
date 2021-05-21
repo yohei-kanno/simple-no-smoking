@@ -8,6 +8,7 @@ RSpec.describe '新規作成画面', type: :system do
     fill_in "user_email", with: "kanno@example.com"
     fill_in "user_password", with: "foobar"
     fill_in "user_password_confirmation", with: "foobar"
+    check "利用規約に同意する"
   end
   
   context "入力が正常の場合" do

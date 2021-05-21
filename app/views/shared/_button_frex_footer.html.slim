@@ -11,11 +11,11 @@
           button.reduction_button.close data-dismiss="modal" type="button"  ×
             
         .modal-body
-            .button_frex
-             - unless current_page?(user_reduction_user_profile_path(current_user.id))
+          .button_frex
+            - unless current_page?(user_reduction_user_profile_path(current_user.id))
               = button_to user_reduction_user_profile_path(current_user.id), method: :get, class: 'cp_link_reduction' do
                 span プロフィールに戻る
-              
+            
             = button_to '喫煙情報を編集する',edit_user_reduction_user_profile_path(current_user.reduction_user_profile.id),{method: :get, class: 'cp_link_reduction'} 
             
             = button_to edit_user_path(current_user.id), {method: :get, class: 'cp_link_reduction'} do
