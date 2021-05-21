@@ -15,6 +15,7 @@ gem 'whenever', require: false
 gem 'mini_racer'
 gem 'rails-i18n'
 gem 'kaminari'
+gem 'rails_admin'
 gem 'kaminari-bootstrap'
 gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
