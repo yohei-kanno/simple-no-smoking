@@ -11,6 +11,6 @@ class ApplicationController < ActionController::Base
   
     def not_authenticated
       flash.now[:myalert] = "権限がありません"
-      redirect_to main_app.root_path
+      redirect_to main_app.login_url
     end
 end
