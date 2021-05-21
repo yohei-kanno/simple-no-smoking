@@ -1,5 +1,6 @@
 class NoSmokingUserProfilesController < ApplicationController
   before_action :set_no_smoking_user, only: %i[ show edit update ]
+  before_action :should_be_mode
   
   layout 'no_smoking'
   
@@ -44,6 +45,7 @@ class NoSmokingUserProfilesController < ApplicationController
   
   def destroy
     current_user.no_smoking_user_profile.destroy!
+    current_user.mode.destroy!
     flash[:nsmysuccess] = t(".select_mode")
     redirect_to new_user_modes_path(current_user.id)
   end
@@ -57,5 +59,12 @@ class NoSmokingUserProfilesController < ApplicationController
   
   def set_no_smoking_user
     @no_smoking_user_profile = current_user.no_smoking_user_profile
+  end
+  
+  def should_be_mode
+    if !current_user.mode
+      flash[:nsmyalert] = t(".select_mode")
+      redirect_to new_user_modes_path(current_user.id)
+    end
   end
 end

@@ -12,34 +12,34 @@
   br/
   = render 'button_frex_head'
   
-  h3 減煙を開始してから
-  h2.reduction_section
+  h4 減煙を開始してから
+  h3.reduction_section
     p = "#{reduction_time}経過"
   
-  h3 今日吸った本数
-  h2.reduction_section 
+  h4 今日吸った本数
+  h3.reduction_section 
     p = "#{current_user.reduction_user_profile.smoking_count}本"
     
-  h3 今日吸って良い本数
-  h2.reduction_section
+  h4 今日吸って良い本数
+  h3.reduction_section
     = render 'you_can_smoke'
     
-  h3 今日タバコに使った金額
-  h2.reduction_section
+  h4 今日タバコに使った金額
+  h3.reduction_section
     p = "#{used_money}円"
     
-  h3 今日タバコに使った時間
-  h6 1本５分計算
+  h4 今日タバコに使った時間
+  h3 1本５分計算
   h2.reduction_section
     p = "#{used_time_final}"
     
-  h3 今日失った寿命
-  h6 1本５分３０秒計算
+  h4 今日失った寿命
+  h3 1本５分３０秒計算
   h2.reduction_section
     p = "#{lost_life_final}"
     
-  h3 今日失った時給
-  h2.reduction_section
+  h4 今日失った時給
+  h3.reduction_section
     p = "#{lost_wage}円"
     
 = render 'shared/button_frex_footer'

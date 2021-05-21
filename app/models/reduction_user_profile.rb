@@ -4,7 +4,7 @@ class ReductionUserProfile < ApplicationRecord
   belongs_to :user
   has_many :stocks, dependent: :destroy
   validates :start_date, presence: true
-  validates :tabaco_price, presence: true
-  validates :smoking_pace, presence: true
-  validates :hourly_wage, presence: true
+  validates :tabaco_price, presence: true, numericality: { greater_than: 0}
+  validates :smoking_pace, presence: true, numericality: { greater_than: 0}
+  validates :hourly_wage, presence: true, numericality: { greater_than: 0}
 end

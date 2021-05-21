@@ -2,6 +2,7 @@ class ReductionUserProfilesController < ApplicationController
   layout 'reduction'
   
   before_action :set_reduction_user, only: %i[ show edit update destory]
+  before_action :should_be_mode
   
   def new
     if current_user.no_smoking_user_profile
@@ -44,7 +45,8 @@ class ReductionUserProfilesController < ApplicationController
   end
   
   def destroy
-    current_user.reduction_user_profile.destroy
+    current_user.reduction_user_profile.destroy!
+    current_user.mode.destroy!
     flash[:nsmysuccess] = t(".select_mode")
     redirect_to new_user_modes_path(current_user.id)
   end
@@ -57,5 +59,12 @@ class ReductionUserProfilesController < ApplicationController
   
   def set_reduction_user
     @reduction_user_profile = current_user.reduction_user_profile
+  end
+  
+  def should_be_mode
+    if !current_user.mode
+      flash[:nsmyalert] = t(".select_mode")
+      redirect_to new_user_modes_path(current_user.id)
+    end
   end
 end
