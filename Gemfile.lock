@@ -44,10 +44,6 @@ GEM
       globalid (>= 0.3.6)
     activemodel (6.1.3.1)
       activesupport (= 6.1.3.1)
-    activemodel-serializers-xml (1.0.2)
-      activemodel (> 5.x)
-      activesupport (> 5.x)
-      builder (~> 3.1)
     activerecord (6.1.3.1)
       activemodel (= 6.1.3.1)
       activesupport (= 6.1.3.1)
@@ -78,7 +74,6 @@ GEM
       sassc-rails (>= 2.0.0)
     builder (3.2.4)
     byebug (11.1.3)
-    cancancan (3.2.1)
     capybara (3.35.3)
       addressable
       mini_mime (>= 0.1.3)
@@ -114,9 +109,6 @@ GEM
     ffi (1.15.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    haml (5.2.1)
-      temple (>= 0.8.0)
-      tilt
     hpricot (0.8.6)
     html2slim (0.2.0)
       hpricot
@@ -124,12 +116,6 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
-    jquery-rails (4.4.0)
-      rails-dom-testing (>= 1, < 3)
-      railties (>= 4.2.0)
-      thor (>= 0.14, < 2.0)
-    jquery-ui-rails (6.0.1)
-      railties (>= 3.2.16)
     jwt (2.2.3)
     kaminari (1.2.1)
       activesupport (>= 4.1.0)
@@ -174,7 +160,6 @@ GEM
     multi_json (1.15.0)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
-    nested_form (0.3.2)
     nio4r (2.5.7)
     nokogiri (1.11.3-x86_64-darwin)
       racc (~> 1.4)
@@ -201,9 +186,6 @@ GEM
     rack (2.2.3)
     rack-mini-profiler (2.3.2)
       rack (>= 1.2.0)
-    rack-pjax (1.1.0)
-      nokogiri (~> 1.5)
-      rack (>= 1.1)
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -231,18 +213,6 @@ GEM
     rails-i18n (6.0.0)
       i18n (>= 0.7, < 2)
       railties (>= 6.0.0, < 7)
-    rails_admin (2.1.1)
-      activemodel-serializers-xml (>= 1.0)
-      builder (~> 3.1)
-      haml (>= 4.0, < 6)
-      jquery-rails (>= 3.0, < 5)
-      jquery-ui-rails (>= 5.0, < 7)
-      kaminari (>= 0.14, < 2.0)
-      nested_form (~> 0.3)
-      rack-pjax (>= 0.7)
-      rails (>= 5.0, < 7)
-      remotipart (~> 1.3)
-      sassc-rails (>= 1.3, < 3)
     railties (6.1.3.1)
       actionpack (= 6.1.3.1)
       activesupport (= 6.1.3.1)
@@ -254,7 +224,6 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (2.1.1)
-    remotipart (1.4.4)
     rspec-core (3.10.1)
       rspec-support (~> 3.10.0)
     rspec-expectations (3.10.1)
@@ -350,7 +319,6 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   bootstrap
   byebug
-  cancancan
   capybara (>= 3.26)
   data-confirm-modal
   factory_bot_rails
@@ -367,7 +335,6 @@ DEPENDENCIES
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.3, >= 6.1.3.1)
   rails-i18n
-  rails_admin (~> 2.0)
   rspec-rails
   sass-rails (>= 6)
   selenium-webdriver
