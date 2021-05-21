@@ -6,6 +6,7 @@ class SorceryCore < ActiveRecord::Migration[6.1]
       t.string :email, null: false
       t.string :crypted_password
       t.string :salt
+      t.boolean :admin, default: false
 
       t.integer :smoke_mode, default: 0
       t.timestamps null: false
