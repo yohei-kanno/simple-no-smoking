@@ -1,7 +1,9 @@
 class SessionsController < ApplicationController
   skip_before_action :require_login
   
-  def new; end
+  def new
+
+  end
   
   def create
     if @user = login(params[:email], params[:password])
