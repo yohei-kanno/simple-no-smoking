@@ -17,6 +17,7 @@ $dark-reduction-color:#583705;
   font-size: 20px;
   border-radius: 8px;
   transition: .4s;
+  user-select: none;
   &:hover{
     text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
                  6px 0px 15px rgba(255, 255, 240, 0.83);
