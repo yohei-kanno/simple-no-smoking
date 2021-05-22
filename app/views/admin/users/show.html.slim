@@ -42,3 +42,5 @@ table
         
 = button_to admin_users_path, {method: :get, class: 'no_smoking_button'} do
    span ユーザー一覧に戻る
+= button_to admin_user_path, {method: :delete, class: "btn btn-danger"},data:{ confirm: "本当に削除しますか？" } do
+   span = "#{@user.name}を削除する"
