@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
-gem 'rails_admin', '~> 2.0'
 gem 'pry-rails'
 gem 'sorcery'
 gem 'slim-rails'
