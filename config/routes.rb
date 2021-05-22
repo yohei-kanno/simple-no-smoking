@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  ActiveAdmin.routes(self)
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
