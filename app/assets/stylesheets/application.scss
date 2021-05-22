@@ -206,6 +206,7 @@ table th{
   padding: 10px 0;
 }
 
+
 table td{
   text-align: center;
   border-left: 3px solid $reduction-color;
@@ -215,9 +216,29 @@ table td{
   width: 10%;
   padding: 10px 0;
 }
+table th.ns{
+  text-align: center;
+  color:#fff;
+  background: linear-gradient($dark-no-smoking-color,$dark-no-smoking-color);
+  border: 1px solid $no-smoking-color;
+  font-size: 2px;
+  width: 3%;
+  padding: 10px 0;
+}
+table td.ns{
+  text-align: center;
+  border: 1px solid $no-smoking-color;
+  width: 10%;
+  padding: 10px 0;
+  font-size: 2px;
+}
 
 table td:last-child{
   border-right: 1px solid $reduction-color;
+}
+
+table td.ns:last-child{
+  border-right: 1px solid $no-smoking-color;
 }
 
 // kaminariのデザイン

@@ -1,6 +1,44 @@
-p = @user.name
-p = @user.mode.mode
--if @user.no_smoking_user_profile
-  p = @user.no_smoking_user_profile.smoking_pace
--if @user.reduction_user_profile
-  p = @user.reduction_user_profile.smoking_pace
+table
+  tbody
+    tr
+      th.ns= "名前"
+      td.ns= @user.name
+    tr
+      th.ns= "アドミン"
+      td.ns= @user.admin
+    tr
+      th.ns= "アドレス"
+      td.ns= @user.email
+    tr
+      th.ns= "誕生日"
+      td.ns= @user.birth_date.strftime("%Y/%m/%d")
+    tr
+      th.ns= "年齢"
+      td.ns= "#{(Date.today.strftime('%Y%m%d').to_i - @user.birth_date.strftime('%Y%m%d').to_i) / 10000}歳"
+    tr
+      th.ns= "モード"
+      td.ns= @user.mode.mode
+    - if @user.no_smoking_user_profile
+      tr
+        th.ns= "タバコの金額"
+        td.ns= "#{@user.no_smoking_user_profile.tabaco_price}円"
+      tr
+        th.ns= "喫煙ペース"
+        td.ns= "１日#{@user.no_smoking_user_profile.smoking_pace}本"
+      tr
+        th.ns= "時給"
+        td.ns= "#{@user.no_smoking_user_profile.hourly_wage}円"
+      
+    - if @user.reduction_user_profile
+      tr
+        th.ns= "タバコの金額"
+        td.ns= "#{@user.reduction_user_profile.tabaco_price}円"
+      tr
+        th.ns= "喫煙ペース"
+        td.ns= "１日#{@user.reduction_user_profile.smoking_pace}本"
+      tr
+        th.ns= "時給"
+        td.ns= "#{@user.reduction_user_profile.hourly_wage}円"
+        
+= button_to admin_users_path, {method: :get, class: 'no_smoking_button'} do
+   span ユーザー一覧に戻る

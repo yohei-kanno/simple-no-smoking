@@ -12,7 +12,10 @@
             
         .modal-body
           .button_frex
-                
+            - if current_user.admin?
+              = button_to admin_users_path, method: :get, class: 'cp_link_reduction' do
+                span 管理者専用
+              
             - unless current_page?(user_reduction_user_profile_path(current_user.id))
               = button_to user_reduction_user_profile_path(current_user.id), method: :get, class: 'cp_link_reduction' do
                 span プロフィールに戻る
@@ -49,7 +52,10 @@
             
         .modal-body
           .button_frex    
-             
+            - if current_user.admin?
+              = button_to admin_users_path, method: :get, class: 'cp_link' do
+                span 管理者専用
+                
             = button_to '喫煙情報を編集する',edit_user_no_smoking_user_profile_path(current_user.no_smoking_user_profile.id),{method: :get, class: 'cp_link'} 
             
             = button_to edit_user_path(current_user.id), {method: :get, class: 'cp_link'} do

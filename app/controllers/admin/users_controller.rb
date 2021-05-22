@@ -15,4 +15,6 @@ class Admin::UsersController < ApplicationController
     def admin_user
       raise unless current_user.admin?
     end
+    
+    
 end

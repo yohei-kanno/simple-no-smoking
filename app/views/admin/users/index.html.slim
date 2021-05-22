@@ -1,18 +1,20 @@
 h1 ユーザー一覧
 table
   thead
-    tr.small-font
-      th= "名前"
-      th= "年齢"
-      th= "メールアドレス"
-      th= "モード"
+    tr
+      th.ns= "順番"
+      th.ns= "名前"
+      th.ns= "リンク"
 
       
       
   tbody
-    - @users.each do |user|
+    - @users.each.with_index(1) do |user,i|
       tbody
-        td= link_to "#{user.name}",admin_user_path(user.id)
-        td= "#{(Date.today.strftime('%Y%m%d').to_i - user.birth_date.strftime('%Y%m%d').to_i) / 10000}歳"
-        td= user.email
-        td= user.mode.mode
+        td.ns= i
+        td.ns= user.name
+        td.ns= link_to "詳細", admin_user_path(user.id)
+
+
+= button_to login_path, {method: :get, class: 'no_smoking_button'} do
+   span ログイン画面に戻る 
