@@ -1,0 +1,18 @@
+h1 ユーザー一覧
+table
+  thead
+    tr.small-font
+      th= "名前"
+      th= "年齢"
+      th= "メールアドレス"
+      th= "モード"
+
+      
+      
+  tbody
+    - @users.each do |user|
+      tbody
+        td= link_to "#{user.name}",admin_user_path(user.id)
+        td= "#{(Date.today.strftime('%Y%m%d').to_i - user.birth_date.strftime('%Y%m%d').to_i) / 10000}歳"
+        td= user.email
+        td= user.mode.mode
