@@ -136,15 +136,7 @@ border: 2px solid $reduction-color;
   margin-top: 10px;
 }
 
-.no_smoking_section{
-  text-decoration: underline $no-smoking-color;
-  margin-bottom: 40px;
-}
 
-.reduction_section{
-  text-decoration: underline $reduction-color;
-  margin-bottom: 40px;
-}
   
 .cp_link {
   @include slide_button;
@@ -300,4 +292,66 @@ table td.ns:last-child{
 
 .logo{
   margin-bottom: 15px;
+}
+
+
+// ---------------------------------------------
+.section-logo{
+  margin-right: 10px;
+  width:  75px;
+  height: 75px;
+}
+
+.conte{
+  width: 500px;
+  display: flex;
+  margin: auto;
+  border-bottom:solid 2px $no-smoking-color;
+  margin-top: 15px;
+}
+
+.no_smoking_section{
+  font-size: 30px;
+  text-align: left;
+}
+
+.section-title{
+  font-size: 25px;
+  text-align: left;
+}
+
+.reduction_section{
+  font-size: 30px;
+  text-align: left;
+}
+
+@media screen and (max-width: 500px) {
+  .conte{
+    width: 280px;
+    display: flex;
+    margin: auto;
+    border-bottom:solid 2px $no-smoking-color;
+    margin-top: 15px;
+  }
+  
+	.section-logo{
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+  .no_smoking_section{
+    font-size: 18px;
+    text-align: left;
+  }
+
+  
+  .section-title{
+    font-size: 13px;
+    text-align: left;
+  }
+  
+  .reduction_section{
+    font-size: 18px;
+    text-align: left;
+  }
 }

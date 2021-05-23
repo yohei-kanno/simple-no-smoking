@@ -1,4 +1,13 @@
-      - if you_can_smoke < 0
-        p = "#{you_can_smoke.abs}本オーバーしてます！"
-      - else
-        p = "あと#{you_can_smoke}本吸えます！"
+.flame
+- if you_can_smoke < 0
+  = image_tag 'kinen_ojisan_iraira.png', class:'section-logo'
+  .section
+    .section-title = "今日吸って良い本数"
+    h6.reduction_section
+      = "#{you_can_smoke.abs}本オーバーしてます！"
+- else
+  = image_tag 'tabako_man.png', class:'section-logo'
+  .section
+    .section-title = "今日吸って良い本数"
+    h6.reduction_section
+      = "#{you_can_smoke}本吸えます"
