@@ -8,7 +8,7 @@
   h2 
     | にスタートします
 - else
-  h4.text-center 吸ったら記録しましょう！
+  h5.text-center 吸ったら記録しましょう！
   br/
   = render 'button_frex_head'
 
@@ -26,7 +26,7 @@
     .section
       .section-title = "今日吸った本数"
       h6.reduction_section
-        = "#{current_user.reduction_user_profile.smoking_count}本"
+        = "#{current_user.reduction_user_profile.smoking_count.to_s(:delimited)}本"
          
   .conte-reduction
     = render 'you_can_smoke'

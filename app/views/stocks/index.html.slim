@@ -5,38 +5,52 @@ h6 = "毎日０時にデータが更新されます"
   table
     | 今までの積み上げ
     thead
-      th = "本数"
-      th = "金額"
-      th = "時間"
-      th = "寿命"
-      th = "時給"
+      th
+        = image_tag  "tabako_woman.png", class: "small-logo"  
+        = "本数"
+      th
+        = image_tag  "money_fly_yen.png", class: "small-logo" 
+        = "金額"
+      th
+        = image_tag  "kaichu_dokei.png", class: "small-logo" 
+        = "時間"
+      th 
+        = image_tag  "shinigami.png", class: "small-logo" 
+        = "寿命"
     
     tbody 
-      td = "#{sum_value}本"
-      td = "#{(sum_value * one_smoke_price).floor}円"
-      td = "#{(sum_value * 5).floor}分"
-      td = "#{(sum_value * 5.5).floor}分"
-      td = "#{(sum_value * 5.5).floor}分"
+      td = "#{sum_value.to_s(:delimited)}本"
+      td = "#{(sum_value * one_smoke_price).floor.to_s(:delimited)}円"
+      td = "#{(sum_value * 5).floor.to_s(:delimited)}分"
+      td = "#{(sum_value * 5.5).floor.to_s(:delimited)}分"
       
   hr/
   table
     | 日々の積み上げ
     thead
-      th = "日付" 
-      th = "本数"
-      th = "金額"
-      th = "時間"
-      th = "寿命"
-      th = "時給"
-      
+      th 
+        = image_tag  "calender_takujou.png", class: "small-logo"  
+        = "日付" 
+      th
+        = image_tag  "tabako_woman.png", class: "small-logo"
+        = "本数"
+      th
+        = image_tag  "money_fly_yen.png", class: "small-logo"
+        = "金額"
+      th
+        = image_tag  "kaichu_dokei.png", class: "small-logo" 
+        = "時間"
+      th
+        = image_tag  "shinigami.png", class: "small-logo"
+        = "寿命"
+  
     - @stocks.each do |stock|
       tbody 
         td = "#{stock.created_at.strftime("%m月%d日")}" 
-        td = "#{stock.counter}本"
-        td = "#{(one_smoke_price * stock.counter).floor}円"
-        td = "#{(stock.counter * 5).floor}分"
-        td = "#{(stock.counter * 5.5).floor}分"
-        td = "#{((stock.counter * 300 /3600.0) * current_user.reduction_user_profile.hourly_wage).floor}円"
+        td = "#{stock.counter.to_s(:delimited)}本"
+        td = "#{(one_smoke_price * stock.counter).floor.to_s(:delimited)}円"
+        td = "#{(stock.counter * 5).floor.to_s(:delimited)}分"
+        td = "#{(stock.counter * 5.5).floor.to_s(:delimited)}分"
         
   = paginate @stocks
   

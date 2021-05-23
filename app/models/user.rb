@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
   include IdGenerator
-  
+  enum admin: { 一般ユーザー: false, 管理者ユーザー: true }
   
   validates_acceptance_of "利用規約",message: "に同意して下さい", allow_nil: false, on: :create
   validates :name, presence: true,length: { maximum: 20 }  

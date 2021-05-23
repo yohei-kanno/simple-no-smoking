@@ -196,6 +196,7 @@ table th{
   box-shadow: 0px 1px 1px $dark-reduction-color inset;
   width: 10%;
   padding: 10px 0;
+  font-size: 25px;
 }
 
 
@@ -208,6 +209,7 @@ table td{
   width: 10%;
   padding: 10px 0;
 }
+
 table th.ns{
   text-align: center;
   color:#fff;
@@ -238,6 +240,7 @@ table td.ns:last-child{
   background-color: $reduction-color;     /*枠線をなくす*/
   color: #fff;   /*文字の色を変える*/
   border: 1px solid $dark-reduction-color;
+  font-size: 10px;
 }
 
 .pagination{
@@ -333,6 +336,11 @@ table td.ns:last-child{
   text-align: left;
 }
 
+.small-logo{
+ width: 25px; 
+ height: 25px; 
+}
+
 @media screen and (max-width: 500px) {
   .conte-reduction{
     width: 280px;
@@ -356,18 +364,67 @@ table td.ns:last-child{
     height: 40px;
   }
   .no_smoking_section{
-    font-size: 18px;
+    font-size: 17px;
     text-align: left;
   }
 
   
   .section-title{
-    font-size: 13px;
+    font-size: 12px;
     text-align: left;
   }
   
   .reduction_section{
-    font-size: 18px;
+    font-size: 17px;
     text-align: left;
+  }
+  
+  //テーブルデザイン
+  .small-logo{
+    width: 15px; 
+    height: 15px; 
+   }
+  
+   table th{
+    text-align: center;
+    color:white;
+    background: linear-gradient($reduction-color,$reduction-color);
+    border-left: 3px solid $reduction-color;
+    border-top: 3px solid $reduction-color;
+    border-bottom: 3px solid $reduction-color;
+    box-shadow: 0px 1px 1px $dark-reduction-color inset;
+    width: 10%;
+    padding: 10px 0;
+    font-size: 15px;
+  }
+  
+  
+  table td{
+    text-align: center;
+    border-left: 3px solid $reduction-color;
+    border-bottom: 3px solid $reduction-color;
+    border-top:none;
+    box-shadow: 0px -3px 5px 1px $dark-reduction-color inset;
+    width: 10%;
+    padding: 10px 0;
+    font-size: 10px;
+  }
+  
+  table th.ns{
+    text-align: center;
+    color:#fff;
+    background: linear-gradient($dark-no-smoking-color,$dark-no-smoking-color);
+    border: 1px solid $no-smoking-color;
+    width: 3%;
+    padding: 10px 0;
+    font-size: 11px;
+    
+  }
+  table td.ns{
+    text-align: center;
+    border: 1px solid $no-smoking-color;
+    width: 10%;
+    padding: 10px 0;
+    font-size: 12px;
   }
 }

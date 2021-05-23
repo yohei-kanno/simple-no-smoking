@@ -30,7 +30,7 @@
     .section
       .section-title = "我慢した本数"
       h6.no_smoking_section
-        = "#{patience_number}本"
+        = "#{patience_number.to_s(:delimited)}本"
         
   .conte-no-smoking
     .flame
@@ -70,7 +70,7 @@
     .section
       .section-title = "今から８０歳まで吸って失う金額"
       h6.no_smoking_section
-        = "#{lost_money_80.to_s(:delimited)}円"
+        = "#{lost_money_80}円"
         
   .conte-no-smoking
     .flame
@@ -78,6 +78,6 @@
     .section
       .section-title = "今吸ってしまったら失う時給"
       h6.no_smoking_section
-        = "#{lost_hours_money_80.to_s(:delimited)}円"
+        = "#{lost_hours_money_80}円"
   
 = render 'shared/button_frex_footer'

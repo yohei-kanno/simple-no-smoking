@@ -75,7 +75,7 @@ RSpec.describe 'ログイン機能のテスト', type: :system do
         ns_profile; login(user_a) 
         expect(page).to have_content("ログインしました")
         expect(page).to have_content("NoSmokingMode")
-        expect(page).to have_content("禁煙時間")
+        expect(page).to have_content("禁煙を開始してから")
       end
     end
     

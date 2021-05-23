@@ -42,7 +42,7 @@ module NoSmokingUserProfilesHelper
     
   #禁煙時間
   def no_smoking_time
-      (Time.parse("1/1") + (smoking_in_second - smoking_in_day * 86400)).strftime("#{smoking_in_day}日%H時間%M分%S秒")
+      (Time.parse("1/1") + (smoking_in_second - smoking_in_day * 86400)).strftime("#{smoking_in_day.to_s(:delimited)}日%H時間%M分%S秒")
   end
   
   #ユーザーの伸びた寿命(秒)
@@ -56,7 +56,7 @@ module NoSmokingUserProfilesHelper
   end
   
   def gained_life
-      (Time.parse("1/1") + (gained_life_second - gained_life_day * 86400)).strftime("#{gained_life_day}日%H時間%M分%S秒")
+      (Time.parse("1/1") + (gained_life_second - gained_life_day * 86400)).strftime("#{gained_life_day.to_s(:delimited)}日%H時間%M分%S秒")
   end
   
   
@@ -64,17 +64,18 @@ module NoSmokingUserProfilesHelper
       
   #得した金額
   def amount_of_money_earned
-    (one_minute_price * smoking_in_second).floor
+    (one_minute_price * smoking_in_second).floor.to_s(:delimited)
   end
   
   #我慢した本数
   def patience_number
     smoking_in_second / one_every_second
   end
-  
+
+    
   #得した時間
   def gained_time
-    patience_number * 5
+    (patience_number * 5).to_s(:delimited)
   end
   
   #我慢した長さ
@@ -85,7 +86,7 @@ module NoSmokingUserProfilesHelper
   #失う時間
   
   def lost_time_80_final
-    (Time.parse("1/1") + (lost_time_80_second - lost_time_80_day * 86400)).strftime("#{lost_time_80_day}日%H時間%M分%S秒")
+    (Time.parse("1/1") + (lost_time_80_second - lost_time_80_day * 86400)).strftime("#{lost_time_80_day.to_s(:delimited)}日%H時間%M分%S秒")
   end
   
     def life_time_80_day
@@ -115,15 +116,15 @@ module NoSmokingUserProfilesHelper
   end
   
   def lost_life_80_final
-    (Time.parse("1/1") + (lost_life_80_second - lost_life_80_day * 86400)).strftime("#{lost_life_80_day}日%H時間%M分%S秒")
+    (Time.parse("1/1") + (lost_life_80_second - lost_life_80_day * 86400)).strftime("#{lost_life_80_day.to_s(:delimited)}日%H時間%M分%S秒")
   end
     
   def lost_money_80
-    (one_minute_price * life_time_80).floor
+    (one_minute_price * life_time_80).floor.to_s(:delimited)
   end
   
   def lost_hours_money_80
-    lost_time_80 * current_user.no_smoking_user_profile.hourly_wage
+    (lost_time_80 * current_user.no_smoking_user_profile.hourly_wage).to_s(:delimited)
   end
  
 end

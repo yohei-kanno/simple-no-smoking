@@ -20,10 +20,10 @@ table
       td.ns= @user.mode.mode
     - if @user.no_smoking_user_profile
       tr
-        th.ns= "タバコの金額"
+        th.ns= "金額"
         td.ns= "#{@user.no_smoking_user_profile.tabaco_price}円"
       tr
-        th.ns= "喫煙ペース"
+        th.ns= "ペース"
         td.ns= "１日#{@user.no_smoking_user_profile.smoking_pace}本"
       tr
         th.ns= "時給"
@@ -31,10 +31,10 @@ table
       
     - if @user.reduction_user_profile
       tr
-        th.ns= "タバコの金額"
+        th.ns= "金額"
         td.ns= "#{@user.reduction_user_profile.tabaco_price}円"
       tr
-        th.ns= "喫煙ペース"
+        th.ns= "ペース"
         td.ns= "１日#{@user.reduction_user_profile.smoking_pace}本"
       tr
         th.ns= "時給"
