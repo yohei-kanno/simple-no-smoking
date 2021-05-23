@@ -12,7 +12,7 @@
   br/
   = render 'button_frex_head'
 
-  .conte
+  .conte-reduction
     .flame
       = image_tag 'mezamashidokei.png', class:'section-logo'
     .section
@@ -20,7 +20,7 @@
       h6.reduction_section
         = "#{reduction_time}経過"
         
-  .conte
+  .conte-reduction
     .flame
       = image_tag 'tabako_woman.png', class:'section-logo'
     .section
@@ -28,10 +28,10 @@
       h6.reduction_section
         = "#{current_user.reduction_user_profile.smoking_count}本"
          
-  .conte
+  .conte-reduction
     = render 'you_can_smoke'
          
-  .conte
+  .conte-reduction
     .flame
       = image_tag 'money_fly_yen.png', class:'section-logo'
     .section
@@ -39,7 +39,7 @@
       h6.reduction_section
         = "#{used_money}円" 
         
-  .conte
+  .conte-reduction
     .flame
       = image_tag 'jikan_tobu.png', class:'section-logo'
     .section
@@ -47,7 +47,7 @@
       h6.reduction_section
         = "#{used_time_final}"
          
-  .conte
+  .conte-reduction
     .flame
       = image_tag 'shinigami.png', class:'section-logo'
     .section
@@ -55,7 +55,7 @@
       h6.reduction_section
         = "#{lost_life_final}"
         
-  .conte
+  .conte-reduction
     .flame
       = image_tag 'christmas_zangyou_man.png', class:'section-logo'
     .section

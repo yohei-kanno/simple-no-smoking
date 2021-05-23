@@ -302,11 +302,19 @@ table td.ns:last-child{
   height: 75px;
 }
 
-.conte{
+.conte-no-smoking{
   width: 500px;
   display: flex;
   margin: auto;
   border-bottom:solid 2px $no-smoking-color;
+  margin-top: 15px;
+}
+
+.conte-reduction{
+  width: 500px;
+  display: flex;
+  margin: auto;
+  border-bottom:solid 2px $reduction-color;
   margin-top: 15px;
 }
 
@@ -326,7 +334,15 @@ table td.ns:last-child{
 }
 
 @media screen and (max-width: 500px) {
-  .conte{
+  .conte-reduction{
+    width: 280px;
+    display: flex;
+    margin: auto;
+    border-bottom:solid 2px $reduction-color;
+    margin-top: 15px;
+  }
+  
+  .conte-no-smoking{
     width: 280px;
     display: flex;
     margin: auto;
