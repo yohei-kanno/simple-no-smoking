@@ -7,6 +7,7 @@ ja:
         email: "メールアドレス"
         birth_date: "誕生日"
         password: "パスワード"
+        password_confirmation: "パスワード(確認)"
         
       no_smoking_user_profile:
         start_date:   "禁煙開始日"
