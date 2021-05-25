@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :require_login, only: %i[ new create]
+  skip_before_action :require_login, only: %i[ new create activate]
   before_action :set_user, only: %i[ edit update destroy ]
 
   def new
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:nsmysuccess] = t(".success_created")
+      flash[:nsmysuccess] = t(".send_mail")
       redirect_to root_url
     else
       flash.now[:nsmyalert] = t(".failed_created")
@@ -30,17 +30,17 @@ class UsersController < ApplicationController
     if current_user.no_smoking_user_profile
       if current_user.update(user_params)
         redirect_to user_no_smoking_user_profile_path(current_user.id)
-        flash[:nsmysuccess] = "更新しました"
+        flash[:nsmysuccess] = t(".success_update")
       else
-        flash.now[:nsmyalert] = "更新出来ませんでした"
+        flash.now[:nsmyalert] = t(".failed_update")
         render :edit
       end
     elsif current_user.reduction_user_profile
       if current_user.reduction_user_profile && current_user.update(user_params)
         redirect_to user_reduction_user_profile_path(current_user.id)
-        flash[:remysuccess] = "更新しました"
+        flash[:remysuccess] = t(".success_update")
        else
-         flash.now[:remyalert] = "更新出来ませんでした"
+         flash.now[:remyalert] = t(".failed_update")
          render :edit  
        end
     end
@@ -52,6 +52,16 @@ class UsersController < ApplicationController
     @user.destroy
     flash[:nsmysuccess] = t(".success_destroy")
     redirect_to root_url
+  end
+  
+  def activate
+    if (@user = User.load_from_activation_token(params[:id]))
+      @user.activate!
+      flash[:nsmysuccess] = t(".success_activate")
+      redirect_to root_path
+    else
+      not_authenticated
+    end
   end
   
   private

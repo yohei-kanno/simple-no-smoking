@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   resources :password_resets, only: %i[ new create edit update ]
   
   resources :users, only: %i[ new create edit update destroy] do
+    member do
+      get :activate
+    end
     resource :no_smoking_user_profile, only: %i[ new create show edit update destroy]
     
     resource :reduction_user_profile, only: %i[ new create show edit update destroy] do

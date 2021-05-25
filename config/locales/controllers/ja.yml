@@ -3,6 +3,7 @@ ja:
     create:
       success_created: "登録が完了しました"
       failed_created: "登録が出来ませんでした"
+      send_mail: "※まだログイン出来ません！ご登録のアドレスに確認メールを送信しました"
       
     update:
       success_update: "更新しました"
@@ -10,6 +11,9 @@ ja:
       
     destroy:
       success_destroy: "アカウントを削除しました"
+      
+    activate:
+      success_activate: "アカウントが有効化されました！"
   
   sessions:
     create:
