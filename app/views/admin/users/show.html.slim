@@ -15,9 +15,15 @@ table
     tr
       th.ns= "年齢"
       td.ns= "#{(Date.today.strftime('%Y%m%d').to_i - @user.birth_date.strftime('%Y%m%d').to_i) / 10000}歳"
-    tr
-      th.ns= "モード"
-      td.ns= @user.mode.mode
+    - if @user.mode  
+      tr
+        th.ns= "モード"
+        td.ns= @user.mode.mode
+    - else
+      tr
+        th.ns= "モード"    
+        td.ns= "まだモードが選択されていません"   
+         
     - if @user.no_smoking_user_profile
       tr
         th.ns= "金額"
