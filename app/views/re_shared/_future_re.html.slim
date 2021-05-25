@@ -1,0 +1,8 @@
+h2
+  = "#{current_user.name}さんの禁煙は"
+  br/
+h1
+  = current_user.reduction_user_profile.start_date.strftime("%m月%d日%H時間%M分")
+  br/
+h2 
+  | にスタートします

@@ -1,7 +1,8 @@
+- content_for(:title, "#{current_user.name} | ReductionMode" )
 = render 'shared/error_form', {object: @reduction_user_profile}
 
 = "#{current_user.name}さんの編集ページ"
 
 = form_with model: [current_user,@reduction_user_profile] , local: true do |f|
-  = render 'form', f: f
+  = render 'shared/form', f: f
   = f.submit '更新する', class:'reduction_button'

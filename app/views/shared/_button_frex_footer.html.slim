@@ -1,4 +1,5 @@
--if logged_in? && current_user.reduction_user_profile
+/ ===============減煙ユーザーのモーダル===================
+- if logged_in? && current_user.reduction_user_profile
   button.reduction_button.custom_text data-target="#Modal" data-toggle="modal" type="button"
     | メニュー画面へ
   #Modal.modal.fade  aria-labelledby="Modal" tabindex="-4" 
@@ -37,7 +38,7 @@
             = button_to user_path(current_user.id), method: :delete, class: 'cp_link_reduction', data:{ confirm: "本当に削除しますか？" } do
               span アカウント削除
               
-                  
+/ ============禁煙ユーザーのモーダ==================                  
 - elsif logged_in? && current_user.no_smoking_user_profile 
   button.no_smoking_button.custom_text data-target="#Modal" data-toggle="modal" type="button"
     | メニュー画面へ

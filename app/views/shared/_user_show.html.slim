@@ -1,0 +1,131 @@
+/ ===========禁煙ユーザー詳細=============
+- if current_user.no_smoking_user_profile
+  = "#{current_user.name}さんの記録です！"
+  .conte-no-smoking
+    .flame
+      = image_tag 'mezamashidokei.png', class:'section-logo'
+    .section
+      .section-title = "禁煙を開始してから"
+      h6.no_smoking_section
+        = "#{no_smoking_time}経過"
+          
+  .conte-no-smoking
+    .flame
+      = image_tag 'money_megakuramu_woman.png', class:'section-logo'
+    .section
+      .section-title = "得した金額"
+      h6.no_smoking_section
+        = "#{amount_of_money_earned}円"
+        
+  .conte-no-smoking
+    .flame
+      = image_tag 'kinen_ojisan_hanenokeru-1.png', class:'section-logo'
+    .section
+      .section-title = "我慢した本数"
+      h6.no_smoking_section
+        = "#{patience_number.to_s(:delimited)}本"
+        
+  .conte-no-smoking
+    .flame
+      = image_tag 'kaichu_dokei.png', class:'section-logo'
+    .section
+      .section-title = "得した時間"
+      h6.no_smoking_section
+        = "#{gained_time}分"
+        
+  .conte-no-smoking
+    .flame
+      = image_tag 'keirou_katamomi_ojiichan2.png', class:'section-logo'
+    .section
+      .section-title = "伸びた寿命"
+      h6.no_smoking_section
+        = "#{gained_life}"
+        
+  .conte-no-smoking
+    .flame
+      = image_tag 'jikan_tobu.png', class:'section-logo'
+    .section
+      .section-title = "今から８０歳まで吸って失う時間"
+      h6.no_smoking_section
+        = "#{lost_time_80_final}"
+        
+  .conte-no-smoking
+    .flame
+      = image_tag 'shinigami.png', class:'section-logo'
+    .section
+      .section-title = "今から８０歳まで吸って失う寿命"
+      h6.no_smoking_section
+        = "#{lost_life_80_final}"
+        
+  .conte-no-smoking
+    .flame
+      = image_tag 'money_dobu_suteru_woman.png', class:'section-logo'
+    .section
+      .section-title = "今から８０歳まで吸って失う金額"
+      h6.no_smoking_section
+        = "#{lost_money_80}円"
+        
+  .conte-no-smoking
+    .flame
+      = image_tag 'karou_businesswoman.png', class:'section-logo'
+    .section
+      .section-title = "今吸ってしまったら失う時給"
+      h6.no_smoking_section
+        = "#{lost_hours_money_80}円"
+
+/ ===========減煙ユーザー詳細=============        
+- elsif current_user.reduction_user_profile
+  h5.text-center 吸ったら記録しましょう！
+
+  = render 're_shared/button_frex_head'
+
+  .conte-reduction
+    .flame
+      = image_tag 'mezamashidokei.png', class:'section-logo'
+    .section
+      .section-title = "減煙を開始してから"
+      h6.reduction_section
+        = "#{reduction_time}経過"
+        
+  .conte-reduction
+    .flame
+      = image_tag 'tabako_woman.png', class:'section-logo'
+    .section
+      .section-title = "今日吸った本数"
+      h6.reduction_section
+        = "#{current_user.reduction_user_profile.smoking_count.to_s(:delimited)}本"
+          
+  .conte-reduction
+    = render 're_shared/you_can_smoke'
+          
+  .conte-reduction
+    .flame
+      = image_tag 'money_fly_yen.png', class:'section-logo'
+    .section
+      .section-title = "今日タバコに使った金額"
+      h6.reduction_section
+        = "#{used_money}円" 
+        
+  .conte-reduction
+    .flame
+      = image_tag 'jikan_tobu.png', class:'section-logo'
+    .section
+      .section-title = "今日タバコに使った時間"
+      h6.reduction_section
+        = "#{used_time_final}"
+          
+  .conte-reduction
+    .flame
+      = image_tag 'shinigami.png', class:'section-logo'
+    .section
+      .section-title = "今日失った寿命"
+      h6.reduction_section
+        = "#{lost_life_final}"
+        
+  .conte-reduction
+    .flame
+      = image_tag 'christmas_zangyou_man.png', class:'section-logo'
+    .section
+      .section-title = "失った時給"
+      h6.reduction_section
+        = "#{lost_wage}円"

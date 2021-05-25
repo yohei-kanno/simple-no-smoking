@@ -1,6 +1,7 @@
+- content_for(:title, "#{current_user.name} | ReductionMode" )
 = "#{current_user.name}さんの事を教えて下さい"
 
 = render 'shared/error_form', {object: @reduction_user_profile}
 = form_with model: @reduction_user_profile, url:user_reduction_user_profile_path,  local: true do |f|
-  = render 'form', f: f
+  = render 'shared/form', f: f
   = f.submit '減煙を始める', class:'reduction_button'

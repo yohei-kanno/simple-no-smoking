@@ -1,3 +1,8 @@
+-if current_user.no_smoking_user_profile
+  - content_for(:title, "#{current_user.name} | NoSmokingMode" )
+-else current_user.reduction_user_profile 
+  - content_for(:title, "#{current_user.name} | reductionMode" )
+  
 = render 'shared/error_form', {object: @user}
 = form_with model: @user, local: true do |f|
 
