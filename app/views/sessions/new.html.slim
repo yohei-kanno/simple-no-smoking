@@ -17,7 +17,6 @@
 div 
   = link_to new_user_path, method: :get,class: 'cp_link_new' do
     span 新規登録(アカウントをお持ちでない方)
-/ div
-/   = link_to new_password_reset_path , method: :get,class: 'cp_link_new' do
-/     span パスワードを忘れた方はこちら
-
+div
+  = link_to new_password_reset_path , method: :get,class: 'cp_link_new' do
+    span パスワードを忘れた方はこちら
