@@ -20,7 +20,7 @@ class UserMailer < ApplicationMailer
     @user = user
     @url  = login_url
     mail(:to => user.email,
-         :subject => "あなたのアカウントがアクティブになりました！")
+         :subject => "アカウントが有効化されました！")
   end
   
 end

@@ -5,8 +5,7 @@ $reduction-color: #f59607;
 $dark-reduction-color:#583705;
 
 @mixin mode_select_button{
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin: 20px auto;
   position: relative;
   display: inline-block;
   font-weight: bold;
