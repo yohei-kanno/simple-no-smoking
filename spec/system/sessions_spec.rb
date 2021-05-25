@@ -2,6 +2,11 @@ require 'rails_helper'
 
 RSpec.describe 'ログイン機能のテスト', type: :system do  
   let(:user_a) { create(:user) }
+  before do
+    user_a.activation_state = "active"
+    user_a.save!
+  end
+    
   describe "ログイン処理" do
     context "画面表示" do
       before do

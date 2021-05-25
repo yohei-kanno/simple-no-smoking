@@ -6,6 +6,8 @@ RSpec.describe '禁煙モード全般の設定', type: :system do
   let(:ns_mode) { create(:mode, user: user_a, mode: 0)}
   
   before do
+    user_a.activation_state = "active"
+    user_a.save!
     login(user_a)
     ns_mode; visit  new_user_no_smoking_user_profile_path(user_a)
   end
