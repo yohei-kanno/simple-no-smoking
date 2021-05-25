@@ -104,14 +104,15 @@ border: 2px solid $reduction-color;
 
 .mode_select_contain{
   margin-top: 30px;
+  width: 250px;
   margin: auto;
   
   .mode_description{
     margin-top: 10px;
     margin-bottom: 50px;
     li {
-      font-size: 12px;
       text-align: left;
+      font-size: 10px;
       margin-top: 9px;
     }
   }
