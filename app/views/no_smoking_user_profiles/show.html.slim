@@ -8,6 +8,7 @@
   h2 
     | にスタートします
 - else
+  = "#{current_user.name}さんの記録です！"
   .conte-no-smoking
     .flame
       = image_tag 'mezamashidokei.png', class:'section-logo'
