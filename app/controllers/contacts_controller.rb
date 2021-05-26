@@ -15,8 +15,8 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.save 
-      ContactMailer.contact_mail(@contact).deliver_now
-      # ContactMailer.contact_mail_to_customer(@contact).deliver
+      # ContactMailer.contact_mail(@contact).deliver_now
+      ContactMailer.contact_mail_to_customer(@contact).deliver_now
       if current_user && current_user.no_smoking_user_profile
         flash[:nsmysuccess] = "お問い合わせを受け付けました"
         redirect_to "/users/#{current_user.id}/no_smoking_user_profile"
