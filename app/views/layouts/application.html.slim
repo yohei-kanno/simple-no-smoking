@@ -17,10 +17,10 @@ html
         p class=("alert alert-#{key}") 
           = value
       = yield
+      = render 'shared/button_frex_footer'
       h2.text-center.no_smoking_updown
         = SimpleNoSmoking
-      .text-right
-        | お問い合わせ
+
 
 script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
 script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 

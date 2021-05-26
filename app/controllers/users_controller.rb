@@ -40,8 +40,8 @@ class UsersController < ApplicationController
         redirect_to user_reduction_user_profile_path(current_user.id)
         flash[:remysuccess] = t(".success_update")
        else
-         flash.now[:remyalert] = t(".failed_update")
-         render :edit  
+        flash.now[:remyalert] = t(".failed_update")
+        render :edit  
        end
     end
   end

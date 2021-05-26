@@ -1,0 +1,19 @@
+.contact-container
+  p = "お問い合わせを下記の通り受け付けました。"
+  p = "=========================="
+  .contact-contain
+    .contact-discription = "お名前:"
+    .contact-discription = "#{@contact.name}"
+  br/
+  .contact-contain
+    .contact-discription = "お客様のご連絡先:"
+    .contact-discription = "#{@contact.email}"
+  br/
+  .contact-contain
+    .contact-discription = "登録状況:"
+    .contact-discription = "#{@contact.mode_i18n}"
+  br/
+  .contact-contain
+    .contact-discription = "お問い合わせ内容:"
+    .contact-discription = simple_format(h(@contact.content),{},sanitize:false)
+  p = "=========================="
