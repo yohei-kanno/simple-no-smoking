@@ -1,6 +1,5 @@
 class UserMailer < ApplicationMailer
  
-  default from: "NoSmoking@example.com"
   
   def reset_password_email(user)
     @user = User.find(user.id)
