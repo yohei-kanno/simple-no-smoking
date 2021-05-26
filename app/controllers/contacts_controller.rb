@@ -17,7 +17,7 @@ class ContactsController < ApplicationController
     @user = User.find_by(email: params[:contact][:email])
     if @contact.save 
       ContactMailer.contact_mail(@contact).deliver
-      ContactMailer.contact_mail_to_customer(@contact).deliver
+      # ContactMailer.contact_mail_to_customer(@contact).deliver
       if current_user && current_user.no_smoking_user_profile
         flash[:nsmysuccess] = "お問い合わせを受け付けました"
         redirect_to "/users/#{current_user.id}/no_smoking_user_profile"
