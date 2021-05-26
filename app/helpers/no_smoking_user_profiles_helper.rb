@@ -59,9 +59,6 @@ module NoSmokingUserProfilesHelper
       (Time.parse("1/1") + (gained_life_second - gained_life_day * 86400)).strftime("#{gained_life_day.to_s(:delimited)}日%H時間%M分%S秒")
   end
   
-  
-  
-      
   #得した金額
   def amount_of_money_earned
     (one_minute_price * smoking_in_second).floor.to_s(:delimited)
@@ -126,5 +123,11 @@ module NoSmokingUserProfilesHelper
   def lost_hours_money_80
     (lost_time_80 * current_user.no_smoking_user_profile.hourly_wage).to_s(:delimited)
   end
- 
+  
+  def you_can_buy
+    you_can_buy_one_hundred = ["お茶"]
+    if amount_of_money_earned > 100.to_s
+      you_can_buy_one_hundred.sample
+    end
+  end
 end

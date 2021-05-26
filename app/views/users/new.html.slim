@@ -33,7 +33,6 @@
       = f.label "利用規約",class:"my-check",name: "checkbox"
         = f.check_box "利用規約", as: :boolean, checked:false
         | 利用規約に同意する
-    div
-      = render 'term_of_use'
+      p = render 'term_of_use'
       
     = f.submit '登録する', class: 'no_smoking_button'

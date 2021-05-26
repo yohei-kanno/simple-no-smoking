@@ -1,6 +1,10 @@
 class ContactsController < ApplicationController
   skip_before_action :require_login
    
+  def index
+    redirect_to new_contact_path
+  end
+  
   def new
     if current_user
       if current_user.no_smoking_user_profile

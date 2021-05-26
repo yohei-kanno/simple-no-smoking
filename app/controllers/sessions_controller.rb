@@ -1,15 +1,14 @@
 class SessionsController < ApplicationController
   skip_before_action :require_login
   
-  def new
-
-  end
+  def new; end
   
   def create
     if @user = login(params[:email], params[:password])
       if @user.no_smoking_user_profile && (@user.mode.mode === "no_smoking_mode")
         flash[:nsmysuccess] = t(".success_logined")
         redirect_to(user_no_smoking_user_profile_path(@user.id))
+        
       elsif @user.reduction_user_profile && (@user.mode.mode === "reduction_mode")
         flash[:remysuccess] = t(".success_logined")
         redirect_to(user_reduction_user_profile_path(@user.id))
@@ -32,10 +31,6 @@ class SessionsController < ApplicationController
     end
   end
         
-      
-        
-        
-  
   def destroy
     logout
     flash[:nsmysuccess] = "ログアウトしました"
@@ -48,4 +43,5 @@ class SessionsController < ApplicationController
   def user_session_params
     params.permit(:email, :password)
   end
+  
 end

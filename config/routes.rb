@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   
   resources :password_resets, only: %i[ new create edit update ]
   
-  resources :users, only: %i[ new create edit update destroy] do
+  resources :users, only: %i[ new create edit update destroy index] do
     member do
       get :activate
     end

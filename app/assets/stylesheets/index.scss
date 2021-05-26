@@ -6,14 +6,11 @@ $dark-reduction-color:#583705;
 
 @mixin mode_select_button{
   margin: 20px auto;
-  position: relative;
+  padding: 5px 10px;
   display: inline-block;
-  font-weight: bold;
-  // text-decoration: none;
   color: #FFF;
+  font-size: 15px;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
-  padding: 0.4em 2rem;
-  font-size: 20px;
   border-radius: 8px;
   transition: .4s;
   user-select: none;
@@ -26,10 +23,9 @@ $dark-reduction-color:#583705;
 @mixin base_background{
   text-align: center;
   height: 100%;
-  width: 100vw;
+  width: 100%;
   background-color: $base_color;
   color: white;
-
 }
 
 @mixin slide_button{

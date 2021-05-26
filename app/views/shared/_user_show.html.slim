@@ -17,6 +17,14 @@
       h6.no_smoking_section
         = "#{amount_of_money_earned}円"
         
+  / .conte-no-smoking
+  /   .flame
+  /     = image_tag 'money_megakuramu_woman.png', class:'section-logo'
+  /   .section
+  /     .section-title = "買える品物"
+  /     h6.no_smoking_section
+  /       = link_to you_can_buy, "#"
+        
   .conte-no-smoking
     .flame
       = image_tag 'kinen_ojisan_hanenokeru-1.png', class:'section-logo'
@@ -72,6 +80,7 @@
       .section-title = "今吸ってしまったら失う時給"
       h6.no_smoking_section
         = "#{lost_hours_money_80}円"
+
 
 / ===========減煙ユーザー詳細=============        
 - elsif current_user.reduction_user_profile

@@ -2,6 +2,10 @@ class UsersController < ApplicationController
   skip_before_action :require_login, only: %i[ new create activate]
   before_action :set_user, only: %i[ edit update destroy ]
 
+  def index
+    redirect_to new_user_path
+  end
+  
   def new
     @user = User.new
   end
