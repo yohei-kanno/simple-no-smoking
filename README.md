@@ -8,8 +8,6 @@
  - 喫煙者の中で本数を減らした人を含めると約６割にのぼる
  - 約1,000万人の人が禁煙か減煙がしたいけど出来てない
 ## 誰の課題なのか？(ターゲット)
-</br>
-
 ### 喫煙モード
 
 - 禁煙したいけど出来ない人に対して
@@ -68,3 +66,4 @@
 https://xd.adobe.com/view/11a0be18-e2f6-44e4-9990-e35d0a5c9511-44f3/
 
 ## ER図
+https://app.diagrams.net/#G1A9AG_SIO5saRkGvfFasevE-oQWrR8fka
