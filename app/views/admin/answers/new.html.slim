@@ -1,0 +1,29 @@
+h3.under = "投稿内容詳細"
+br/
+table
+  tbody
+    tr
+      th.ns= "名前"
+      td.ns= @contact.name
+    tr
+      th.ns= "アドレス"
+      td.ns= @contact.email
+    tr
+      th.ns= "モード"
+      td.ns= @contact.mode
+    tr
+      th.ns= "質問内容"
+      td.ns = simple_format(h(@contact.content),{},sanitize:false)
+= button_to admin_contacts_path, {method: :get, class: 'no_smoking_button'} do
+    span 問い合わせ一覧に戻る
+hr/
+h3.under = "回答フォーム"
+= form_with model:Answer.new, url: admin_contact_answers_path, local: true do |f|
+    .text-center
+      .form-group 
+        = f.label :content, "ここに回答を書いて下さい"
+        .row.justify-content-center
+          .col-sm-10
+            = f.text_area :content, class: 'form-control', style: "height: 500px "
+            
+      = f.submit '回答する', class:'no_smoking_button user'

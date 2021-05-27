@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_27_054204) do
+ActiveRecord::Schema.define(version: 2021_05_27_063702) do
+
+  create_table "answers", force: :cascade do |t|
+    t.integer "contact_id"
+    t.text "content", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["contact_id"], name: "index_answers_on_contact_id"
+  end
 
   create_table "contacts", force: :cascade do |t|
     t.string "name", null: false
@@ -82,6 +90,7 @@ ActiveRecord::Schema.define(version: 2021_05_27_054204) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token"
   end
 
+  add_foreign_key "answers", "contacts"
   add_foreign_key "modes", "users"
   add_foreign_key "no_smoking_user_profiles", "users"
   add_foreign_key "reduction_user_profiles", "users"

@@ -2,6 +2,10 @@
 @import "index";
 @import "/user/user";
 
+.under{
+  border-bottom: solid 1px #3FAD88
+}
+
 // フラッシュメッセージ
 .alert-nsmysuccess{
   @include my_flash ;
@@ -231,18 +235,18 @@ table td{
 }
 
 table th.ns{
-  text-align: center;
+  text-align: left;
   color:#fff;
   background: linear-gradient($dark-no-smoking-color,$dark-no-smoking-color);
   border: 1px solid $no-smoking-color;
   width: 3%;
-  padding: 10px 0;
+  padding-left: 10px;
 }
 table td.ns{
-  text-align: center;
+  text-align: left;
   border: 1px solid $no-smoking-color;
   width: 10%;
-  padding: 10px 0;
+  padding-left: 10px;
 }
 
 table td:last-child{
@@ -408,7 +412,7 @@ table td.ns:last-child{
    }
   
    table th{
-    text-align: center;
+    text-align: left;
     color:white;
     background: linear-gradient($reduction-color,$reduction-color);
     border-left: 3px solid $reduction-color;
@@ -422,7 +426,7 @@ table td.ns:last-child{
   
   
   table td{
-    text-align: center;
+    text-align: left;
     border-left: 3px solid $reduction-color;
     border-bottom: 3px solid $reduction-color;
     border-top:none;
@@ -433,20 +437,20 @@ table td.ns:last-child{
   }
   
   table th.ns{
-    text-align: center;
+    text-align: left;
     color:#fff;
     background: linear-gradient($dark-no-smoking-color,$dark-no-smoking-color);
     border: 1px solid $no-smoking-color;
     width: 3%;
-    padding: 10px 0;
+    padding-left: 5px;
     font-size: 11px;
     
   }
   table td.ns{
-    text-align: center;
+    text-align: left;
     border: 1px solid $no-smoking-color;
     width: 10%;
-    padding: 10px 0;
-    font-size: 12px;
+    padding-left: 5px;
+    font-size: 11px;
   }
 }

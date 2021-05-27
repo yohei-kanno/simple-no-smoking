@@ -6,8 +6,6 @@ table
       th.ns= "名前"
       th.ns= "詳細"
       th.ns= "回答"
-
-      
       
   tbody
     - @contacts.each.with_index(1) do |contact,i|
@@ -15,7 +13,11 @@ table
         td.ns= i
         td.ns= contact.name
         td.ns= link_to "質問内容", admin_contact_path(contact.id)
-        td.ns= contact.answered_i18n
+        - if contact.answers[0]
+          td.ns= link_to contact.answered_i18n, admin_contact_answer_path(contact_id:contact.id, id:contact.answers[0].id)
+        - else
+          td.ns= contact.answered_i18n
+        
 
 
 = button_to login_path, {method: :get, class: 'no_smoking_button'} do

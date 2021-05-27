@@ -1,0 +1,23 @@
+h3.under = "投稿内容詳細"
+br/
+table
+  tbody
+    tr
+      th.ns= "名前"
+      td.ns= @contact.name
+    tr
+      th.ns= "アドレス"
+      td.ns= @contact.email
+    tr
+      th.ns= "モード"
+      td.ns= @contact.mode
+    tr
+      th.ns = "質問内容"
+      td.ns = simple_format(h(@contact.content),{},sanitize:false)
+    - @contact.answers.each.with_index(1) do |answer,i|
+      tr
+        th.ns = "回答#{i}"
+        td.ns = simple_format(h(answer.content),{},sanitize:false)
+    
+= button_to admin_contacts_path, {method: :get, class: 'no_smoking_button'} do
+    span 問い合わせ一覧に戻る
