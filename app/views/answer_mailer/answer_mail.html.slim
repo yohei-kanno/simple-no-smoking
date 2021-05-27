@@ -1,8 +1,8 @@
 p = "以下の通り返信しました"
 .contact-container
   p = "#{@contact.name}様"
-  p = "日頃よりご利用頂きありがとうございます"
-  p = "お問い合わせの回答になります"
+  p = "日頃よりご利用頂きありがとうございます。"
+  p = "お問い合わせの回答になります。"
   p = "===================================="
   .contact-contain
     .contact-discription = simple_format(h(@contact.answers.last.content),{},sanitize:false)
@@ -10,11 +10,11 @@ p = "以下の通り返信しました"
   p = "======お客様のお問い合わせ内容======"
   .contact-contain
     .contact-discription = "お名前:"
-    .contact-discription = "#{@contact.name}"
+    .contact-discription = "#{@contact.name}様"
   .contact-contain
     .contact-discription = "お問い合わせ内容:"
     .contact-discription = simple_format(h(@contact.content),{},sanitize:false)
     
   p = "===================================="
-  p = "ご不明点がございましたら再度お申し付け下さい"
-  p = "今後共宜しくお願い致します"
+  p = "ご不明点がございましたら再度お申し付け下さい。"
+  p = "今後共宜しくお願い致します。"

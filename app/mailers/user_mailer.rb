@@ -4,7 +4,7 @@ class UserMailer < ApplicationMailer
     @user = User.find(user.id)
     @url  = edit_password_reset_url(@user.reset_password_token)
     mail(to: user.email,
-         subject: "パスワードリセット申請を受け付けました")
+         subject: "パスワードリセット申請を受け付けました。")
   end
   
   def activation_needed_email(user)
@@ -18,7 +18,7 @@ class UserMailer < ApplicationMailer
     @user = user
     @url  = login_url
     mail(:to => user.email,
-         :subject => "アカウントが有効化されました！")
+         :subject => "アカウントが有効化されました。")
   end
   
 end

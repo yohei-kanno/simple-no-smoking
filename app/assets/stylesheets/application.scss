@@ -165,9 +165,6 @@ border: 2px solid $reduction-color;
   border: 2px solid #F89703;
 }
 
-
-
-  
 .cp_link {
   @include slide_button;
   &:hover {
@@ -182,14 +179,12 @@ border: 2px solid $reduction-color;
   }
 }
 
-
 .cp_link_reduction {
   @include slide_button;
   &:hover {
     background-color: $reduction-color;
   }
 }
-
 
 .button_frex{
   display:  inline-block;
@@ -250,6 +245,7 @@ table th.ns{
   padding-left: 10px;
   font-size: 15px;
 }
+
 table td.ns{
   text-align: left;
   border: 1px solid $no-smoking-color;
@@ -267,6 +263,7 @@ table th.re{
   padding-left: 10px;
   font-size: 15px;
 }
+
 table td.re{
   text-align: left;
   border: 1px solid $reduction-color;
