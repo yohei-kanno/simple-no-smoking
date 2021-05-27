@@ -1,6 +1,7 @@
 .contact-container
+  p = "お問い合わせありがとうございます"
   p = "お問い合わせを下記の通り受け付けました。"
-  p = "=========================="
+  p = "===================================="
   .contact-contain
     .contact-discription = "お名前:"
     .contact-discription = "#{@contact.name}"
@@ -16,4 +17,8 @@
   .contact-contain
     .contact-discription = "お問い合わせ内容:"
     .contact-discription = simple_format(h(@contact.content),{},sanitize:false)
-  p = "=========================="
+  p = "===================================="
+  
+  P = "返信は３日以内を心掛けております。"
+  p = "優しく待って頂けると幸いです。"
+  p = "今後とも宜しくお願い致します。"
