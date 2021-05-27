@@ -20,19 +20,10 @@
       = f.label :birth_date, '誕生日を教えて下さい'
       .row.justify-content-center
         - if current_user.no_smoking_user_profile 
-          = raw sprintf(f.date_select(:birth_date,{use_month_numbers: true,date_separator: "%s"}, class: 'form-control-ns-inline'),'年','月') + '日'
+          = raw sprintf(f.date_select(:birth_date,{use_month_numbers: true,start_year:Time.now.year, end_year:1950,date_separator: "%s"}, class: 'form-control-ns-inline'),'年','月') + '日'
         - elsif current_user.reduction_user_profile
-          = raw sprintf(f.date_select(:birth_date,{use_month_numbers: true,date_separator: "%s"}, class: 'form-control-re-inline'),'年','月') + '日'
+          = raw sprintf(f.date_select(:birth_date,{use_month_numbers: true,start_year:Time.now.year, end_year:1950,date_separator: "%s"}, class: 'form-control-re-inline'),'年','月') + '日'
         
-    
-    .form-group 
-      = f.label :email, 'メールアドレスを教えて下さい'
-      .row.justify-content-center
-        .col-sm-4
-          - if current_user.no_smoking_user_profile 
-            = f.email_field :email, class: 'form-control'
-          - elsif current_user.reduction_user_profile
-            = f.email_field :email, class: 'form-control reduction', size: "20"
     - if current_user.no_smoking_user_profile       
       = f.submit '更新する', class: 'no_smoking_button'
     - elsif current_user.reduction_user_profile

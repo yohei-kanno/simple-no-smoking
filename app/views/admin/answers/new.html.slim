@@ -1,16 +1,16 @@
-h3.under = "投稿内容詳細"
+h3.under-ns = "お問い合わせ内容詳細"
 br/
 table
   tbody
     tr
       th.ns= "名前"
-      td.ns= @contact.name
+      td.ns= "#{@contact.name}様"
     tr
       th.ns= "アドレス"
       td.ns= @contact.email
     tr
       th.ns= "モード"
-      td.ns= @contact.mode
+      td.ns= @contact.mode_i18n
     tr
       th.ns= "質問内容"
       td.ns = simple_format(h(@contact.content),{},sanitize:false)
@@ -24,6 +24,5 @@ h3.under = "回答フォーム"
         = f.label :content, "ここに回答を書いて下さい"
         .row.justify-content-center
           .col-sm-10
-            = f.text_area :content, class: 'form-control', style: "height: 500px "
-            
-      = f.submit '回答する', class:'no_smoking_button user'
+            = f.text_area :content, class: 'form-control', style: "height: 500px "  
+        = f.submit '回答する', class:'no_smoking_button user'

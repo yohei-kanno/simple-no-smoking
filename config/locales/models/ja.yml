@@ -21,15 +21,22 @@ ja:
         smoking_pace: "1日の理想の喫煙数"
         hourly_wage: "時給"
         
-  enums:
-    contact:
-      mode:
-        not_selected: 未選択
-        reduction_mode: 減煙モード
-        no_smoking_mode: 禁煙モード
-   
+      contact: 
+        name: "お名前"
+        email: "メールアドレス"
+        mode: "モード"
+        content: "お問い合わせ内容"
+        
+      answer: 
+        content: "回答"
+        
   enums:
     contact:    
       answered:
         unanswered: "未回答"
         answered: "回答済"
+        
+      mode:
+        not_selected: "未選択"
+        reduction_mode: "減煙モード"
+        no_smoking_mode: "禁煙モード"

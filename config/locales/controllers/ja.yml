@@ -78,3 +78,8 @@ ja:
   stocks:
     index:
       no_record: "まだ記録がありません"
+      
+  contacts:
+    create:
+      contact_create: "お問い合わせを受け付けました"
+      contact_failed_create: "必要事項を入力して下さい"

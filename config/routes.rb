@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
-  resources :contacts
+  resources :contacts do
+    get :confirm, action: :confirm_new, on: :new
+  end
   namespace :admin do
     resources :users
     resources :contacts do

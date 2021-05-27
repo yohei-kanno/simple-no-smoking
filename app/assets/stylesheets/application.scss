@@ -2,8 +2,14 @@
 @import "index";
 @import "/user/user";
 
-.under{
-  border-bottom: solid 1px #3FAD88
+.under-ns{
+  border-bottom: solid 1px $dark-no-smoking-color;
+  margin-top: 25px
+}
+
+.under-re{
+  border-bottom: solid 1px $reduction-color;
+  margin-top: 25px
 }
 
 // フラッシュメッセージ
@@ -199,6 +205,7 @@ table{
   width: 100%;
   border-collapse:separate;
   border-spacing: 0;
+  margin-bottom: 10px;
 }
 
 table th:first-child{
@@ -241,12 +248,31 @@ table th.ns{
   border: 1px solid $no-smoking-color;
   width: 3%;
   padding-left: 10px;
+  font-size: 15px;
 }
 table td.ns{
   text-align: left;
   border: 1px solid $no-smoking-color;
   width: 10%;
   padding-left: 10px;
+  font-size: 15px;
+}
+
+table th.re{
+  text-align: left;
+  color:#fff;
+  background: linear-gradient($reduction-color,$reduction-color);
+  border: 1px solid $reduction-color;
+  width: 3%;
+  padding-left: 10px;
+  font-size: 15px;
+}
+table td.re{
+  text-align: left;
+  border: 1px solid $reduction-color;
+  width: 10%;
+  padding-left: 10px;
+  font-size: 15px;
 }
 
 table td:last-child{
@@ -365,6 +391,16 @@ table td.ns:last-child{
 .small-logo{
  width: 25px; 
  height: 25px; 
+}
+
+.btn-primary{
+  background-color: $dark-no-smoking-color;
+  font-size: 12px;
+  border: solid 1px $dark-no-smoking-color;
+  &:hover{
+    background-color: $no-smoking-color;
+    border: solid 1px $dark-no-smoking-color;
+  }
 }
 
 @media screen and (max-width: 500px) {

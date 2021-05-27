@@ -14,10 +14,8 @@ class ReductionUserProfilesController < ApplicationController
     else
       @reduction_user_profile = current_user.build_reduction_user_profile
     end
-      
-      
   end
-  
+      
   def create
     @reduction_user_profile = current_user.build_reduction_user_profile(reduction_user_profile_params)
     if @reduction_user_profile.save
@@ -69,3 +67,4 @@ class ReductionUserProfilesController < ApplicationController
     end
   end
 end
+      

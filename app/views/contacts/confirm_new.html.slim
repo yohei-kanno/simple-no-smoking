@@ -1,0 +1,50 @@
+- if current_user && current_user.reduction_user_profile
+  h5.under-re = "以下の内容で送信しますか？"
+- else
+  h5.under-ns = "以下の内容で送信しますか？"
+= form_with model:@contact, url: contacts_path, local: true do |f|
+  - if current_user && current_user.reduction_user_profile
+      table
+        tbody 
+          tr 
+            th.re= "お名前"
+            td.re= @contact.name
+            = f.hidden_field :name 
+          tr 
+            th.re= "アドレス"
+            td.re= @contact.email     
+            = f.hidden_field :email
+          tr 
+            th.re= "モード"
+            td.re= @contact.mode_i18n    
+            = f.hidden_field :mode
+          tr 
+            th.re= "内容"
+            td.re= simple_format(h(@contact.content),{},sanitize:false)
+            = f.hidden_field :content 
+            
+      = f.submit '戻る', name: "back", class:'reduction_button mr-3'
+      = f.submit '送信', class:'reduction_button'
+      
+  - else
+      table
+        tbody 
+          tr 
+            th.ns= "お名前"
+            td.ns= @contact.name
+            = f.hidden_field :name 
+          tr 
+            th.ns= "アドレス"
+            td.ns= @contact.email     
+            = f.hidden_field :email
+          tr 
+            th.ns= "モード"
+            td.ns= @contact.mode_i18n    
+            = f.hidden_field :mode
+          tr 
+            th.ns= "内容"
+            td.ns= simple_format(h(@contact.content),{},sanitize:false)
+            = f.hidden_field :content 
+            
+      = f.submit '戻る', name: "back", class:'no_smoking_button mr-3'
+      = f.submit '送信', class:'no_smoking_button'

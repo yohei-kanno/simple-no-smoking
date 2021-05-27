@@ -17,6 +17,9 @@
               = button_to admin_users_path, method: :get, class: 'cp_link_reduction' do
                 span 管理者専用
               
+              = button_to admin_contacts_path, method: :get, class: 'cp_link_reduction' do
+                span お問い合わせ一覧
+              
             - unless current_page?(user_reduction_user_profile_path(current_user.id))
               = button_to user_reduction_user_profile_path(current_user.id), method: :get, class: 'cp_link_reduction' do
                 span プロフィールに戻る

@@ -1,23 +1,20 @@
-h3.under = "投稿内容詳細"
+h3.under-ns = "お問い合わせ内容詳細"
 br/
 table
   tbody
     tr
       th.ns= "名前"
-      td.ns= @contact.name
+      td.ns= "#{@contact.name}様"
     tr
       th.ns= "アドレス"
       td.ns= @contact.email
     tr
       th.ns= "モード"
-      td.ns= @contact.mode
+      td.ns= @contact.mode_i18n
     tr
       th.ns = "質問内容"
       td.ns = simple_format(h(@contact.content),{},sanitize:false)
       
-= button_to admin_contacts_path, {method: :get, class: 'no_smoking_button'} do
-    span 問い合わせ一覧に戻る
-
 - if @contact.answered === "unanswered"     
   = button_to new_admin_contact_answer_path(@contact.id), {method: :get, class: 'btn btn-primary'} do
     span 返信フォームへ
@@ -25,3 +22,6 @@ table
 - else @contact.answered === "unanswered"     
   = button_to new_admin_contact_answer_path(@contact.id), {method: :get, class: 'btn btn-primary'} do
     span 追加返信する
+      
+= button_to admin_contacts_path, {method: :get, class: 'no_smoking_button'} do
+    span 問い合わせ一覧に戻る

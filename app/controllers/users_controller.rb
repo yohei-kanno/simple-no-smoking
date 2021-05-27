@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   
   def update
     if current_user.no_smoking_user_profile
-      if current_user.update(user_params)
+      if current_user.update(user_edit_params)
         redirect_to user_no_smoking_user_profile_path(current_user.id)
         flash[:nsmysuccess] = t(".success_update")
       else
@@ -72,6 +72,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :birth_date, "利用規約")
+  end
+  
+  def user_edit_params
+    params.require(:user).permit(:name,:birth_date)
   end
   
   def set_user

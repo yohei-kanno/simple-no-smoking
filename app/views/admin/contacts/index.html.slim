@@ -11,14 +11,13 @@ table
     - @contacts.each.with_index(1) do |contact,i|
       tbody
         td.ns= i
-        td.ns= contact.name
+        td.ns= "#{contact.name}様"
         td.ns= link_to "質問内容", admin_contact_path(contact.id)
         - if contact.answers[0]
           td.ns= link_to contact.answered_i18n, admin_contact_answer_path(contact_id:contact.id, id:contact.answers[0].id)
         - else
           td.ns= contact.answered_i18n
         
-
-
 = button_to login_path, {method: :get, class: 'no_smoking_button'} do
    span ログイン画面に戻る 
+

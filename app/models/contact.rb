@@ -1,6 +1,6 @@
 class Contact < ApplicationRecord
   
-  has_many :answers
+  has_many :answers, dependent: :destroy
   
   validates :name, presence: true 
   validates :email, presence: true
