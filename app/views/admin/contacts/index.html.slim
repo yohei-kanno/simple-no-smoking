@@ -1,0 +1,22 @@
+h4 お問い合わせ一覧
+table
+  thead
+    tr
+      th.ns= "順番"
+      th.ns= "名前"
+      th.ns= "詳細"
+      th.ns= "回答"
+
+      
+      
+  tbody
+    - @contacts.each.with_index(1) do |contact,i|
+      tbody
+        td.ns= i
+        td.ns= contact.name
+        td.ns= link_to "質問内容", admin_contact_path(contact.id)
+        td.ns= contact.answered_i18n
+
+
+= button_to login_path, {method: :get, class: 'no_smoking_button'} do
+   span ログイン画面に戻る 

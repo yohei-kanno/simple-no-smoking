@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   
+
   resources :contacts
   namespace :admin do
     resources :users
+    resources :contacts
   end
   
   get "/login", to: "sessions#new"

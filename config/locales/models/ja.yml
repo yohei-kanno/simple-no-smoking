@@ -27,3 +27,9 @@ ja:
         not_selected: 未選択
         reduction_mode: 減煙モード
         no_smoking_mode: 禁煙モード
+   
+  enums:
+    contact:    
+      answered:
+        unanswered: "未回答"
+        answered: "回答済"

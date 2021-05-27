@@ -1,0 +1,22 @@
+h3 = "投稿内容詳細"
+br/
+table
+  tbody
+    tr
+      th.ns= "名前"
+      td.ns= @contact.name
+    tr
+      th.ns= "アドレス"
+      td.ns= @contact.email
+    tr
+      th.ns= "モード"
+      td.ns= @contact.mode
+    tr
+      th.ns= "質問内容"
+      td.ns= @contact.content
+= button_to admin_contacts_path, {method: :get, class: 'no_smoking_button'} do
+    span 問い合わせ一覧に戻る
+
+- if @contact.answered === "unanswered"     
+  = button_to admin_contacts_path, {method: :get, class: 'btn btn-primary'} do
+    span 返信する
