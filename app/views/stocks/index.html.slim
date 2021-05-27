@@ -5,54 +5,53 @@ h6 = "毎日０時にデータが更新されます"
   table
     | 今までの積み上げ
     thead
-      th
+      th.re
         = image_tag  "tabako_woman.png", class: "small-logo"  
         = "本数"
-      th
+      th.re
         = image_tag  "money_fly_yen.png", class: "small-logo" 
         = "金額"
-      th
+      th.re
         = image_tag  "kaichu_dokei.png", class: "small-logo" 
         = "時間"
-      th 
+      th.re 
         = image_tag  "shinigami.png", class: "small-logo" 
         = "寿命"
     
     tbody 
-      td = "#{sum_value.to_s(:delimited)}本"
-      td = "#{(sum_value * one_smoke_price).floor.to_s(:delimited)}円"
-      td = "#{(sum_value * 5).floor.to_s(:delimited)}分"
-      td = "#{(sum_value * 5.5).floor.to_s(:delimited)}分"
+      td.re = "#{sum_value.to_s(:delimited)}本"
+      td.re = "#{(sum_value * one_smoke_price).floor.to_s(:delimited)}円"
+      td.re = "#{(sum_value * 5).floor.to_s(:delimited)}分"
+      td.re = "#{(sum_value * 5.5).floor.to_s(:delimited)}分"
       
   hr/
   table
     | 日々の積み上げ
     thead
-      th 
+      th.re 
         = image_tag  "calender_takujou.png", class: "small-logo"  
         = "日付" 
-      th
+      th.re
         = image_tag  "tabako_woman.png", class: "small-logo"
         = "本数"
-      th
+      th.re
         = image_tag  "money_fly_yen.png", class: "small-logo"
         = "金額"
-      th
+      th.re
         = image_tag  "kaichu_dokei.png", class: "small-logo" 
         = "時間"
-      th
+      th.re
         = image_tag  "shinigami.png", class: "small-logo"
         = "寿命"
   
     - @stocks.each do |stock|
       tbody 
-        td = "#{stock.created_at.strftime("%m月%d日")}" 
-        td = "#{stock.counter.to_s(:delimited)}本"
-        td = "#{(one_smoke_price * stock.counter).floor.to_s(:delimited)}円"
-        td = "#{(stock.counter * 5).floor.to_s(:delimited)}分"
-        td = "#{(stock.counter * 5.5).floor.to_s(:delimited)}分"
+        td.re.re = "#{stock.created_at.strftime("%m月%d日")}" 
+        td.re = "#{stock.counter.to_s(:delimited)}本"
+        td.re = "#{(one_smoke_price * stock.counter).floor.to_s(:delimited)}円"
+        td.re = "#{(stock.counter * 5).floor.to_s(:delimited)}分"
+        td.re = "#{(stock.counter * 5.5).floor.to_s(:delimited)}分"
         
   = paginate @stocks
   
 = render 'shared/button_frex_footer'
-

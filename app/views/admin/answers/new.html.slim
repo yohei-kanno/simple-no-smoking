@@ -14,7 +14,7 @@ table
     tr
       th.ns= "質問内容"
       td.ns = simple_format(h(@contact.content),{},sanitize:false)
-= button_to admin_contacts_path, {method: :get, class: 'no_smoking_button'} do
+= button_to admin_contacts_path, {method: :get, class: 'no-smoking-button'} do
     span 問い合わせ一覧に戻る
 hr/
 h3.under = "回答フォーム"
@@ -25,4 +25,4 @@ h3.under = "回答フォーム"
         .row.justify-content-center
           .col-sm-10
             = f.text_area :content, class: 'form-control', style: "height: 500px "  
-        = f.submit '回答する', class:'no_smoking_button user'
+        = f.submit '回答する', class:'no-smoking-button'

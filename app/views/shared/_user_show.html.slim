@@ -6,7 +6,7 @@
       = image_tag 'mezamashidokei.png', class:'section-logo'
     .section
       .section-title = "禁煙を開始してから"
-      h6.no_smoking_section
+      h6.show-section
         = "#{no_smoking_time}経過"
           
   .conte-no-smoking
@@ -14,7 +14,7 @@
       = image_tag 'money_megakuramu_woman.png', class:'section-logo'
     .section
       .section-title = "得した金額"
-      h6.no_smoking_section
+      h6.show-section
         = "#{amount_of_money_earned}円"
         
   / .conte-no-smoking
@@ -22,7 +22,7 @@
   /     = image_tag 'money_megakuramu_woman.png', class:'section-logo'
   /   .section
   /     .section-title = "買える品物"
-  /     h6.no_smoking_section
+  /     h6.show-section
   /       = link_to you_can_buy, "#"
         
   .conte-no-smoking
@@ -30,7 +30,7 @@
       = image_tag 'kinen_ojisan_hanenokeru-1.png', class:'section-logo'
     .section
       .section-title = "我慢した本数"
-      h6.no_smoking_section
+      h6.show-section
         = "#{patience_number.to_s(:delimited)}本"
         
   .conte-no-smoking
@@ -38,7 +38,7 @@
       = image_tag 'kaichu_dokei.png', class:'section-logo'
     .section
       .section-title = "得した時間"
-      h6.no_smoking_section
+      h6.show-section
         = "#{gained_time}分"
         
   .conte-no-smoking
@@ -46,7 +46,7 @@
       = image_tag 'keirou_katamomi_ojiichan2.png', class:'section-logo'
     .section
       .section-title = "伸びた寿命"
-      h6.no_smoking_section
+      h6.show-section
         = "#{gained_life}"
         
   .conte-no-smoking
@@ -54,7 +54,7 @@
       = image_tag 'jikan_tobu.png', class:'section-logo'
     .section
       .section-title = "今から８０歳まで吸って失う時間"
-      h6.no_smoking_section
+      h6.show-section
         = "#{lost_time_80_final}"
         
   .conte-no-smoking
@@ -62,7 +62,7 @@
       = image_tag 'shinigami.png', class:'section-logo'
     .section
       .section-title = "今から８０歳まで吸って失う寿命"
-      h6.no_smoking_section
+      h6.show-section
         = "#{lost_life_80_final}"
         
   .conte-no-smoking
@@ -70,7 +70,7 @@
       = image_tag 'money_dobu_suteru_woman.png', class:'section-logo'
     .section
       .section-title = "今から８０歳まで吸って失う金額"
-      h6.no_smoking_section
+      h6.show-section
         = "#{lost_money_80}円"
         
   .conte-no-smoking
@@ -78,7 +78,7 @@
       = image_tag 'karou_businesswoman.png', class:'section-logo'
     .section
       .section-title = "今吸ってしまったら失う時給"
-      h6.no_smoking_section
+      h6.show-section
         = "#{lost_hours_money_80}円"
 
 
@@ -93,7 +93,7 @@
       = image_tag 'mezamashidokei.png', class:'section-logo'
     .section
       .section-title = "減煙を開始してから"
-      h6.reduction_section
+      h6.show-section
         = "#{reduction_time}経過"
         
   .conte-reduction
@@ -101,7 +101,7 @@
       = image_tag 'tabako_woman.png', class:'section-logo'
     .section
       .section-title = "今日吸った本数"
-      h6.reduction_section
+      h6.show-section
         = "#{current_user.reduction_user_profile.smoking_count.to_s(:delimited)}本"
           
   .conte-reduction
@@ -112,7 +112,7 @@
       = image_tag 'money_fly_yen.png', class:'section-logo'
     .section
       .section-title = "今日タバコに使った金額"
-      h6.reduction_section
+      h6.show-section
         = "#{used_money}円" 
         
   .conte-reduction
@@ -120,7 +120,7 @@
       = image_tag 'jikan_tobu.png', class:'section-logo'
     .section
       .section-title = "今日タバコに使った時間"
-      h6.reduction_section
+      h6.show-section
         = "#{used_time_final}"
           
   .conte-reduction
@@ -128,7 +128,7 @@
       = image_tag 'shinigami.png', class:'section-logo'
     .section
       .section-title = "今日失った寿命"
-      h6.reduction_section
+      h6.show-section
         = "#{lost_life_final}"
         
   .conte-reduction
@@ -136,5 +136,5 @@
       = image_tag 'christmas_zangyou_man.png', class:'section-logo'
     .section
       .section-title = "失った時給"
-      h6.reduction_section
+      h6.show-section
         = "#{lost_wage}円"

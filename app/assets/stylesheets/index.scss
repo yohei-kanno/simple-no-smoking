@@ -4,7 +4,7 @@ $dark-no-smoking-color: #3FAD88;
 $reduction-color: #f59607;
 $dark-reduction-color:#583705;
 
-@mixin mode_select_button{
+@mixin mode-select-button{
   margin: 20px auto;
   padding: 5px 10px;
   display: inline-block;
@@ -20,7 +20,7 @@ $dark-reduction-color:#583705;
   }
 }
 
-@mixin base_background{
+@mixin base-background{
   text-align: center;
   height: 100%;
   width: 100%;
@@ -28,7 +28,7 @@ $dark-reduction-color:#583705;
   color: white;
 }
 
-@mixin slide_button{
+@mixin slide-button{
   padding: 0.1em 0.3em;
 	background-color: $base_color;
 	background-position: 0 0;
@@ -40,7 +40,7 @@ $dark-reduction-color:#583705;
   margin-bottom: 5px;
 }
 
-@mixin my_flash{
+@mixin my-flash{
   width: 100%;
   padding: 0;
   margin: auto;
@@ -54,4 +54,48 @@ $dark-reduction-color:#583705;
       list-style: none;
     }
   }
+}
+
+@mixin my-form-control{
+  padding: 2px 10px;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+@mixin my-th{
+  text-align: left;
+  color:#fff;
+  width: 3%;
+  padding-left: 10px;
+  font-size: 15px;
+}
+
+@mixin my-td{
+  text-align: left;
+  width: 10%;
+  padding-left: 10px;
+  font-size: 15px;
+}
+
+@mixin my-conte{
+  width: 500px;
+  display: flex;
+  margin: auto;
+  margin-top: 15px;
+}
+
+// レスポンシブ対応
+@mixin media-my-th{
+  text-align: left;
+  color:#fff;
+  width: 3%;
+  padding-left: 5px;
+  font-size: 10px;
+}
+
+@mixin media-my-td{
+  text-align: left;
+  width: 10%;
+  padding-left: 5px;
+  font-size: 10px;
 }

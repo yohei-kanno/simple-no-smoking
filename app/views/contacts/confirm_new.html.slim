@@ -23,8 +23,8 @@
             td.re= simple_format(h(@contact.content),{},sanitize:false)
             = f.hidden_field :content 
             
-      = f.submit '戻る', name: "back", class:'reduction_button mr-3'
-      = f.submit '送信', class:'reduction_button'
+      = f.submit '戻る', name: "back", class:'reduction-button mr-3'
+      = f.submit '送信', class:'reduction-button'
       
   - else
       table
@@ -46,5 +46,5 @@
             td.ns= simple_format(h(@contact.content),{},sanitize:false)
             = f.hidden_field :content 
             
-      = f.submit '戻る', name: "back", class:'no_smoking_button mr-3'
-      = f.submit '送信', class:'no_smoking_button'
+      = f.submit '戻る', name: "back", class:'no-smoking-button mr-3'
+      = f.submit '送信', class:'no-smoking-button'

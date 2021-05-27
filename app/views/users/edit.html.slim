@@ -25,6 +25,6 @@
           = raw sprintf(f.date_select(:birth_date,{use_month_numbers: true,start_year:Time.now.year, end_year:1950,date_separator: "%s"}, class: 'form-control-re-inline'),'年','月') + '日'
         
     - if current_user.no_smoking_user_profile       
-      = f.submit '更新する', class: 'no_smoking_button'
+      = f.submit '更新する', class: 'no-smoking-button'
     - elsif current_user.reduction_user_profile
-      = f.submit '更新する', class: 'reduction_button' 
+      = f.submit '更新する', class: 'reduction-button' 

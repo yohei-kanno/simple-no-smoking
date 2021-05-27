@@ -10,14 +10,14 @@ html
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
   body
-    .container.no_smoking
-      h2.text-center.no_smoking_updown
+    .container.no-smoking
+      h2.text-center.no-smoking-updown
         = SimpleNoSmoking
       - flash.each do |key, value|
         p class=("alert alert-#{key}") 
           = value
       = yield
-      h2.text-center.no_smoking_updown
+      h2.text-center.no-smoking-updown
         = SimpleNoSmoking
       = render 'shared/button_frex_footer'
 

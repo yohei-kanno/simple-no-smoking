@@ -1,6 +1,5 @@
 @import "bootstrap";
 @import "index";
-@import "/user/user";
 
 .under-ns{
   border-bottom: solid 1px $dark-no-smoking-color;
@@ -14,7 +13,7 @@
 
 // フラッシュメッセージ
 .alert-nsmysuccess{
-  @include my_flash ;
+  @include my-flash ;
   border: 3px solid $dark-no-smoking-color;
   background-color:$no-smoking-color;
   color: #fff;
@@ -22,14 +21,14 @@
 
 
 .alert-nsmyalert{
-  @include my_flash ;
+  @include my-flash ;
   border: 3px solid $dark-no-smoking-color;
   background-color:$no-smoking-color;
   color: rgb(233, 103, 103);
 }
 
 .alert-nsmyalert-mini{
-  @include my_flash ;
+  @include my-flash ;
   border: 3px solid $dark-no-smoking-color;
   background-color:$no-smoking-color;
   color: rgb(233, 103, 103);
@@ -38,7 +37,7 @@
 }
   
 .alert-remyalert-mini{
-  @include my_flash ;
+  @include my-flash ;
   border: 3px solid $dark-reduction-color;
   background-color:$reduction-color;
   color: red;
@@ -47,7 +46,7 @@
 }
 
 .alert-remysuccess{
-  @include my_flash ;
+  @include my-flash ;
   border: 3px solid $dark-reduction-color;
   background-color:$reduction-color;
   color: #fff;
@@ -55,7 +54,7 @@
 
 
 .alert-remyalert{
-  @include my_flash ;
+  @include my-flash ;
   border: 3px solid $dark-reduction-color;
   background-color:$reduction-color;
   color: red;
@@ -63,13 +62,13 @@
   
 
 // バックグランド設定
-.container.no_smoking{
-  @include base_background;
+.container.no-smoking{
+  @include base-background;
   border: 3px solid  $no-smoking-color;
 }
 
 .container.reduction{
-  @include base_background;
+  @include base-background;
   border: 3px solid  $reduction-color;
 }
 
@@ -82,27 +81,23 @@ border: 2px solid $reduction-color;
 }
 
 .form-control-ns-inline{
-    border: 2px solid $no-smoking-color;
-    padding: 2px 10px;
-    border-radius: 5px;
-    margin: 2px;
+  @include my-form-control;  
+  border: 2px solid $no-smoking-color;
 }
 .form-control-re-inline{
-    border: 2px solid $reduction-color;
-    padding: 2px 10px;
-    border-radius: 5px;
-    margin: 2px;
+  @include my-form-control;  
+  border: 2px solid $reduction-color;
 }
 
-.use_term{
+.use-term{
   border-radius: 4px;
 }
 
-.no_smoking_updown{
+.no-smoking-updown{
   text-shadow:0 3px 5px $no-smoking-color
 }
 
-.reduction_updown{
+.reduction-updown{
   text-shadow:0 3px 5px $reduction-color
 }
 
@@ -131,12 +126,12 @@ border: 2px solid $reduction-color;
   border-bottom: solid 2px white;
 }
 
-.mode_select_contain{
+.mode-select-contain{
   margin-top: 30px;
   width: 250px;
   margin: auto;
   
-  .mode_description{
+  .mode-description{
     margin-top: 10px;
     margin-bottom: 50px;
     li {
@@ -147,51 +142,45 @@ border: 2px solid $reduction-color;
   }
 }
     
-.no_smoking_button{
-  @include mode_select_button;
+.no-smoking-button{
+  @include mode-select-button;
   background: #3FAD88;
   border: 2px solid green;
 }
 
-.contact_button{
-  @include mode_select_button;
-  background: rgb(199, 86, 199);
-  border: 2px solid rgb(207, 22, 207);
-}
-
-.reduction_button{
-  @include mode_select_button;
+.reduction-button{
+  @include mode-select-button;
   background: #E2992A;
   border: 2px solid #F89703;
 }
 
-.cp_link {
-  @include slide_button;
+.cp-link {
+  @include slide-button;
   &:hover {
     background-color: $dark-no-smoking-color;
   }
 }
 
-.cp_link_new {
+.cp-link-new {
   color: #3FAD88;
   &:hover{
     color: $no-smoking-color
   }
 }
 
-.cp_link_reduction {
-  @include slide_button;
+.cp-link-reduction {
+  @include slide-button;
   &:hover {
     background-color: $reduction-color;
   }
 }
 
-.button_frex{
+.button-frex{
   display:  inline-block;
   font-size: 20px;
 }
 
-.button_frex_end{
+.button-frex-end{
   display: inline-flex;
 }
 
@@ -225,6 +214,28 @@ table th{
   font-size: 25px;
 }
 
+table th.ns{
+  @include my-th;
+  background: linear-gradient($dark-no-smoking-color,$dark-no-smoking-color);
+  border: 1px solid $no-smoking-color;
+}
+
+table th.re{
+  @include my-th;
+  background: linear-gradient($reduction-color,$reduction-color);
+  border: 1px solid $reduction-color;
+}
+
+table td.ns{
+  @include my-td;
+  border: 1px solid $no-smoking-color;
+}
+
+table td.re{
+  @include my-td;
+  border: 1px solid $reduction-color;
+}
+
 
 table td{
   text-align: center;
@@ -234,42 +245,6 @@ table td{
   box-shadow: 0px -3px 5px 1px $dark-reduction-color inset;
   width: 10%;
   padding: 10px 0;
-}
-
-table th.ns{
-  text-align: left;
-  color:#fff;
-  background: linear-gradient($dark-no-smoking-color,$dark-no-smoking-color);
-  border: 1px solid $no-smoking-color;
-  width: 3%;
-  padding-left: 10px;
-  font-size: 15px;
-}
-
-table td.ns{
-  text-align: left;
-  border: 1px solid $no-smoking-color;
-  width: 10%;
-  padding-left: 10px;
-  font-size: 15px;
-}
-
-table th.re{
-  text-align: left;
-  color:#fff;
-  background: linear-gradient($reduction-color,$reduction-color);
-  border: 1px solid $reduction-color;
-  width: 3%;
-  padding-left: 10px;
-  font-size: 15px;
-}
-
-table td.re{
-  text-align: left;
-  border: 1px solid $reduction-color;
-  width: 10%;
-  padding-left: 10px;
-  font-size: 15px;
 }
 
 table td:last-child{
@@ -285,7 +260,7 @@ table td.ns:last-child{
 .pagination>li>a {     
   margin-top: 10px;   
   background-color: $reduction-color;     /*枠線をなくす*/
-  color: #fff;   /*文字の色を変える*/
+  color: #fff; 
   border: 1px solid $dark-reduction-color;
   font-size: 10px;
 }
@@ -304,11 +279,6 @@ table td.ns:last-child{
   padding: 0;
 }
 
-.modal-title-contact{
-  color: rgb(199, 86, 199);
-  padding: 0;
-}
-
 .modal-title-no-smoking{
   color: $no-smoking-color;
   padding: 0;
@@ -317,9 +287,6 @@ table td.ns:last-child{
   background-color: $base_color;
 }
 
-.modal-contact{
-  border: 3px solid rgb(199, 86, 199);
-}
 .modal-reduction{
   border: 3px solid $reduction-color;
 }
@@ -347,7 +314,7 @@ table td.ns:last-child{
 }
 
 
-// ---------------------------------------------
+// プロフィール設定
 .section-logo{
   margin-right: 10px;
   width:  75px;
@@ -355,32 +322,22 @@ table td.ns:last-child{
 }
 
 .conte-no-smoking{
-  width: 500px;
-  display: flex;
-  margin: auto;
+  @include my-conte;
   border-bottom:solid 2px $no-smoking-color;
-  margin-top: 15px;
 }
 
 .conte-reduction{
-  width: 500px;
-  display: flex;
-  margin: auto;
+  @include my-conte;
   border-bottom:solid 2px $reduction-color;
-  margin-top: 15px;
 }
 
-.no_smoking_section{
-  font-size: 30px;
-  text-align: left;
-}
 
 .section-title{
   font-size: 25px;
   text-align: left;
 }
 
-.reduction_section{
+.show-section{
   font-size: 30px;
   text-align: left;
 }
@@ -405,16 +362,16 @@ table td.ns:last-child{
     width: 280px;
     display: flex;
     margin: auto;
-    border-bottom:solid 2px $reduction-color;
     margin-top: 15px;
+    border-bottom:solid 2px $reduction-color;
   }
   
   .conte-no-smoking{
     width: 280px;
     display: flex;
     margin: auto;
-    border-bottom:solid 2px $no-smoking-color;
     margin-top: 15px;
+    border-bottom:solid 2px $no-smoking-color;
   }
   
 	.section-logo{
@@ -422,18 +379,13 @@ table td.ns:last-child{
     width: 40px;
     height: 40px;
   }
-  .no_smoking_section{
-    font-size: 17px;
-    text-align: left;
-  }
-
   
   .section-title{
     font-size: 12px;
     text-align: left;
   }
   
-  .reduction_section{
+  .show-section{
     font-size: 17px;
     text-align: left;
   }
@@ -443,47 +395,27 @@ table td.ns:last-child{
     width: 15px; 
     height: 15px; 
    }
-  
-   table th{
-    text-align: left;
-    color:white;
-    background: linear-gradient($reduction-color,$reduction-color);
-    border-left: 3px solid $reduction-color;
-    border-top: 3px solid $reduction-color;
-    border-bottom: 3px solid $reduction-color;
-    box-shadow: 0px 1px 1px $dark-reduction-color inset;
-    width: 10%;
-    padding: 10px 0;
-    font-size: 15px;
-  }
-  
-  
-  table td{
-    text-align: left;
-    border-left: 3px solid $reduction-color;
-    border-bottom: 3px solid $reduction-color;
-    border-top:none;
-    box-shadow: 0px -3px 5px 1px $dark-reduction-color inset;
-    width: 10%;
-    padding: 10px 0;
-    font-size: 10px;
-  }
-  
+ 
   table th.ns{
-    text-align: left;
-    color:#fff;
+    @include media-my-th;
     background: linear-gradient($dark-no-smoking-color,$dark-no-smoking-color);
     border: 1px solid $no-smoking-color;
-    width: 3%;
-    padding-left: 5px;
-    font-size: 11px;
     
   }
+  
+  table th.re{
+    @include media-my-th;
+    background: linear-gradient($reduction-color,$reduction-color);
+    border: 1px solid $reduction-color;
+  }
+    
   table td.ns{
-    text-align: left;
+    @include media-my-td;
     border: 1px solid $no-smoking-color;
-    width: 10%;
-    padding-left: 5px;
-    font-size: 11px;
+  }
+  
+  table td.re{
+    @include media-my-td;
+    border: 1px solid $reduction-color;
   }
 }

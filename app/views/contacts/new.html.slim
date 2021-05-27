@@ -33,7 +33,7 @@
           .col-sm-4
             = f.text_area :content, class: 'form-control reduction', value: "以下に内容を記入して下さい" 
             
-      = f.submit '確認画面へ', class:'reduction_button user'
+      = f.submit '確認画面へ', class:'reduction-button'
       
   - elsif current_user && current_user.no_smoking_user_profile
     .text-center
@@ -61,7 +61,7 @@
           .col-sm-4
             = f.text_area :content, class: 'form-control',value: "以下に内容を記入して下さい"
             
-      = f.submit '確認画面へ', class:'no_smoking_button user'
+      = f.submit '確認画面へ', class:'no-smoking-button user'
       
   - else
     .text-center
@@ -89,4 +89,4 @@
           .col-sm-4
             = f.text_area :content, class: 'form-control',placeholder: "お問い合わせ内容" 
             
-      = f.submit '確認画面へ', class:'no_smoking_button user'
+      = f.submit '確認画面へ', class:'no-smoking-button user'

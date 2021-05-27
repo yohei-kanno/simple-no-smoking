@@ -1,9 +1,9 @@
-  .button_frex_end
-    = button_to '1本吸った',user_smoke_counts_path(current_user.reduction_user_profile.id),{method: :patch, class: 'cp_link_reduction', name: "reduction"}
+  .button-frex-end
+    = button_to '1本吸った',user_smoke_counts_path(current_user.reduction_user_profile.id),{method: :patch, class: 'cp-link-reduction', name: "reduction"}
     - if current_user.reduction_user_profile.smoking_count > 0
-     = button_to '1本減らす',user_smoke_counts_path(current_user.reduction_user_profile.id),{method: :patch, class: 'cp_link_reduction', name: "reduction"}
+     = button_to '1本減らす',user_smoke_counts_path(current_user.reduction_user_profile.id),{method: :patch, class: 'cp-link-reduction', name: "reduction"}
     
-    = button_to '記録を見る！',user_reduction_user_profile_stocks_path(current_user.reduction_user_profile.id),{method: :get, class: 'cp_link_reduction'}
+    = button_to '記録を見る！',user_reduction_user_profile_stocks_path(current_user.reduction_user_profile.id),{method: :get, class: 'cp-link-reduction'}
     br/
     br/
     br/

@@ -1,9 +1,9 @@
 div
   | モードを選択して下さい
-.mode_select_contain
-  = button_to '禁煙モードで始める',no_smoking_user_modes_path,{method: :post, class:'no_smoking_button'} 
+.mode-select-contain
+  = button_to '禁煙モードで始める',no_smoking_user_modes_path,{method: :post, class:'no-smoking-button'} 
 
-  .mode_description
+  .mode-description
     ul
       li 我慢している本数が分かります
       li タバコで損していた金額が分かります
@@ -11,10 +11,10 @@ div
       li 我慢したタバコの長さが分かります
       li 失った時給が分かります
     
-.mode_select_contain
-  = button_to '減煙モードで始める',reduction_user_modes_path,{method: :post, class:'reduction_button'}
+.mode-select-contain
+  = button_to '減煙モードで始める',reduction_user_modes_path,{method: :post, class:'reduction-button'}
 
-  .mode_description
+  .mode-description
     ul
       li 自分の喫煙状況が分かります
       li 1日何本タバコを吸いたいのか設定出来ます
