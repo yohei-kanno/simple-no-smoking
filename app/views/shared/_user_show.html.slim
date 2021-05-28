@@ -8,7 +8,6 @@
       .section-title = "禁煙を開始してから"
       h6.show-section
         = "#{no_smoking_time}経過"
-          
   .conte-no-smoking
     .flame
       = image_tag 'money_megakuramu_woman.png', class:'section-logo'
@@ -84,10 +83,8 @@
 
 / ===========減煙ユーザー詳細=============        
 - elsif current_user.reduction_user_profile
-  h5.text-center 吸ったら記録しましょう！
-
+  h5.text-center 吸ったら記録しましょう！ 
   = render 're_shared/button_frex_head'
-
   .conte-reduction
     .flame
       = image_tag 'mezamashidokei.png', class:'section-logo'

@@ -1,6 +1,6 @@
 module ReductionUserProfilesHelper
   
-  #減煙期間
+  #減煙期間(秒)
   def smoking_in_second
     DateTime.now.to_i - current_user.reduction_user_profile.start_date.to_i
   end
@@ -52,5 +52,5 @@ end
   def lost_wage
     ((used_time_second / 3600.0) * current_user.reduction_user_profile.hourly_wage).floor.to_s(:delimited)
   end
-  
+    
 end
