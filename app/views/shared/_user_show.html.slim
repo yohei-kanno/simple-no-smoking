@@ -90,7 +90,7 @@
       = image_tag 'tabako_woman.png', class:'section-logo'
     .section
       .section-title = "今日吸った本数"
-      h6.show-section
+      h6.show-section#smoking
         = "#{current_user.reduction_user_profile.smoking_count.to_s(:delimited)}本"
           
   .conte-reduction
@@ -101,7 +101,7 @@
       = image_tag 'money_fly_yen.png', class:'section-logo'
     .section
       .section-title = "今日タバコに使った金額"
-      h6.show-section
+      h6.show-section#used-money
         = "#{used_money}円" 
         
   .conte-reduction
@@ -109,7 +109,7 @@
       = image_tag 'jikan_tobu.png', class:'section-logo'
     .section
       .section-title = "今日タバコに使った時間"
-      h6.show-section
+      h6.show-section#used-time-final
         = "#{used_time_final}"
           
   .conte-reduction
@@ -117,7 +117,7 @@
       = image_tag 'shinigami.png', class:'section-logo'
     .section
       .section-title = "今日失った寿命"
-      h6.show-section
+      h6.show-section#lost-life-final
         = "#{lost_life_final}"
         
   .conte-reduction
@@ -125,5 +125,5 @@
       = image_tag 'christmas_zangyou_man.png', class:'section-logo'
     .section
       .section-title = "失った時給"
-      h6.show-section
+      h6.show-section#lost-wage
         = "#{lost_wage}円"

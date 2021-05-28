@@ -1,24 +1,26 @@
+br/
 -if current_user.reduction_user_profile
   .text-center
       .form-group
-        = f.label :start_date, 'いつになったら減煙を始めますか？'
+        = f.label :start_date, 'いつ減煙を始めますか？'
         .row.justify-content-center
           = raw sprintf(f.datetime_select(:start_date, {use_month_numbers: true, start_year:Time.now.year, end_year:1900,date_separator: '%s' ,datetime_separator: '%s',time_separator: '%s'}, class: 'form-control-re-inline'),'年','月','日','時') + '分'
             
       .form-group
-        = f.label :tabaco_price, '吸っているタバコの金額を教えて下さい'
+        = f.label :tabaco_price, '吸っているタバコの金額'
         .row.justify-content-center
           .col-sm-4
             = f.number_field :tabaco_price, class: 'form-control reduction',placeholder: "半角数字"
         
       .form-group
-        = f.label :smoking_pace, '理想の喫煙ペースは何本ですか？'
+        = f.label :smoking_pace, '理想の喫煙ペース'
         .row.justify-content-center
           .col-sm-4
             = f.number_field :smoking_pace, class: 'form-control reduction',placeholder: "半角数字" 
     
       .form-group 
-        = f.label :hourly_wage, 'あなたの時給を教えて下さい'
+        = f.label :hourly_wage, 'あなたの時給'
+        h6 style="font-size:10px" = "月給の方は『月の総支給÷月の労働時間』で算出して下さい"
         .row.justify-content-center
           .col-sm-4
             = f.number_field :hourly_wage, class: 'form-control reduction',placeholder: "半角数字"
@@ -26,11 +28,11 @@
 -elsif current_user.no_smoking_user_profile
   .text-center
     .form-group
-      = f.label :start_date, 'いつになったら禁煙を始めますか？'
+      = f.label :start_date, 'いつ禁煙を始めますか？'
       .row.justify-content-center
         = raw sprintf(f.datetime_select(:start_date, {use_month_numbers: true, start_year:Time.now.year, end_year:1900,date_separator: '%s' ,datetime_separator: '%s',time_separator: '%s'}, class: 'form-control-ns-inline'),'年','月','日','時') + '分'   
     .form-group
-      = f.label :tabaco_price, '吸っているタバコの金額を教えて下さい'
+      = f.label :tabaco_price, '吸っているタバコの金額'
       .row.justify-content-center
         .col-sm-4
           = f.number_field :tabaco_price, class: 'form-control',placeholder: "半角数字"
@@ -42,7 +44,8 @@
           = f.number_field :smoking_pace, class: 'form-control' ,placeholder: "半角数字"
 
     .form-group 
-      = f.label :hourly_wage, 'あなたの時給を教えて下さい'
+      = f.label :hourly_wage, 'あなたの時給'
+      h6 style="font-size:10px" = "月給の方は『月の総支給÷月の労働時間』で算出して下さい"
       .row.justify-content-center
         .col-sm-4
           = f.number_field :hourly_wage, class: "form-control",placeholder: "半角数字"

@@ -10,12 +10,12 @@
   = image_tag 'kinen_ojisan_iraira.png', class:'section-logo'
   .section
     .section-title = "今日吸って良い本数"
-    h6.show-section
+    h6.show-section#no_you
       = "今日は終わりです！"
       
 - else
   = image_tag 'tabako_man.png', class:'section-logo'
   .section
-    .section-title = "今日吸って良い本数"
-    h6.show-section
+    .section-title#you-can-title = "今日吸って良い本数"
+    h6.show-section#you-can-section
       = "#{you_can_smoke}本吸えます"

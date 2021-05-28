@@ -1,0 +1,12 @@
+$("#smoking").html("<%= current_user.reduction_user_profile.smoking_count.to_s(:delimited) %>本")
+$("#used-money").html("<%= used_money %>円")
+$("#used-time-final").html("<%= used_time_final %>")
+$("#lost-life-final").html("<%= lost_life_final %>")
+$("#lost-wage").html("<%= lost_wage %>円")
+
+
+if ( $("#you-can-section").html("<%= you_can_smoke %>")){
+  $("#you-can-section").html("<%= you_can_smoke %>本吸えます")
+}else{
+  $("#you-can-section").html("今日は終わりです！")
+}
