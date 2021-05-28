@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'enum_help'
 gem 'dotenv-rails'
+gem 'gon'
 
 group :development, :test do
   gem 'letter_opener_web'

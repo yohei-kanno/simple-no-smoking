@@ -7,7 +7,7 @@
     .section
       .section-title = "禁煙を開始してから"
       h6.show-section
-        = "#{no_smoking_time}経過"
+        #showTime
   .conte-no-smoking
     .flame
       = image_tag 'money_megakuramu_woman.png', class:'section-logo'
@@ -15,14 +15,6 @@
       .section-title = "得した金額"
       h6.show-section
         = "#{amount_of_money_earned}円"
-        
-  / .conte-no-smoking
-  /   .flame
-  /     = image_tag 'money_megakuramu_woman.png', class:'section-logo'
-  /   .section
-  /     .section-title = "買える品物"
-  /     h6.show-section
-  /       = link_to you_can_buy, "#"
         
   .conte-no-smoking
     .flame
@@ -91,8 +83,8 @@
     .section
       .section-title = "減煙を開始してから"
       h6.show-section
-        = "#{reduction_time}経過"
-        
+        #showTime
+
   .conte-reduction
     .flame
       = image_tag 'tabako_woman.png', class:'section-logo'

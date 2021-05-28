@@ -30,7 +30,8 @@ class ReductionUserProfilesController < ApplicationController
   def edit; end
   
   def show
-
+    time = DateTime.now.to_i - current_user.reduction_user_profile.start_date.to_i
+    gon.time = time
   end
   
   def update
@@ -67,4 +68,3 @@ class ReductionUserProfilesController < ApplicationController
     end
   end
 end
-      
