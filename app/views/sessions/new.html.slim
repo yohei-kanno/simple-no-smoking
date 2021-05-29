@@ -14,7 +14,7 @@
           = f.password_field :password, class: 'form-control'
     div.cp_ipcheck
       = check_box_tag :remember, params[:remember], true, class: "move-check"
-      = label_tag :remember,"ログインを記憶する"
+      = label_tag :remember,"ログイン状態を保持する"
       
   = f.submit 'ログイン', class:'no-smoking-button'
 div 

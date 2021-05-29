@@ -29,9 +29,9 @@
         .col-sm-4
           = f.password_field :password_confirmation, class: 'form-control',placeholder:"6文字以上、半角英数字"
           
-    .form-group 
+    .form-group.cp_ipcheck
       = f.label "利用規約",class:"my-check",name: "checkbox"
-        = f.check_box "利用規約", as: :boolean, checked:false
+        = f.check_box "利用規約", as: :boolean, checked:false, class: "move-check"
         | 利用規約に同意する
       p = render 'term_of_use'
       

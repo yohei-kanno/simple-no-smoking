@@ -84,14 +84,17 @@ border: 2px solid $reduction-color;
   @include my-form-control;  
   border: 2px solid $no-smoking-color;
 }
+
+.use_term{
+  border-radius: 8px;
+  border: solid 1px $no-smoking-color;
+}
+
 .form-control-re-inline{
   @include my-form-control;  
   border: 2px solid $reduction-color;
 }
 
-.use-term{
-  border-radius: 4px;
-}
 
 .no-smoking-updown{
   text-shadow:0 3px 5px $no-smoking-color
@@ -361,6 +364,7 @@ table td.ns:last-child{
 	width: 90%;
   margin: auto;
 }
+
 
 .cp_ipcheck label {
 	line-height: 135%;

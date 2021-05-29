@@ -12,7 +12,7 @@ Rails.application.config.sorcery.configure do |config|
     user.reset_password_mailer = UserMailer
     user.user_activation_mailer = UserMailer
     user.reset_password_time_between_emails
-    user.remember_me_for = 604800
+    user.remember_me_for = 1209600
   end
   config.user_class = "User"
 end
