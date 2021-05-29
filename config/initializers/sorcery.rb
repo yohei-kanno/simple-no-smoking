@@ -4,7 +4,7 @@
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging,
 # :magic_login, :external
-Rails.application.config.sorcery.submodules = [:reset_password, :user_activation]
+Rails.application.config.sorcery.submodules = [:reset_password, :user_activation, :remember_me]
 
 Rails.application.config.sorcery.configure do |config|
   config.user_config do |user|
@@ -12,6 +12,7 @@ Rails.application.config.sorcery.configure do |config|
     user.reset_password_mailer = UserMailer
     user.user_activation_mailer = UserMailer
     user.reset_password_time_between_emails
+    user.remember_me_for = 604800
   end
   config.user_class = "User"
 end

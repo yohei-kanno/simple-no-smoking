@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
   end
   
   def create
-    if @user = login(params[:email], params[:password])
+    if @user = login(params[:email], params[:password], params[:remember])
       if @user.no_smoking_user_profile && (@user.mode.mode === "no_smoking_mode")
         flash[:nsmysuccess] = t(".success_logined")
         redirect_to(user_no_smoking_user_profile_path(@user.id))

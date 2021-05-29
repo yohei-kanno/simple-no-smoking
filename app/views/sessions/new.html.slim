@@ -12,7 +12,10 @@
       .row.justify-content-center
         .col-sm-4
           = f.password_field :password, class: 'form-control'
-    
+    div
+      = check_box_tag :remember, params[:remember], true
+      = label_tag :remember,"永続ログイン"
+      
   = f.submit 'ログイン', class:'no-smoking-button'
 div 
   = link_to new_user_path, method: :get,class: 'cp-link-new' do
