@@ -1,7 +1,19 @@
 class SessionsController < ApplicationController
   skip_before_action :require_login
   
-  def new; end
+  def new
+    if current_user && current_user.mode && current_user.no_smoking_user_profile
+      redirect_to user_no_smoking_user_profile_path(current_user.id)
+    elsif current_user && current_user.mode && current_user.reduction_user_profile
+      redirect_to user_reduction_user_profile_path(current_user.id)
+    elsif current_user && !current_user.mode
+      redirect_to new_user_modes_path(current_user.id)
+    elsif current_user && (current_user.mode.mode === "no_smoking_mode") && !current_user.no_smoking_user_profile
+      redirect_to(new_user_no_smoking_user_profile_path(current_user.id))
+    elsif current_user && (current_user.mode.mode === "reduction_mode") && !current_user.reduction_user_profile
+      redirect_to(new_user_reduction_user_profile_path(current_user.id))
+    end
+  end
   
   def create
     if @user = login(params[:email], params[:password])
