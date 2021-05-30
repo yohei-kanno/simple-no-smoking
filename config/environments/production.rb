@@ -9,7 +9,7 @@ Rails.application.configure do
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
   config.assets.compile = true
 
-  config.hosts << "simple-no-smoking.herokuapp.com"
+  config.hosts << "www.simple-no-smoking.com"
   config.active_storage.service = :local
   config.log_level = :info
   config.assets.debug = false
