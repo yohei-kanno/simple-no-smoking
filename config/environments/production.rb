@@ -8,12 +8,12 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
   config.assets.compile = true
-
+  config.force_ssl = true
   config.hosts << "www.simple-no-smoking.com"
   config.active_storage.service = :local
   config.log_level = :info
   config.assets.debug = false
-  host = 'simple-no-smoking.herokuapp.com'
+  host = 'www.simple-no-smoking.com'
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_caching = false
   config.action_mailer.perform_deliveries = true
