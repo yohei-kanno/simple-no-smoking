@@ -1,11 +1,15 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
+  has_many :authentications, dependent: :destroy
+  accepts_nested_attributes_for :authentications
   include IdGenerator
   enum admin: { 一般ユーザー: false, 管理者ユーザー: true }
   
   validates_acceptance_of "利用規約",message: "に同意して下さい", allow_nil: false, on: :create
   validates :name, presence: true,length: { maximum: 20 }  
-  validates :email, uniqueness: true, presence: true
+  validates :email, uniqueness: true
+  validates :email, presence: true,
+    if: Proc.new{ |user| user.authentications}
   validates :birth_date, presence: true
   
   validates :password, presence: true,length: { minimum: 6 } ,on: :create 

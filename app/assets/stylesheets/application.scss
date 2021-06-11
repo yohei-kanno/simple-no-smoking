@@ -1,5 +1,10 @@
 @import "bootstrap";
+@import "font-awesome";
 @import "index";
+
+.fa{
+  color: #00acee;
+}
 
 .under-ns{
   border-bottom: solid 1px $dark-no-smoking-color;

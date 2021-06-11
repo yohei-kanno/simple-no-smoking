@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_29_173003) do
+ActiveRecord::Schema.define(version: 2021_06_11_150517) do
 
   create_table "answers", force: :cascade do |t|
     t.integer "contact_id"
@@ -18,6 +18,16 @@ ActiveRecord::Schema.define(version: 2021_05_29_173003) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["contact_id"], name: "index_answers_on_contact_id"
+  end
+
+  create_table "authentications", force: :cascade do |t|
+    t.string "user_id", limit: 36, null: false
+    t.string "provider", null: false
+    t.string "uid", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
+    t.index ["user_id"], name: "index_authentications_on_user_id"
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -77,7 +87,7 @@ ActiveRecord::Schema.define(version: 2021_05_29_173003) do
     t.boolean "admin", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.datetime "birth_date"
+    t.datetime "birth_date", default: "2021-06-12 00:00:00"
     t.string "reset_password_token"
     t.datetime "reset_password_token_expires_at"
     t.datetime "reset_password_email_sent_at"
@@ -94,6 +104,7 @@ ActiveRecord::Schema.define(version: 2021_05_29_173003) do
   end
 
   add_foreign_key "answers", "contacts"
+  add_foreign_key "authentications", "users"
   add_foreign_key "modes", "users"
   add_foreign_key "no_smoking_user_profiles", "users"
   add_foreign_key "reduction_user_profiles", "users"

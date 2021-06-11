@@ -25,6 +25,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'enum_help'
 gem 'dotenv-rails'
 gem 'gon'
+gem 'omniauth-twitter'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'letter_opener_web'
