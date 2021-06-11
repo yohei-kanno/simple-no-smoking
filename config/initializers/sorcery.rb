@@ -20,7 +20,7 @@ Rails.application.config.sorcery.configure do |config|
   config.twitter.key = ENV['TWITTER_API_KEY']
   config.twitter.secret = ENV['TWITTER_SECRET_API_KEY']
   config.twitter.user_info_path = "/1.1/account/verify_credentials.json?include_email=true"
-  config.twitter.callback_url = 'https://simple-no-smoking.herokuapp.com/callback?provider=twitter_'
+  config.twitter.callback_url = 'https://simple-no-smoking.herokuapp.com/oauth/callback?provider=twitter'
   config.twitter.user_info_mapping = {
     id: 'uid',
     name: 'name',
