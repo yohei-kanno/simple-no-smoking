@@ -27,6 +27,7 @@ gem 'dotenv-rails'
 gem 'gon'
 gem 'omniauth-twitter'
 gem 'font-awesome-rails'
+gem 'config'
 
 group :development, :test do
   gem 'letter_opener_web'
