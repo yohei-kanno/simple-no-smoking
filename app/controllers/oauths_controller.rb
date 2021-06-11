@@ -11,18 +11,18 @@ class OauthsController < ApplicationController
       redirect_to root_path
       if current_user.no_smoking_user_profile
         flash[:nsmysuccess] = "#{provider.titleize}でログインしました"
-      elsif
+      elsif current_user.reduction_user_profile
         flash[:remysuccess] = "#{provider.titleize}でログインしました"
       end
     else
      if  @user = create_from(provider)
         reset_session
         auto_login(@user)
-        binding.pry
         redirect_to root_path
         flash[:nsmysuccess] = "#{provider.titleize}でログインしました"
       else
-        redirect_to root_path, alert: "#{provider.titleize}でのログインに失敗しました"
+        redirect_to root_path
+        flash[:nsmyalert] = "#{provider.titleize}でのログインに失敗しました"
       end
     end
   end
