@@ -96,6 +96,10 @@ border: 2px solid $reduction-color;
   border: solid 1px $no-smoking-color;
 }
 
+.use_term:hover{
+  opacity: .8;
+}
+
 .form-control-re-inline{
   @include my-form-control;  
   border: 2px solid $reduction-color;
