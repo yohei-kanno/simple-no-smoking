@@ -12,4 +12,5 @@ class AnswerMailer < ApplicationMailer
          subject: "お問い合わせの回答になります。")
   end
   
+  
 end
