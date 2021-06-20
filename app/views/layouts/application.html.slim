@@ -13,6 +13,9 @@ html
     = favicon_link_tag 'apple-touch-icon.png', rel: 'apple-touch-icon', sizes: '180x180', type: 'image/png'
     = favicon_link_tag 'android-touch-icon.png', rel: 'android-touch-icon', sizes: '192x192', type: 'image/png'
     script crossorigin="anonymous" src="https://cdn.lr-ingest.io/LogRocket.min.js" 
+    javascript:
+      | window.LogRocket && window.LogRocket.init('xydfzi/simplenosmoking');
+
   body
     .container.no-smoking
       h2.text-center.no-smoking-updown
