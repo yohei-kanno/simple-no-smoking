@@ -8,9 +8,8 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import Rails from "@rails/ujs"
+require("user/sample")
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
-

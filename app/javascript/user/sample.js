@@ -1,4 +1,4 @@
-javascript:
+window.onload  = function(){
   setInterval((function showTime(){
     var t = `${gon.time++}`;
     d=Number(""+(t/864000|0)+(t/86400%10|0)).toLocaleString()
@@ -9,3 +9,4 @@ javascript:
     document.getElementById("showTime").innerHTML = D;
     return showTime
   }()),1000);
+}

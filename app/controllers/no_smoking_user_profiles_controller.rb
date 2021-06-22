@@ -29,7 +29,7 @@ class NoSmokingUserProfilesController < ApplicationController
   end
     
   def show
-    time = DateTime.now.to_i - current_user.no_smoking_user_profile.start_date.to_i
+    time = NoSmokingUserProfile.smoking_in_second(current_user)
     gon.time = time
   end
   

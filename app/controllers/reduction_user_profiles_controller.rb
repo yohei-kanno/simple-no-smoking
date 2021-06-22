@@ -30,7 +30,7 @@ class ReductionUserProfilesController < ApplicationController
   def edit; end
   
   def show
-    time = DateTime.now.to_i - current_user.reduction_user_profile.start_date.to_i
+    time = ReductionUserProfile.smoking_in_second(current_user)
     gon.time = time
   end
   
