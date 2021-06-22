@@ -1,4 +1,6 @@
 / ===========禁煙ユーザー詳細=============
+= javascript_pack_tag 'sample', 'data-turbolinks-track': 'reload'
+= include_gon
 - if current_user.no_smoking_user_profile
   = "#{current_user.name}さんの記録です！"
   .conte-no-smoking
